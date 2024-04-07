@@ -1,10 +1,8 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# dependencies - use PNPM
 /node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
+yarn-error.log
+yarn.lock
+package-lock.json
 
 # testing
 /coverage
@@ -21,6 +19,7 @@
 *.pem
 
 # debug
+pnpm-debug.log*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
