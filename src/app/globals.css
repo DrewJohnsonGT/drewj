@@ -13,23 +13,54 @@ body {
   flex-direction: column;
 }
 
+.light {
+  --background: white;
+  --offBackground: #fff0e6;
+  --accentBackground: #ffcfae;
+  --textColor: black;
+  --colorHighEmphasis: #ff7400;
+  --colorMidEmphasis: #21232c;
+  --colorLowEmphasis: #7e8c9a;
+}
+
+.dark {
+  --background: #0e141b;
+  --offBackground: #182635;
+  --accentBackground: #d25401;
+  --textColor: white;
+  --colorLowEmphasis: #6c7693;
+  --colorMidEmphasis: #f2f5f7;
+  --colorHighEmphasis: #ff9651;
+}
+
 main {
   flex: 1;
   overflow-y: auto;
+  background-color: var(--background);
+  color: var(--textColor);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+section {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found-image {
+  width: 250px;
+  height: 250px;
+  animation: wiggle 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite
+    alternate-reverse;
+  cursor: pointer;
+}
+
+@keyframes wiggle {
+  from {
+    transform: rotate(20deg);
   }
-}
-
-.theme.light {
-  --background-color: #fff;
-  --text-color: #000;
-}
-
-.theme.dark {
-  --background-color: #1a1a1a;
-  --text-color: #f1f1f1;
+  to {
+    transform: rotate(-20deg);
+  }
 }
