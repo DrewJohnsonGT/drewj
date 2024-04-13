@@ -1,0 +1,6 @@
+.root {
+  height: 5rem;
+  background-color: #282c34;
+  display: flex;
+  color: white;
+}
