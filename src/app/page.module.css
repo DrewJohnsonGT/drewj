@@ -3,8 +3,41 @@
   font-family: 'Cube1', 'cube2';
   color: var(--colorHighEmphasis);
 }
+@media screen and (max-width: 600px) {
+  .name {
+    font-size: 1.25rem;
+  }
+  .slogan {
+    font-size: 1rem;
+  }
+}
 
 .slogan {
   color: var(--colorLowEmphasis);
   margin-top: 0.5rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  height: 200px;
+}
+
+.skill {
+  position: absolute;
+  bottom: 0;
+  animation-name: moveRight;
+  transform-origin: center;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(100vw) rotate(360deg);
+  }
 }

@@ -1,19 +1,21 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { IoClose, IoMenu } from 'react-icons/io5';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Cube } from '~/components/Header/Cube';
 import { ROUTES } from '~/constants';
+import { useClickAway } from '~/hooks/useClickAway';
 import styles from './header.module.css';
 
 export const Header = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const currentPath = usePathname().split('/')[1];
   const navRef = useRef<(HTMLLIElement | null)[]>([]);
   const underlineRef = useRef<HTMLDivElement>(null);
+
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const clickAwayRef = useClickAway<HTMLUListElement>(() => setMenuOpen(false));
 
   const findRouteIndex = useCallback(
     () => ROUTES.findIndex((route) => route.value === currentPath),
@@ -79,7 +81,7 @@ export const Header = () => {
       <nav className={styles.mobileNavBar}>
         {/* Mobile */}
         <h1 className={styles.mobileNavTitle}>
-          {ROUTES[findRouteIndex()].label}
+          {ROUTES[findRouteIndex()]?.label}
         </h1>
         <button
           className={`${styles.menuButton} ${isMenuOpen ? styles.menuOpen : ''}`}
@@ -89,7 +91,8 @@ export const Header = () => {
           <span></span>
         </button>
         <ul
-          className={`${styles.mobileNavList} ${isMenuOpen ? styles.menuOpen : ''}`}>
+          className={`${styles.mobileNavList} ${isMenuOpen ? styles.menuOpen : ''}`}
+          ref={clickAwayRef}>
           {ROUTES.map((route) => (
             <li key={route.value} className={styles.mobileNavItem}>
               <Link
