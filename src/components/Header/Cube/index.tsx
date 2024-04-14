@@ -33,12 +33,12 @@ const SIDES = [
   },
   {
     icon: BsBriefcaseFill,
-    position: 'right',
+    position: 'left',
     route: 'resume',
   },
   {
     icon: AiFillMessage,
-    position: 'left',
+    position: 'right',
     route: 'contact',
   },
 ];

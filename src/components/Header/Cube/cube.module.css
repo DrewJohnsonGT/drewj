@@ -2,7 +2,6 @@
   --cubeSize: calc(var(--headerHeight) * 0.8);
   --translateZ: calc(var(--cubeSize) / 2);
   margin-left: calc(var(--headerHeight) * 0.1);
-  margin-top: calc(var(--headerHeight) * 0.1);
   width: var(--cubeSize);
   height: var(--cubeSize);
   display: flex;

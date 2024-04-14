@@ -1,12 +1,51 @@
 .root {
   background-color: var(--accentBackground);
   height: var(--headerHeight);
-  display: flex;
   color: white;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+.navBar {
+  margin-left: calc(var(--headerHeight) * 0.2);
+  position: relative;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
 }
 
 .navItem {
-  padding: 1rem;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--colorMidEmphasis);
   cursor: pointer;
   font-family: 'Qube1', 'Qube2';
+}
+
+.navItem:hover {
+  color: var(--colorMidEmphasis);
+}
+
+.navItemLink {
+  color: inherit;
+  text-decoration: none;
+}
+.navItem.active {
+  color: var(--colorHighEmphasis);
+}
+
+.underline {
+  height: 4px;
+  background-color: var(--colorHighEmphasis);
+  position: absolute;
+  transition:
+    left 0.5s ease-in-out,
+    width 0.5s ease-in-out;
+  bottom: 0;
 }
