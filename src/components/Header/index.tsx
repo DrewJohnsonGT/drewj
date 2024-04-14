@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { IoClose, IoMenu } from 'react-icons/io5';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -9,6 +10,7 @@ import { ROUTES } from '~/constants';
 import styles from './header.module.css';
 
 export const Header = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
   const currentPath = usePathname().split('/')[1];
   const navRef = useRef<(HTMLLIElement | null)[]>([]);
   const underlineRef = useRef<HTMLDivElement>(null);
@@ -72,7 +74,32 @@ export const Header = () => {
             </li>
           ))}
         </ul>
-        <div className={styles.underline} ref={underlineRef}></div>
+        <div className={styles.underline} ref={underlineRef} />
+      </nav>
+      <nav className={styles.mobileNavBar}>
+        {/* Mobile */}
+        <h1 className={styles.mobileNavTitle}>
+          {ROUTES[findRouteIndex()].label}
+        </h1>
+        <button
+          className={`${styles.menuButton} ${isMenuOpen ? styles.menuOpen : ''}`}
+          onClick={() => setMenuOpen(!isMenuOpen)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul
+          className={`${styles.mobileNavList} ${isMenuOpen ? styles.menuOpen : ''}`}>
+          {ROUTES.map((route) => (
+            <li key={route.value} className={styles.mobileNavItem}>
+              <Link
+                href={`/${route.value}`}
+                className={styles.mobileNavItemLink}>
+                {route.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
     </header>
   );
