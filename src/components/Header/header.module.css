@@ -1,6 +1,12 @@
 .root {
-  height: 5rem;
-  background-color: #282c34;
+  background-color: var(--accentBackground);
+  height: var(--headerHeight);
   display: flex;
   color: white;
+}
+
+.navItem {
+  padding: 1rem;
+  cursor: pointer;
+  font-family: 'Qube1', 'Qube2';
 }

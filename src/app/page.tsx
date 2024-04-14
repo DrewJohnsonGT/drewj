@@ -1,5 +1,12 @@
 import styles from './page.module.css';
 
 export default function Home() {
-  return <div className={styles.root}>YEET</div>;
+  return (
+    <section>
+      <h1 className={styles.name}>Drew Johnson</h1>
+      <h3 className={styles.slogan}>
+        <i>Always building something</i>
+      </h3>
+    </section>
+  );
 }

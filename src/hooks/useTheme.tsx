@@ -2,10 +2,10 @@
 
 import React, {
   createContext,
-  useContext,
   ReactNode,
-  useState,
+  useContext,
   useEffect,
+  useState,
 } from 'react';
 
 type Theme = 'light' | 'dark';
@@ -26,10 +26,12 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(() => {
+  const [theme, setTheme] = useState<Theme>('light');
+
+  useEffect(() => {
     const storedTheme = localStorage.getItem('theme');
-    return (storedTheme as Theme) || 'dark';
-  });
+    setTheme(storedTheme === 'dark' ? 'dark' : 'light');
+  }, []);
 
   useEffect(() => {
     document.body.className = `${document.body.className} ${theme}`; // Apply the theme class to the body element

@@ -1,7 +1,44 @@
+@font-face {
+  font-family: 'Qube1';
+  src: url('/fonts/QUBE.woff');
+}
+@font-face {
+  font-family: 'Qube2';
+  src: url('/fonts/QUBE.woff2');
+}
+@font-face {
+  font-family: 'Cube1';
+  src: url('/fonts/Cube.woff');
+}
+@font-face {
+  font-family: 'Cube2';
+  src: url('/fonts/Cube.woff2');
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+:root {
+  --headerHeight: 100px;
+  --footerHeight: 60px;
+  /* COLORS */
+  --disabled: #dfdfdf;
+  --disabledText: #b2b2b2;
+  --githubLightPurple: #b802b8;
+  --githubPurple: #7c007c;
+  --success: #2ea44f;
+  --instagram: #e4405f;
+  --instagramLight: #f092a7;
+  --lightOrange: #ff9651;
+  --linkedInBlue: #0072b1;
+  --linkedInLightBlue: #00a0dc;
+  --orange: #ff7400;
+  --purple: #212173;
+  --red: #ff0000;
+  --yellow: #ff9900;
 }
 
 html,
@@ -11,6 +48,7 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  font-family: 'Qube1', 'Qube2';
 }
 
 .light {
@@ -35,6 +73,7 @@ body {
 
 main {
   flex: 1;
+  display: flex;
   overflow-y: auto;
   background-color: var(--background);
   color: var(--textColor);
@@ -42,6 +81,7 @@ main {
 
 section {
   padding: 1rem;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;

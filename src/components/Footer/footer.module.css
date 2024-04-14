@@ -1,8 +1,7 @@
 .root {
-  background-color: #282c34;
-  color: white;
+  background-color: var(--accentBackground);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5rem;
+  height: var(--footerHeight);
 }

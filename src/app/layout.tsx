@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import { Footer, Header } from '~/components';
 import { ThemeProvider } from '~/hooks/useTheme';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+// const font = localFont({
+//   display: 'swap',
+//   src: '/fonts/Cube.woff2',
+// });
 
 export const metadata: Metadata = {
   description: "A simple portfolio site I update when I'm bored",
@@ -19,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider>
-        <body className={inter.className}>
+        <body>
           <Header />
           <main>{children}</main>
           <Footer />
