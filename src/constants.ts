@@ -94,7 +94,7 @@ export const SKILLS = [
   { icon: 'jest', score: 40 },
   { icon: 'aws', score: 70 },
   { icon: 'cucumber', score: 30 },
-  { icon: 'java', score: 20 },
+  { icon: 'java', score: 40 },
   { icon: 'scala', score: 55 },
   { icon: 'kafka', score: 15 },
   { icon: 'firebase', score: 50 },
