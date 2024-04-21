@@ -1,24 +1,24 @@
 import { useEffect, useRef, useState } from 'react';
 
-interface WindowSize {
+interface Size {
   width: number;
   height: number;
 }
 
-export const useWindowSize = (): WindowSize => {
-  const [windowSize, setWindowSize] = useState<WindowSize>({
-    height: 0,
-    width: 0,
-  });
+export const useElementSize = () => {
+  const elementRef = useRef<HTMLElement | null>(null);
+  const [size, setSize] = useState<Size>({ height: 0, width: 0 });
 
   const resizeTimeout = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     const handleResize = () => {
-      setWindowSize({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
+      if (elementRef.current) {
+        setSize({
+          height: elementRef.current.offsetHeight,
+          width: elementRef.current.offsetWidth,
+        });
+      }
     };
 
     const handleResizeDebounced = () => {
@@ -28,8 +28,11 @@ export const useWindowSize = (): WindowSize => {
       resizeTimeout.current = setTimeout(handleResize, 250);
     };
 
-    window.addEventListener('resize', handleResizeDebounced);
+    // Initialize measurement once to set initial size
     handleResize();
+
+    // Set up event listener for resize
+    window.addEventListener('resize', handleResizeDebounced);
 
     return () => {
       window.removeEventListener('resize', handleResizeDebounced);
@@ -39,5 +42,5 @@ export const useWindowSize = (): WindowSize => {
     };
   }, []);
 
-  return windowSize;
+  return { ref: elementRef, size };
 };
