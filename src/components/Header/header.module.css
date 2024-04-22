@@ -51,7 +51,6 @@
 
 /* Mobile */
 .mobileNavBar {
-  flex: 1;
   display: none;
   position: relative;
   justify-content: space-between;
@@ -61,6 +60,7 @@
 }
 
 .mobileNavTitle {
+  display: none;
   margin-left: 1rem;
   font-size: 1rem;
   font-weight: bold;
@@ -73,6 +73,7 @@
   cursor: pointer;
   background: none;
   margin-right: 1rem;
+  margin-left: auto;
   border: none;
   width: var(--menu-bar-width);
   height: calc(2 * var(--menu-bar-height) + 2 * var(--menu-bar-spacing));
@@ -115,6 +116,7 @@
   align-items: flex-end;
   position: absolute;
   list-style: none;
+  z-index: 10;
   gap: 0.75rem;
   padding: 0;
   margin: 0;
@@ -148,12 +150,16 @@
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+@media (max-width: 790px) {
   .navBar {
     display: none;
   }
 
   .mobileNavBar {
     display: flex;
+  }
+
+  .mobileNavTitle {
+    display: block;
   }
 }

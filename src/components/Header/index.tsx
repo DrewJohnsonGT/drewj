@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Cube } from '~/components/Header/Cube';
+import { ThemeToggle } from '~/components/Header/ThemeToggle';
 import { ROUTES } from '~/constants';
 import { useClickAway } from '~/hooks/useClickAway';
 import styles from './header.module.css';
@@ -78,21 +79,21 @@ export const Header = () => {
         </ul>
         <div className={styles.underline} ref={underlineRef} />
       </nav>
-      <nav className={styles.mobileNavBar}>
+      <h1 className={styles.mobileNavTitle}>
+        {ROUTES[findRouteIndex()]?.label}
+      </h1>
+      <ThemeToggle />
+      <nav className={styles.mobileNavBar} ref={clickAwayRef}>
         {/* Mobile */}
-        <h1 className={styles.mobileNavTitle}>
-          {ROUTES[findRouteIndex()]?.label}
-        </h1>
         <button
           className={`${styles.menuButton} ${isMenuOpen ? styles.menuOpen : ''}`}
-          onClick={() => setMenuOpen(!isMenuOpen)}>
+          onClick={() => setMenuOpen((isMenuOpen) => !isMenuOpen)}>
           <span></span>
           <span></span>
           <span></span>
         </button>
         <ul
-          className={`${styles.mobileNavList} ${isMenuOpen ? styles.menuOpen : ''}`}
-          ref={clickAwayRef}>
+          className={`${styles.mobileNavList} ${isMenuOpen ? styles.menuOpen : ''}`}>
           {ROUTES.map((route) => (
             <li key={route.value} className={styles.mobileNavItem}>
               <Link

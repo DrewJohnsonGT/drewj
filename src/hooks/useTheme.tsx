@@ -18,7 +18,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
-  return context;
+  return context as ThemeContextType;
 };
 
 interface ThemeProviderProps {
@@ -26,15 +26,16 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('light');
-
-  useEffect(() => {
+  const [theme, setTheme] = useState<Theme>(() => {
     const storedTheme = localStorage.getItem('theme');
-    setTheme(storedTheme === 'dark' ? 'dark' : 'light');
-  }, []);
+    return storedTheme === 'dark' ? 'dark' : 'light';
+  });
 
   useEffect(() => {
-    document.body.className = `${document.body.className} ${theme}`; // Apply the theme class to the body element
+    // Apply the theme class to the body element
+    // Remove old light/dark value
+    document.body.classList.remove('light', 'dark');
+    document.body.classList.add(theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
 

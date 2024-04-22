@@ -1,0 +1,85 @@
+.root {
+  --icon-size: 64px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 2rem;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  height: var(--icon-size);
+  width: var(--icon-size);
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  color: red;
+  fill: red;
+}
+.image:hover {
+  color: var(--colorLowEmphasis);
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.5) rotate(-360deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s forwards;
+}
+
+.rebels {
+  transition: all 0.3s ease;
+  stroke: black;
+  stroke-width: 0.2;
+}
+.rebels:hover {
+  stroke: blue;
+  stroke-width: 1;
+}
+
+.empire {
+  transition: all 0.3s ease;
+  stroke: black;
+  stroke-width: 0.2;
+}
+.empire:hover {
+  stroke: red;
+  stroke-width: 0.5;
+}
