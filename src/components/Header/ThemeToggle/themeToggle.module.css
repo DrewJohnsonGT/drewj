@@ -1,14 +1,17 @@
 .root {
   --icon-size: 64px;
-  display: inline-block;
   margin-left: auto;
   margin-right: 2rem;
-  background: none;
-  border: none;
   padding: 0;
+}
+
+.button {
   cursor: pointer;
   height: var(--icon-size);
   width: var(--icon-size);
+  background: none;
+  border: none;
+  display: inline-block;
 }
 
 .imageContainer {
@@ -24,14 +27,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.image {
-  color: red;
-  fill: red;
-}
-.image:hover {
-  color: var(--colorLowEmphasis);
 }
 
 @keyframes fadeIn {
@@ -64,22 +59,20 @@
   animation: fadeOut 0.5s forwards;
 }
 
-.rebels {
-  transition: all 0.3s ease;
-  stroke: black;
-  stroke-width: 0.2;
-}
-.rebels:hover {
-  stroke: blue;
-  stroke-width: 1;
+.root:hover .rebels {
+  fill: blue;
+  stroke-width: 3;
 }
 
-.empire {
-  transition: all 0.3s ease;
-  stroke: black;
-  stroke-width: 0.2;
-}
-.empire:hover {
-  stroke: red;
+.root:hover .empire {
+  fill: red;
   stroke-width: 0.5;
+}
+
+.rebels,
+.empire {
+  transition: all 0.7s ease;
+  stroke: black;
+  height: var(--icon-size);
+  width: var(--icon-size);
 }
