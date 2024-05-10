@@ -22,18 +22,32 @@
   }
 }
 
+.headshot {
+  border-radius: 50%;
+  border: 5px solid var(--colorHighEmphasis);
+  margin-right: 1rem;
+  background: #ffffff22;
+}
+
 .slogan {
-  color: var(--colorLowEmphasis);
+  color: var(--colorMidEmphasis);
   margin-top: 0.5rem;
 }
 
 .blurryBackdrop {
   z-index: 10;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.85);
+  display: inline-flex;
+  background: var(--accentBackgroundLight);
   backdrop-filter: blur(1px);
   border-radius: 8px;
   font-size: 24px;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
 .skills {

@@ -1,5 +1,5 @@
 .root {
-  --cubeSize: calc(var(--headerHeight) * 0.8);
+  --cubeSize: calc(var(--headerHeight) * 0.6);
   --translateZ: calc(var(--cubeSize) / 2);
   margin-left: calc(var(--headerHeight) * 0.1);
   width: var(--cubeSize);
@@ -11,7 +11,7 @@
 }
 
 .icon {
-  color: var(--background);
+  color: var(--colorMidEmphasis);
   width: calc(var(--cubeSize) * 0.65);
   height: calc(var(--cubeSize) * 0.65);
   opacity: 1;
@@ -29,7 +29,7 @@
   position: absolute;
   width: var(--cubeSize);
   height: var(--cubeSize);
-  border: 1px solid var(--background);
+  border: 1px solid var(--colorMidEmphasis);
   display: flex;
   align-items: center;
   justify-content: center;

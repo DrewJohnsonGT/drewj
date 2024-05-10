@@ -55,6 +55,7 @@ body {
   --background: white;
   --offBackground: #fff0e6;
   --accentBackground: #ffcfae;
+  --accentBackgroundLight: #ffcfaeaa;
   --textColor: black;
   --colorHighEmphasis: #ff7400;
   --colorMidEmphasis: #21232c;
@@ -65,6 +66,7 @@ body {
   --background: #0e141b;
   --offBackground: #182635;
   --accentBackground: #d25401;
+  --accentBackgroundLight: #d25401aa;
   --textColor: white;
   --colorLowEmphasis: #6c7693;
   --colorMidEmphasis: #f2f5f7;

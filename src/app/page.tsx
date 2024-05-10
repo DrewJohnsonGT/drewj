@@ -48,10 +48,19 @@ export default function Home() {
   return (
     <section className={styles.root} ref={sectionRef}>
       <div className={styles.blurryBackdrop}>
-        <h1 className={styles.name}>Drew Johnson</h1>
-        <h3 className={styles.slogan}>
-          <i>Always building something</i>
-        </h3>
+        <Image
+          className={styles.headshot}
+          src="/images/headshot.png"
+          alt="Drew Johnson"
+          width={150}
+          height={150}
+        />
+        <div className={styles.headerText}>
+          <h1 className={styles.name}>Drew Johnson</h1>
+          <h3 className={styles.slogan}>
+            <i>Always building something</i>
+          </h3>
+        </div>
       </div>
       <div className={styles.skills}>
         {skillStyles.map(({ icon, src, style }) => (
