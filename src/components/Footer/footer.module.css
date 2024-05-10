@@ -5,3 +5,39 @@
   align-items: center;
   height: var(--footerHeight);
 }
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  color: var(--colorMidEmphasis);
+  font-size: 2.5rem;
+  margin: 0 0.5rem;
+  background-color: var(--colorMidEmphasis);
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.instagram {
+  color: var(--instagram);
+}
+.instagram:hover {
+  color: var(--instagramLight);
+}
+
+.linkedin {
+  color: var(--linkedin);
+}
+.linkedin:hover {
+  color: var(--linkedinLight);
+}
+
+.github {
+  color: var(--github);
+}
+.github:hover {
+  color: var(--githubLight);
+}
