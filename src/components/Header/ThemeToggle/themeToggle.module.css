@@ -72,7 +72,8 @@
 .rebels,
 .empire {
   transition: all 0.7s ease;
-  stroke: black;
+  fill: var(--offBackground);
+  stroke: var(--textColor);
   height: var(--icon-size);
   width: var(--icon-size);
 }

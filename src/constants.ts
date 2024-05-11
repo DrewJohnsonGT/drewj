@@ -93,6 +93,7 @@ export const SKILLS = [
   { icon: 'typescript', score: 80 },
   { icon: 'jest', score: 40 },
   { icon: 'aws', score: 70 },
+  { icon: 'aws2', score: 70 },
   { icon: 'cucumber', score: 30 },
   { icon: 'java', score: 40 },
   { icon: 'scala', score: 55 },
@@ -102,4 +103,10 @@ export const SKILLS = [
   { icon: 'gcp', score: 65 },
   { icon: 'cypress', score: 45 },
   { icon: 'jetbrains', score: 40 },
+  { icon: 'terraform', score: 70 },
+  { icon: 'newrelic', score: 40 },
+  { icon: 'storybook', score: 60 },
+  { icon: 'jenkins', score: 45 },
+  { icon: 'docker', score: 70 },
+  { icon: 'git', score: 65 },
 ];

@@ -19,6 +19,9 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 :root {
@@ -55,7 +58,7 @@ body {
   --background: white;
   --offBackground: #fff0e6;
   --accentBackground: #ffcfae;
-  --accentBackgroundLight: #ffcfaeaa;
+  --accentBackgroundLight: #ffcfae22;
   --textColor: black;
   --colorHighEmphasis: #ff7400;
   --colorMidEmphasis: #21232c;
@@ -66,7 +69,7 @@ body {
   --background: #0e141b;
   --offBackground: #182635;
   --accentBackground: #d25401;
-  --accentBackgroundLight: #d25401aa;
+  --accentBackgroundLight: #d2540122;
   --textColor: white;
   --colorLowEmphasis: #6c7693;
   --colorMidEmphasis: #f2f5f7;

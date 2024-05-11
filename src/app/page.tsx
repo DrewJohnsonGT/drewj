@@ -27,8 +27,8 @@ export default function Home() {
       const size = minIconSize + (maxIconSize - minIconSize) * (score / 100);
       const top = Math.random() * (sectionSize.height - size);
 
-      const travelTime = getRandomVariance(25, 150);
-      const delay = getRandomVariance(0, travelTime / 5);
+      const travelTime = getRandomVariance(10, 175);
+      const delay = getRandomVariance(0, 5);
 
       return {
         icon,

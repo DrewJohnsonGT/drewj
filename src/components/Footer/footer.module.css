@@ -14,11 +14,12 @@
 
 .icon {
   color: var(--colorMidEmphasis);
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 0 0.5rem;
-  background-color: var(--colorMidEmphasis);
+  border: 2px solid var(--colorHighEmphasis);
+  background-color: var(--textColor);
   border-radius: 50%;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
 .instagram {
