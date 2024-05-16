@@ -84,7 +84,7 @@
   display: block;
   height: var(--menu-bar-height);
   width: 100%;
-  background: black;
+  background: var(--textColor);
   margin-bottom: var(--menu-bar-spacing);
   transition: all 0.3s ease;
   position: relative;

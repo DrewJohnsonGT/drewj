@@ -12,7 +12,7 @@ interface SkillProps {
   style: Record<string, string>;
 }
 
-export const getRandomVariance = (min: number, max: number): number =>
+const getRandomVariance = (min: number, max: number): number =>
   Math.random() * (max - min) + min;
 
 export default function Home() {
@@ -27,8 +27,8 @@ export default function Home() {
       const size = minIconSize + (maxIconSize - minIconSize) * (score / 100);
       const top = Math.random() * (sectionSize.height - size);
 
-      const travelTime = getRandomVariance(10, 175);
-      const delay = getRandomVariance(0, 5);
+      const travelTime = getRandomVariance(25, 200);
+      const delay = getRandomVariance(0, 10);
 
       return {
         icon,

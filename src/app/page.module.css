@@ -62,7 +62,7 @@
   bottom: 0;
   will-change: animation;
   transition: all 0.3s;
-  opacity: 0.4;
+  opacity: 0.75;
 }
 
 @keyframes moveAndRotate {
