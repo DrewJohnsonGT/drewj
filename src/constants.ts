@@ -1,8 +1,8 @@
 export const ROUTES = [
-  {
-    label: 'Posts',
-    value: 'posts',
-  },
+  // {
+  //   label: 'Posts',
+  //   value: 'posts',
+  // },
   {
     label: 'Projects',
     value: 'projects',
@@ -12,7 +12,7 @@ export const ROUTES = [
     value: 'resume',
   },
   { label: 'About', value: 'about' },
-  { label: 'Games', value: 'games' },
+  // { label: 'Games', value: 'games' },
   {
     label: 'Contact',
     value: 'contact',

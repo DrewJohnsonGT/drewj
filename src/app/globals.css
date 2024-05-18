@@ -42,6 +42,8 @@
   --purple: #212173;
   --red: #ff0000;
   --yellow: #ff9900;
+  --buttonBackground: #ff7400;
+  --buttonHoverBackground: #ff8c00;
 }
 
 html,
@@ -55,7 +57,7 @@ body {
 }
 
 .light {
-  --background: white;
+  --background: #f2f5f7;
   --offBackground: #fff0e6;
   --accentBackground: #ffcfae;
   --accentBackgroundLight: #ffcfae22;
@@ -66,7 +68,7 @@ body {
 }
 
 .dark {
-  --background: #0e141b;
+  --background: #1b130e;
   --offBackground: #182635;
   --accentBackground: #d25401;
   --accentBackgroundLight: #d2540122;
