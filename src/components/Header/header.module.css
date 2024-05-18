@@ -24,7 +24,7 @@
   font-size: 1.25rem;
   color: var(--colorMidEmphasis);
   cursor: pointer;
-  font-family: 'Qube1', 'Qube2';
+  font-family: Qube;
 }
 
 .navItem:hover {
@@ -64,7 +64,7 @@
   margin-left: 1rem;
   font-size: 1rem;
   font-weight: bold;
-  font-family: 'Cube1', 'Cube2';
+  font-family: Cube;
   color: var(--textColor);
 }
 
@@ -135,6 +135,7 @@
   width: 100%;
   font-size: 1.25rem;
   text-align: right;
+  font-family: Qube;
 }
 .mobileNavItem:hover {
   color: var(--colorHighEmphasis);

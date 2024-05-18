@@ -88,7 +88,7 @@
 }
 
 .unfocused {
-  animation: rotating 10s linear infinite;
+  animation: rotating 20s linear infinite;
 }
 
 @keyframes rotating {

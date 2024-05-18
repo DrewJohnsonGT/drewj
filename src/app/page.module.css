@@ -7,15 +7,6 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 600px) {
-  .name {
-    font-size: 1.25rem;
-  }
-  .slogan {
-    font-size: 1rem;
-  }
-}
-
 .headshot {
   border-radius: 50%;
   border: 5px solid var(--colorHighEmphasis);
@@ -24,14 +15,10 @@
   background: #ffffff22;
 }
 
-.name {
-  font-size: 2rem;
-  font-family: 'Cube1', 'cube2';
-  color: var(--colorHighEmphasis);
-}
-
 .slogan {
   color: var(--colorMidEmphasis);
+  font-family: Qube;
+  font-size: 1.25rem;
   margin-top: 0.5rem;
 }
 
@@ -94,7 +81,7 @@
     margin: 0.5rem;
   }
 
-  .name {
-    font-size: 1.5rem;
+  .slogan {
+    font-size: 1rem;
   }
 }

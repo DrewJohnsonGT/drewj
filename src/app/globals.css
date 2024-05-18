@@ -1,18 +1,58 @@
 @font-face {
-  font-family: 'Qube1';
-  src: url('/fonts/QUBE.woff');
-}
-@font-face {
-  font-family: 'Qube2';
+  font-family: 'Qube';
   src: url('/fonts/QUBE.woff2');
 }
 @font-face {
-  font-family: 'Cube1';
-  src: url('/fonts/Cube.woff');
+  font-family: 'Cube';
+  src: url('/fonts/Cube.woff2');
 }
 @font-face {
-  font-family: 'Cube2';
-  src: url('/fonts/Cube.woff2');
+  font-family: 'Geotalism';
+  src: url('/fonts/Geotalism.woff2');
+}
+@font-face {
+  font-family: 'Mecha';
+  src: url('/fonts/Mecha.woff2');
+}
+@font-face {
+  font-family: 'ScienceFiction';
+  src: url('/fonts/ScienceFiction.woff2');
+}
+@font-face {
+  font-family: 'Sikat';
+  src: url('/fonts/Sikat.woff2');
+}
+@font-face {
+  font-family: 'Gravis';
+  src: url('/fonts/Gravis.woff2');
+}
+@font-face {
+  font-family: 'Beking';
+  src: url('/fonts/Beking.woff2');
+}
+@font-face {
+  font-family: 'Convert';
+  src: url('/fonts/Convert.woff2');
+}
+@font-face {
+  font-family: 'Craftsman';
+  src: url('/fonts/Craftsman.woff2');
+}
+@font-face {
+  font-family: 'Knight';
+  src: url('/fonts/Knight.woff2');
+}
+@font-face {
+  font-family: 'Cookies';
+  src: url('/fonts/Cookies.woff2');
+}
+@font-face {
+  font-family: 'Identity';
+  src: url('/fonts/Identity.woff2');
+}
+@font-face {
+  font-family: 'demo';
+  src: url('/fonts/demo.woff2');
 }
 
 * {
@@ -53,14 +93,13 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  font-family: 'Qube1', 'Qube2';
 }
 
 .light {
   --background: #f2f5f7;
   --offBackground: #fff0e6;
   --accentBackground: #ffcfae;
-  --accentBackgroundLight: #ffcfae22;
+  --accentBackgroundLight: #ffcfaeaa;
   --textColor: black;
   --colorHighEmphasis: #ff7400;
   --colorMidEmphasis: #21232c;
@@ -71,7 +110,7 @@ body {
   --background: #1b130e;
   --offBackground: #182635;
   --accentBackground: #d25401;
-  --accentBackgroundLight: #d2540122;
+  --accentBackgroundLight: #d25401aa;
   --textColor: white;
   --colorLowEmphasis: #6c7693;
   --colorMidEmphasis: #f2f5f7;

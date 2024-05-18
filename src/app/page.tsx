@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { CyclingText } from '~/components/CyclingText';
 import { SKILLS } from '~/constants';
 import { useElementSize } from '~/hooks/useElementSize';
 import styles from './page.module.css';
@@ -56,7 +57,7 @@ export default function Home() {
           height={150}
         />
         <div className={styles.headerText}>
-          <h1 className={styles.name}>Drew Johnson</h1>
+          <CyclingText text="Drew Johnson" />
           <h3 className={styles.slogan}>
             <i>Always building something</i>
           </h3>
