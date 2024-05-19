@@ -16,7 +16,7 @@
   color: var(--colorMidEmphasis);
   font-size: 3rem;
   margin: 0 0.5rem;
-  border: 2px solid var(--colorHighEmphasis);
+  border: 2px solid var(--textColor);
   background-color: var(--background);
   border-radius: 50%;
   padding: 0.25rem;

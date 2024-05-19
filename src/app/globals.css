@@ -134,6 +134,16 @@ section {
   justify-content: center;
 }
 
+a {
+  color: var(--colorHighEmphasis);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--colorMidEmphasis);
+  text-decoration: underline;
+}
+
 .not-found-image {
   width: 250px;
   height: 250px;

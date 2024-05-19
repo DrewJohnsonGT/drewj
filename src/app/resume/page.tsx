@@ -12,19 +12,19 @@ const ResumePage = () => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className={styles.root} onClick={() => isModalOpen && toggleModal()}>
       <button className={styles.downloadButton}>
         <a href="/resume.pdf" download="DrewJohnson_resume.pdf">
           Download as PDF
         </a>
       </button>
-      <div className={styles.resumeImage} onClick={toggleModal}>
+      <div className={styles.imageContainer}>
         <Image
           src="/resume.png"
           alt="Resume"
-          width={1200}
-          height={1552}
-          layout="responsive"
+          onClick={toggleModal}
+          className={styles.resumeImage}
+          fill
         />
       </div>
       {isModalOpen && (
@@ -35,7 +35,6 @@ const ResumePage = () => {
               alt="Zoomed Resume"
               width={1400}
               height={1866}
-              layout="responsive"
             />
           </div>
         </div>

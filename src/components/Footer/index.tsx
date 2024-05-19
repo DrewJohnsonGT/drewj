@@ -1,21 +1,22 @@
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import clsx from 'clsx';
 import { Tooltip } from '~/components/Tooltip';
+import { GITHUB_URL, INSTAGRAM_URL, LINKED_IN_URL } from '~/constants';
 import styles from './footer.module.css';
 
 const LINKS = [
   {
-    href: 'https://www.linkedin.com/in/sdrewjohnson/',
+    href: LINKED_IN_URL,
     icon: FaLinkedin,
     title: 'LinkedIn',
   },
   {
-    href: 'https://www.instagram.com/sdrewjohnson/',
+    href: INSTAGRAM_URL,
     icon: FaInstagram,
     title: 'Instagram',
   },
   {
-    href: 'https://github.com/DrewJohnsonGT',
+    href: GITHUB_URL,
     icon: FaGithub,
     title: 'GitHub',
   },

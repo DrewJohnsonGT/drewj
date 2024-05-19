@@ -28,8 +28,8 @@ export default function Home() {
       const size = minIconSize + (maxIconSize - minIconSize) * (score / 100);
       const top = Math.random() * (sectionSize.height - size);
 
-      const travelTime = getRandomVariance(25, 200);
-      const delay = getRandomVariance(0, 10);
+      const travelTime = getRandomVariance(30, 250);
+      const delay = getRandomVariance(0, 5);
 
       return {
         icon,
@@ -37,7 +37,7 @@ export default function Home() {
         style: {
           animation: `${Math.random() > 0.5 ? styles.moveAndRotate : styles.moveAndRotateCounter} ${travelTime}s infinite ${delay}s linear`,
           height: `${size}px`,
-          left: `-${maxIconSize + getRandomVariance(0, size)}px`,
+          left: `-${maxIconSize + getRandomVariance(0, size * 4)}px`,
           top: `${top}px`,
           width: `${size}px`,
         },
