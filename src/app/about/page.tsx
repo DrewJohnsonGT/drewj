@@ -7,13 +7,7 @@ const IMAGE_HEIGHT = 266;
 
 const AboutImage = ({ alt, src }: { alt: string; src: string }) => {
   return (
-    <Image
-      src={src}
-      alt={alt}
-      width={IMAGE_WIDTH}
-      height={IMAGE_HEIGHT}
-      objectFit="cover"
-    />
+    <Image src={src} alt={alt} width={IMAGE_WIDTH} height={IMAGE_HEIGHT} />
   );
 };
 const AboutPage = () => {

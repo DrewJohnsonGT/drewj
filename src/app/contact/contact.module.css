@@ -5,3 +5,13 @@
   align-items: center;
   justify-content: center;
 }
+
+.root a {
+  color: var(--colorHighEmphasis);
+  text-decoration: none;
+}
+
+.root a:hover {
+  color: var(--colorMidEmphasis);
+  text-decoration: underline;
+}
