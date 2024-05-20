@@ -32,7 +32,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
       return 'dark';
     }
     const storedTheme = localStorage.getItem('theme');
-    return storedTheme === 'dark' ? 'dark' : 'light';
+    return storedTheme === 'light' ? 'light' : 'dark';
   });
 
   useEffect(() => {
