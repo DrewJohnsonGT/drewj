@@ -1,0 +1,15 @@
+.root {
+  margin: 1rem;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.label {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1rem;
+}
