@@ -27,7 +27,7 @@ const getPercentOfGoal = (date: Date, goal: number) => {
   return Math.round(percentage * 100) / 100;
 };
 
-export const useHomeLogic = () => {
+const useHomeLogic = () => {
   const [timeSince, setTimeSince] = useState<TimeSince[]>();
 
   // Find time since TIME and update every second
