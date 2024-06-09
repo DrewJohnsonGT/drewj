@@ -59,7 +59,7 @@ export default function Home() {
         <div className={styles.headerText}>
           <CyclingText text="Drew Johnson" />
           <h3 className={styles.slogan}>
-            <i>Always building something</i>
+            <i>Always Building Something</i>
           </h3>
         </div>
       </div>
