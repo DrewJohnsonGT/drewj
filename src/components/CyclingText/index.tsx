@@ -28,13 +28,7 @@ const setFinalFont = () => {
   });
 };
 
-export const CyclingText = ({
-  fontSize = '3rem',
-  text,
-}: {
-  text: string;
-  fontSize?: string;
-}) => {
+export const CyclingText = ({ text }: { text: string }) => {
   const [_count, setCount] = useState(0);
 
   useEffect(() => {
@@ -63,18 +57,9 @@ export const CyclingText = ({
 
   return (
     <div className={styles.container}>
-      <h2
-        className={styles.text}
-        style={{
-          fontSize,
-        }}>
+      <h2 className={styles.text}>
         {text.split('').map((letter, index) => (
-          <p
-            key={index}
-            className={styles.letter}
-            style={{
-              width: fontSize,
-            }}>
+          <p key={index} className={styles.letter}>
             {letter}
           </p>
         ))}
