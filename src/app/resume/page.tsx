@@ -31,12 +31,16 @@ const ResumePage = () => {
       </div>
       {isModalOpen && (
         <div className={styles.modal}>
-          <div className={styles.modalContent} onClick={toggleModal}>
+          <div className={styles.modalContent}>
             <Image
               src={RESUME_FILE}
               alt="Zoomed Resume"
               width={1400}
               height={1866}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleModal();
+              }}
             />
           </div>
         </div>

@@ -22,14 +22,12 @@ const AboutPage = () => {
       <br />
       <i className={styles.description}>
         ... <br />
-        Product focused engineer and leader with a passion for problem solving.
-        <br />
-        Committed to action, delivering quality results, and empowering the
-        team. <br />
-        Proficient generalist adept at swiftly acquiring and applying new
-        knowledge and skills.
-        <br /> Prides himself on managing complexity while creating maintainable
-        and extensible systems, and thrives on tackling challenging problems.
+        A product-focused engineer and leader with a passion for
+        problem-solving, a commitment to action, and a dedication to delivering
+        quality results while empowering the team. My proficiency as a
+        generalist allows me to swiftly acquire and apply new knowledge and
+        skills. I excel in managing complexity, creating maintainable and
+        extensible systems, and thrive on tackling challenging problems.
         <br />
         ...
       </i>
