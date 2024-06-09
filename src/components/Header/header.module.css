@@ -62,7 +62,7 @@
 .mobileNavTitle {
   display: none;
   margin-left: 1rem;
-  font-size: 1rem;
+  font-size: 0.65rem;
   font-weight: bold;
   font-family: Cube;
   color: var(--textColor);
