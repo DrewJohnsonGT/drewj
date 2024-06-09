@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import styles from './resume.module.css';
 
+const RESUME_FILE = '/resume.jpg';
+
 const ResumePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -20,7 +22,7 @@ const ResumePage = () => {
       </button>
       <div className={styles.imageContainer}>
         <Image
-          src="/resume.png"
+          src={RESUME_FILE}
           alt="Resume"
           onClick={toggleModal}
           className={styles.resumeImage}
@@ -31,7 +33,7 @@ const ResumePage = () => {
         <div className={styles.modal}>
           <div className={styles.modalContent} onClick={toggleModal}>
             <Image
-              src="/resume.png"
+              src={RESUME_FILE}
               alt="Zoomed Resume"
               width={1400}
               height={1866}
