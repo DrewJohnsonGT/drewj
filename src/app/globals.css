@@ -93,6 +93,8 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  /* Default to dark theme */
+  background-color: #1b130e;
 }
 
 .light {
