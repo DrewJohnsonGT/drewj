@@ -1,0 +1,204 @@
+%-------------------------
+% Resume
+% Author : Drew Johnson
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-8pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% List indent 
+\setlist{leftmargin=*}
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+
+% Custom commands
+\newcommand{\overviewSection}[1]{%
+  \begin{center}
+    \small #1 \par
+  \end{center}
+}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemTitle}[1]{\textbf{#1}:}
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://drewj.dev/}{\Large Drew Johnson}} & Email : \href{mailto:DrewJohnsonGT@gmail.com}{DrewJohnsonGT@gmail.com}\\
+%   \href{http://drewj.dev/}{drewj.dev} & Mobile : +1-404-825-2866 \\
+% \end{tabular*}
+
+\begin{center}
+	\textbf{\Huge \scshape Drew Johnson} \\ \vspace{1pt}
+	\small 404-825-2866 $|$ \href{mailto:x@x.com}{\underline{DrewJohnsonGT@gmail.com}} $|$ 
+	\href{https://linkedin.com/in/drewjohnsongt}{\underline{linkedin.com/in/drewjohnsongt}} $|$
+	\href{https://github.com/drewjohnsongt}{\underline{github.com/drewjohnsongt}} $|$
+	\href{https://drewj.dev/}{\underline{drewj.dev}}
+\end{center}
+
+%-----------OVERVIEW-------------
+
+\overviewSection {Accomplished Senior Software Engineer and Team Lead with over 7 years of experience specializing in full-stack development, cloud architecture, and big data solutions. Proven leadership in guiding teams of 5-8 engineers through the full product lifecycle at a high-growth unicorn cybersecurity startup. Experience in building, upgrading, and maintaining systems at the scale of Fortune 100/500 companies. Lifelong learner, always building something.}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+	\small{\item{
+		\textbf{Languages:}{ TypeScript/JavaScript, Python, Scala, Java, GraphQL, SQL, Terraform, HTML/CSS} \\
+		\textbf{Frameworks/Tools:}{ React, Node.js, AWS (DynamoDB, Lambda, EC2, SQS, SNS, S3, etc), Docker, Spark, Databricks} \\
+		\textbf{Skills:}{ Cloud Native Development, Full Stack Development, IaC, CI/CD and DevOps, data engineering}
+        }}
+\end{itemize}
+ 
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Team Lead and Senior Software Engineer}{Feb 2021 -- Present}
+{JupiterOne}{Raleigh, NC (Remote)}
+\resumeItemListStart
+\resumeItem{\resumeItemTitle{Project Leadership} Led both technical and non-technical aspects of a teams of up to 8 engineers, translating ambiguous requirements into technical system designs and actionable implementation plans.}
+\resumeItem{\resumeItemTitle{Full Stack System Design} Drove SaaS architecture and development to support 1000\%+ company growth, using React single-SPA microfrontends and serverless, multi-tenant, and asynchronous, event-driven AWS patterns.}
+\resumeItem{\resumeItemTitle{SaaS Development} Created core cybersecurity applications and features across domains such as insights/data visualization, alerting, integrations, and graph operations, supporting growth to over 100 customers.}
+\resumeItem{\resumeItemTitle{Big Data Engineering} Designed and implemented a high-throughput (25B records/hour) deduplication ETL system using Spark/Scala/Databricks, which consolidates CDC Delta Lake data, securing 1m+ ARR deal.}
+\resumeItem{\resumeItemTitle{AI/LLM} Championed the integration of AI and LLMs into the JupiterOne platform, leading the development of a feature that transforms natural language queries into a cipher-based DSL, increasing user engagement by over 400\%.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Senior Software Engineer}{May 2020 -- Feb 2021}
+{The Home Depot}{Atlanta, GA (Remote)}
+\resumeItemListStart
+\resumeItem{\resumeItemTitle{Full Stack Typescript} Authored suite of new React frontends and Node/Express/TypeORM layered multi-tenant microservice APIs for B2B/B2C tax exemption software, decreasing monthly legacy system requests by 2 million.}
+\resumeItem{\resumeItemTitle{Cloud Architecture and SRE} Directed GCP cloud architecture, CI/CD, and database migrations from legacy on-premise systems to new microservice architecture maintaining 99.99\% uptime for 250k+ requests a day. } 
+\resumeItemListEnd
+
+\resumeSubheading
+{Senior Software Engineer}{Sep 2019 -- May 2020}
+{Delta Air Lines}{Atlanta, GA}
+\resumeItemListStart
+\resumeItem{\resumeItemTitle{Cloud Architecture} Guided development architecture of Delta’s first AWS cloud project, implementing real-time, high throughput data streaming from on-premise sources for the daily distributed processing of millions of records.}
+\resumeItem{\resumeItemTitle{Data Ingestion and Streaming} Integrated with hundreds of disparate legacy on-premise and cloud applications for real-time customer data ingestion, standardization, and consolidation around centralized IDs (SVOC).}
+\resumeItem{\resumeItemTitle{TDD/BDD} Created Java utilities alongside Gherkin-based libraries to establish best practices for unit, integration, and E2E testing, achieving over 95\% code coverage and standardizing processes across API development teams.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Full Stack Software Engineer (Side contract)}{Oct 2018 -- Sep 2019}
+{Schenck Process}{Kansas City, MO}
+\resumeItemListStart
+\resumeItem{\resumeItemTitle{Full Stack App Design/Development} Architected, developed, and implemented engineering product specification/sizing tool, saving hundreds of monthly engineer hours and preventing company liability issues.}
+\resumeItem{\resumeItemTitle{Maintainable Code} Strategically evolved and maintained a robust codebase over 6+ years, driving the transition from MVP to advanced iterations in response to evolving feature requirements and technology upgrades.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Software Engineer}{Oct 2017 -- Sep 2019}
+{Meridian Business Services}{Overland Park, KS}
+\resumeItemListStart
+\resumeItem{\resumeItemTitle{Development Lead} Led development efforts supporting company’s 2-year 500\% growth, establishing and maintaining core engineering best practices while delivering effective and efficient code.}
+\resumeItem{\resumeItemTitle{Web Solutions} Architected and developed ERP/CRM customizations for over 50 clients including third-party RESTful integrations/API development, backend workflow automations, and full stack web app development.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Georgia Institute of Technology}{Atlanta, GA}
+{Bachelor of Science in Computer Science}{Aug. 2013 -- May 2017}
+\resumeSubHeadingListEnd
+%
+
+
+%-------------------------------------------
+\end{document}
