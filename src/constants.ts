@@ -22,7 +22,7 @@ export const ROUTES = [
 export const PUG_SEARCH =
   'https://www.google.com/search?biw=1618&bih=916&tbm=isch&sa=1&ei=IgAyXc7oI5HbtAaFpoaoDQ&q=cute+pugs&oq=cute+pugs&gs_l=img.12..0l10.3742.4211..6198...0.0..0.98.467.5......0....1..gws-wiz-img.......0i7i30.RXCuQBPhb7U&ved=0ahUKEwjOgb-Uw8HjAhWRLc0KHQWTAdUQ4dUDCAY';
 
-export const LINKED_IN_URL = 'https://www.linkedin.com/in/sdrewjohnson/';
+export const LINKED_IN_URL = 'https://www.linkedin.com/in/drewjohnsongt/';
 export const GITHUB_URL = 'https://github.com/DrewJohnsonGT/';
 export const INSTAGRAM_URL = 'https://www.instagram.com/sdrewjohnson/';
 
