@@ -21,7 +21,7 @@ export default function Home() {
   const [skillStyles, setSkillStyles] = useState<SkillProps[]>([]);
 
   useEffect(() => {
-    const maxIconSize = sectionSize.height * 0.25;
+    const maxIconSize = sectionSize.height * 0.15;
     const minIconSize = sectionSize.height * 0.05;
 
     const newSkillStyles = SKILLS.map(({ icon, score }) => {
