@@ -14,7 +14,7 @@ const NotFoundPage = () => (
         height={200}
       />
     </a>
-    <h5>This page was not found </h5>
+    <h5>This page does not exist </h5>
   </section>
 );
 
