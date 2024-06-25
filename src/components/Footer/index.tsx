@@ -1,6 +1,6 @@
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { Tooltip } from '@chakra-ui/react';
 import clsx from 'clsx';
-import { Tooltip } from '~/components/Tooltip';
 import { GITHUB_URL, INSTAGRAM_URL, LINKED_IN_URL } from '~/constants';
 import styles from './footer.module.css';
 
@@ -28,7 +28,7 @@ export const Footer = () => {
         {LINKS.map((link) => {
           const Icon = link.icon;
           return (
-            <Tooltip key={link.title} message={link.title}>
+            <Tooltip key={link.title} label={link.title}>
               <a
                 href={link.href}
                 target="_blank"

@@ -1,6 +1,6 @@
+import { Tooltip } from '@chakra-ui/react';
 import { EmpireSVG } from '~/assets/svg/empire';
 import { RebelsSVG } from '~/assets/svg/rebels';
-import { Tooltip } from '~/components/Tooltip';
 import { useTheme } from '~/utils/useTheme';
 import styles from './themeToggle.module.css';
 
@@ -13,8 +13,7 @@ export const ThemeToggle = () => {
 
   return (
     <div className={styles.root}>
-      <Tooltip
-        message={`Change to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
+      <Tooltip label={`Change to ${theme === 'dark' ? 'light' : 'dark'} theme`}>
         <button onClick={handleClick} className={styles.button}>
           <div className={styles.imageContainer}>
             <div

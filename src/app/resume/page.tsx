@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Button } from '@chakra-ui/react';
 import Image from 'next/image';
 import styles from './resume.module.css';
 
@@ -15,11 +16,11 @@ const ResumePage = () => {
 
   return (
     <div className={styles.root} onClick={() => isModalOpen && toggleModal()}>
-      <button className={styles.downloadButton}>
+      <Button>
         <a href="/resume.pdf" download="DrewJohnson_resume.pdf">
           Download as PDF
         </a>
-      </button>
+      </Button>
       <div className={styles.imageContainer}>
         <Image
           src={RESUME_FILE}

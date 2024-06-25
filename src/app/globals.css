@@ -124,7 +124,7 @@ main {
   display: flex;
   overflow-y: auto;
   flex-direction: column;
-  min-height: calc(100% - var(--headerHeight) - var(--footerHeight));
+  min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
   background-color: var(--background);
   color: var(--textColor);
 }

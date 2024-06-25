@@ -1,8 +1,8 @@
+import { Providers } from './providers';
 import { Analytics } from '@vercel/analytics/react';
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Footer, Header } from '~/components';
-import { ThemeProvider } from '~/utils/useTheme';
+import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -22,15 +22,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className}>
-      <ThemeProvider>
+      <Providers>
         <body>
           <Header />
-          <main>{children}</main>
-          <Footer />
-
+          <main>
+            {children}
+            <Footer />
+          </main>
           <Analytics />
         </body>
-      </ThemeProvider>
+      </Providers>
     </html>
   );
 }
