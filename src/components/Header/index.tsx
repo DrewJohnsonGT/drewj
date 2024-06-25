@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { Cube } from '~/components/Header/Cube';
 import { ThemeToggle } from '~/components/Header/ThemeToggle';
 import { ROUTES } from '~/constants';
-import { useClickAway } from '~/hooks/useClickAway';
+import { useClickAway } from '~/utils/useClickAway';
 import styles from './header.module.css';
 
 export const Header = () => {

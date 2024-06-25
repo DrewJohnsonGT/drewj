@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { CyclingText } from '~/components/CyclingText';
 import { SKILLS } from '~/constants';
-import { useElementSize } from '~/hooks/useElementSize';
+import { useElementSize } from '~/utils/useElementSize';
 import styles from './page.module.css';
 
 interface SkillProps {

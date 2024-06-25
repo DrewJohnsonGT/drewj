@@ -1,47 +1,7 @@
-import { access, readFile } from 'fs/promises';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import Head from 'next/head';
 import { notFound } from 'next/navigation';
-import path from 'path';
-
-enum Technology {
-  React = 'React',
-  Next = 'Next.js',
-  TypeScript = 'TypeScript',
-  Tailwind = 'Tailwind CSS',
-  MDX = 'MDX',
-  Node = 'Node.js',
-  Express = 'Express',
-  MongoDB = 'MongoDB',
-  GraphQL = 'GraphQL',
-  Apollo = 'Apollo',
-  Postgres = 'Postgres',
-}
-
-export interface Project {
-  slug: string;
-  date: string;
-  thumbnail: string;
-  coverImage: string;
-  title: string;
-  description: string;
-  tags: string[];
-  technologies: Technology[];
-}
-
-const PROJECTS_FOLDER = path.join(process.cwd(), '_projects');
-
-async function readProjectsFile(slug: string) {
-  const filePath = path.resolve(path.join(PROJECTS_FOLDER, `${slug}.mdx`));
-  try {
-    await access(filePath);
-  } catch (err) {
-    return null;
-  }
-
-  const fileContent = await readFile(filePath, { encoding: 'utf8' });
-  return fileContent;
-}
+import { Project, readProjectsFile } from '~/utils/projects';
 
 const ProjectsPage = async ({
   params: { slug },

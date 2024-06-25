@@ -1,7 +1,7 @@
 import { EmpireSVG } from '~/assets/svg/empire';
 import { RebelsSVG } from '~/assets/svg/rebels';
 import { Tooltip } from '~/components/Tooltip';
-import { useTheme } from '~/hooks/useTheme';
+import { useTheme } from '~/utils/useTheme';
 import styles from './themeToggle.module.css';
 
 export const ThemeToggle = () => {
