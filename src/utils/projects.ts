@@ -20,11 +20,13 @@ export interface Project {
   slug: string;
   date: string;
   thumbnail: string;
-  coverImage: string;
+  icon: string;
   title: string;
   description: string;
   tags: string[];
   technologies: Technology[];
+  repository?: string;
+  link?: string;
 }
 
 const PROJECTS_FOLDER = path.join(process.cwd(), '_projects');

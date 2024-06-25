@@ -2,7 +2,6 @@
   position: sticky;
   top: 0;
   background-color: var(--accentBackground);
-  opacity: 0.8;
   height: var(--headerHeight);
   color: white;
   display: flex;

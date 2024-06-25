@@ -16,7 +16,7 @@ const fonts = [
   'Craftsman',
   'Knight',
   'Cookies',
-  'Identity',
+  'Identify',
   'demo',
 ];
 const FINAL_FONT = 'Qube';
