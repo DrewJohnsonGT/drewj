@@ -1,22 +1,26 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import clsx from 'clsx';
+import {
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from '@chakra-ui/react';
+import { MenuIcon } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Cube } from '~/components/Header/Cube';
 import { ThemeToggle } from '~/components/Header/ThemeToggle';
 import { ROUTES } from '~/constants';
-import { useClickAway } from '~/utils/useClickAway';
+import clsx from 'clsx';
 import styles from './header.module.css';
 
 export const Header = () => {
   const currentPath = usePathname().split('/')[1];
   const navRef = useRef<(HTMLLIElement | null)[]>([]);
   const underlineRef = useRef<HTMLDivElement>(null);
-
-  const [isMenuOpen, setMenuOpen] = useState(false);
-  const clickAwayRef = useClickAway<HTMLUListElement>(() => setMenuOpen(false));
 
   const findRouteIndex = useCallback(
     () => ROUTES.findIndex((route) => route.value === currentPath),
@@ -83,28 +87,16 @@ export const Header = () => {
         {ROUTES[findRouteIndex()]?.label}
       </h1>
       <ThemeToggle />
-      <nav className={styles.mobileNavBar} ref={clickAwayRef}>
-        {/* Mobile */}
-        <button
-          className={`${styles.menuButton} ${isMenuOpen ? styles.menuOpen : ''}`}
-          onClick={() => setMenuOpen((isMenuOpen) => !isMenuOpen)}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul
-          className={`${styles.mobileNavList} ${isMenuOpen ? styles.menuOpen : ''}`}>
+      <Menu>
+        <MenuButton as={IconButton} aria-label="Options" icon={<MenuIcon />} />
+        <MenuList>
           {ROUTES.map((route) => (
-            <li key={route.value} className={styles.mobileNavItem}>
-              <Link
-                href={`/${route.value}`}
-                className={styles.mobileNavItemLink}>
-                {route.label}
-              </Link>
-            </li>
+            <MenuItem key={route.value} icon={<route.icon />} command="⌘T">
+              {route.label}
+            </MenuItem>
           ))}
-        </ul>
-      </nav>
+        </MenuList>
+      </Menu>
     </header>
   );
 };

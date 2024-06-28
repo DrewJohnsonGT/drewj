@@ -2,14 +2,18 @@
 
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { withDefaultColorScheme } from '@chakra-ui/react';
-import { ThemeProvider } from '~/utils/useTheme';
+import { ColorModeScript } from '@chakra-ui/react';
 
-const theme = extendTheme(withDefaultColorScheme({ colorScheme: 'orange' }));
+const theme = extendTheme(withDefaultColorScheme({ colorScheme: 'orange' }), {
+  initialColorMode: 'system',
+  useSystemColorMode: true,
+});
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider>
-      <ChakraProvider theme={theme}>{children}</ChakraProvider>
-    </ThemeProvider>
+    <ChakraProvider theme={theme}>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      {children}
+    </ChakraProvider>
   );
 }

@@ -1,19 +1,24 @@
+import {
+  BriefcaseIcon,
+  InfoIcon,
+  MailIcon,
+  ScrollTextIcon,
+} from 'lucide-react';
+
 export const ROUTES = [
-  // {
-  //   label: 'Posts',
-  //   value: 'posts',
-  // },
   {
+    icon: BriefcaseIcon,
     label: 'Projects',
     value: 'projects',
   },
   {
+    icon: ScrollTextIcon,
     label: 'Resume',
     value: 'resume',
   },
-  { label: 'About', value: 'about' },
-  // { label: 'Games', value: 'games' },
+  { icon: InfoIcon, label: 'About', value: 'about' },
   {
+    icon: MailIcon,
     label: 'Contact',
     value: 'contact',
   },

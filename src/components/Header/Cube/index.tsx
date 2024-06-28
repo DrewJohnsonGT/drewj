@@ -1,43 +1,46 @@
 'use client';
 
 import React from 'react';
-import { AiFillInfoCircle, AiFillMessage } from 'react-icons/ai';
-import { BsBriefcaseFill } from 'react-icons/bs';
-import { MdGames } from 'react-icons/md';
-import { RiArticleLine } from 'react-icons/ri';
-import { TiLightbulb } from 'react-icons/ti';
-import clsx from 'clsx';
+import {
+  BriefcaseIcon,
+  Gamepad2Icon,
+  InfoIcon,
+  LightbulbIcon,
+  MailIcon,
+  NewspaperIcon,
+} from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
 import styles from './cube.module.css';
 
 const SIDES = [
   {
-    icon: MdGames,
+    icon: Gamepad2Icon,
     position: 'front',
     route: 'games',
   },
   {
-    icon: AiFillInfoCircle,
+    icon: InfoIcon,
     position: 'back',
     route: 'about',
   },
   {
-    icon: RiArticleLine,
+    icon: NewspaperIcon,
     position: 'top',
     route: 'posts',
   },
   {
-    icon: TiLightbulb,
+    icon: LightbulbIcon,
     position: 'bottom',
     route: 'projects',
   },
   {
-    icon: BsBriefcaseFill,
+    icon: BriefcaseIcon,
     position: 'left',
     route: 'resume',
   },
   {
-    icon: AiFillMessage,
+    icon: MailIcon,
     position: 'right',
     route: 'contact',
   },
