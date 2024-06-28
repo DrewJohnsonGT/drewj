@@ -1,7 +1,7 @@
 .root {
-  position: sticky;
-  top: 0;
-  background-color: var(--accentBackground);
+  z-index: 10;
+  position: absolute;
+  backdrop-filter: blur(10px);
   height: var(--headerHeight);
   color: white;
   display: flex;

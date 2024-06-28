@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { Box } from '@chakra-ui/react';
 import Image from 'next/image';
 import { CyclingText } from '~/components/CyclingText';
 import { SKILLS } from '~/constants';
@@ -21,12 +22,12 @@ export default function Home() {
   const [skillStyles, setSkillStyles] = useState<SkillProps[]>([]);
 
   useEffect(() => {
-    const maxIconSize = sectionSize.height * 0.15;
+    const maxIconSize = sectionSize.height * 0.25;
     const minIconSize = sectionSize.height * 0.05;
 
     const newSkillStyles = SKILLS.map(({ icon, score }) => {
       const size = minIconSize + (maxIconSize - minIconSize) * (score / 100);
-      const top = Math.random() * (sectionSize.height - size);
+      const top = Math.random() * sectionSize.height;
 
       const travelTime = getRandomVariance(10, 150);
       const delay = getRandomVariance(0, 10);
@@ -48,7 +49,7 @@ export default function Home() {
 
   return (
     <section className={styles.root} ref={sectionRef}>
-      <div className={styles.blurryBackdrop}>
+      <Box className={styles.blurryBackdrop}>
         <Image
           className={styles.headshot}
           src="/images/headshot.png"
@@ -62,7 +63,7 @@ export default function Home() {
             <i>Always Building Something</i>
           </h3>
         </div>
-      </div>
+      </Box>
       <div className={styles.skills}>
         {skillStyles.map(({ icon, src, style }) => (
           <Image

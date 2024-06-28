@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
+  Box,
   IconButton,
   Menu,
   MenuButton,
@@ -52,7 +53,7 @@ export const Header = () => {
   }, [activeIndex]);
 
   return (
-    <header className={styles.root}>
+    <Box className={styles.root}>
       <Link href="/">
         <Cube />
       </Link>
@@ -97,6 +98,6 @@ export const Header = () => {
           ))}
         </MenuList>
       </Menu>
-    </header>
+    </Box>
   );
 };
