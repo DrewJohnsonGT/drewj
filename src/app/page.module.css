@@ -7,6 +7,7 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
+  margin: 0 -0.5rem;
   margin-top: calc(var(--headerHeight) * -1);
   margin-bottom: calc(var(--footerHeight) * -1);
 }

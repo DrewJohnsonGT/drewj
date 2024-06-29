@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '@chakra-ui/react';
+import { Button, Modal, ModalContent, ModalOverlay } from '@chakra-ui/react';
 import Image from 'next/image';
 import styles from './resume.module.css';
 
@@ -16,36 +16,39 @@ const ResumePage = () => {
 
   return (
     <div className={styles.root} onClick={() => isModalOpen && toggleModal()}>
-      <Button>
-        <a href="/resume.pdf" download="DrewJohnson_resume.pdf">
-          Download as PDF
-        </a>
-      </Button>
       <div className={styles.imageContainer}>
+        <Button className={styles.downloadButton}>
+          <a href="/resume.pdf" download="DrewJohnson_resume.pdf">
+            Download as PDF
+          </a>
+        </Button>
         <Image
+          className={styles.resumeImage}
           src={RESUME_FILE}
           alt="Resume"
           onClick={toggleModal}
-          className={styles.resumeImage}
-          fill
+          width={1000}
+          height={1000}
         />
       </div>
-      {isModalOpen && (
-        <div className={styles.modal}>
-          <div className={styles.modalContent}>
-            <Image
-              src={RESUME_FILE}
-              alt="Zoomed Resume"
-              width={1400}
-              height={1866}
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleModal();
-              }}
-            />
-          </div>
-        </div>
-      )}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        size="full"
+        allowPinchZoom
+        isCentered>
+        <ModalOverlay />
+        <ModalContent p={4}>
+          <Image
+            className={styles.resumeImageExpanded}
+            src={RESUME_FILE}
+            alt="Resume"
+            width={2000}
+            height={2000}
+            onClick={() => setIsModalOpen(false)}
+          />
+        </ModalContent>
+      </Modal>
     </div>
   );
 };

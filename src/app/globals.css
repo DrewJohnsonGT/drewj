@@ -95,11 +95,12 @@ body {
   flex-direction: column;
 }
 
-main {
+.main {
   flex: 1;
   display: flex;
   overflow-y: auto;
   flex-direction: column;
+  padding: 0.5rem;
   padding-top: var(--headerHeight);
   padding-bottom: var(--footerHeight);
   min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));

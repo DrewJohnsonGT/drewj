@@ -17,7 +17,7 @@ const ProjectsPage = async () => {
   const projects = await getAllProjectsFrontMatter();
 
   return (
-    <SimpleGrid minChildWidth="500px" spacing="40px" m={4}>
+    <SimpleGrid minChildWidth="300px" spacing="2rem" m={4}>
       {projects.map((project) => (
         <Card maxW="xxl" key={project.title} cursor="pointer">
           <CardBody>

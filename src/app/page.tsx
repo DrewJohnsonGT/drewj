@@ -27,7 +27,7 @@ export default function Home() {
 
     const newSkillStyles = SKILLS.map(({ icon, score }) => {
       const size = minIconSize + (maxIconSize - minIconSize) * (score / 100);
-      const top = Math.random() * sectionSize.height;
+      const top = Math.random() * (sectionSize.height - size / 2);
 
       const travelTime = getRandomVariance(10, 150);
       const delay = getRandomVariance(0, 10);
