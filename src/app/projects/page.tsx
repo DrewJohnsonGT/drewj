@@ -14,7 +14,6 @@ import {
 import { getAllProjectsFrontMatter } from '~/utils/projects';
 
 const ProjectsPage = async () => {
-  return <div>WIP</div>;
   const projects = await getAllProjectsFrontMatter();
 
   return (

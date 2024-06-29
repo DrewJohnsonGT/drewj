@@ -7,6 +7,8 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
+  margin-top: calc(var(--headerHeight) * -1);
+  margin-bottom: calc(var(--footerHeight) * -1);
 }
 
 .headshot {
@@ -52,7 +54,7 @@
   bottom: 0;
   will-change: animation;
   transition: all 0.3s;
-  opacity: 0.75;
+  opacity: 0.65;
 }
 
 @keyframes moveAndRotate {

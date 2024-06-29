@@ -97,9 +97,11 @@ export const Header = () => {
           />
           <MenuList>
             {ROUTES.map((route) => (
-              <MenuItem key={route.value} icon={<route.icon />}>
-                {route.label}
-              </MenuItem>
+              <Link href={`/${route.value}`} key={route.value}>
+                <MenuItem key={route.value} icon={<route.icon />}>
+                  {route.label}
+                </MenuItem>
+              </Link>
             ))}
           </MenuList>
         </Menu>
