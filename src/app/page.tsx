@@ -22,15 +22,15 @@ export default function Home() {
   const [skillStyles, setSkillStyles] = useState<SkillProps[]>([]);
 
   useEffect(() => {
-    const maxIconSize = sectionSize.height * 0.25;
-    const minIconSize = sectionSize.height * 0.05;
+    const maxIconSize = sectionSize.height * 0.35;
+    const minIconSize = sectionSize.height * 0.025;
 
     const newSkillStyles = SKILLS.map(({ icon, score }) => {
       const size = minIconSize + (maxIconSize - minIconSize) * (score / 100);
       const top = Math.random() * (sectionSize.height - size / 2);
 
-      const travelTime = getRandomVariance(8, 175);
-      const delay = getRandomVariance(-5, 15);
+      const travelTime = getRandomVariance(10, 175);
+      const delay = getRandomVariance(-5, 35);
 
       return {
         icon,
