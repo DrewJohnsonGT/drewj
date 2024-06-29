@@ -27,15 +27,15 @@ const ResumePage = () => {
           src={RESUME_FILE}
           alt="Resume"
           onClick={toggleModal}
-          width={1000}
-          height={1000}
+          width={800}
+          height={800}
         />
       </div>
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        size="full"
         allowPinchZoom
+        size="full"
         isCentered>
         <ModalOverlay />
         <ModalContent p={4}>
@@ -43,9 +43,8 @@ const ResumePage = () => {
             className={styles.resumeImageExpanded}
             src={RESUME_FILE}
             alt="Resume"
-            width={2000}
-            height={2000}
             onClick={() => setIsModalOpen(false)}
+            fill
           />
         </ModalContent>
       </Modal>
