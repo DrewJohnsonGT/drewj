@@ -15,6 +15,7 @@ const AboutPage = () => {
     <div className={styles.root}>
       <h2 className={styles.name}>Hey, I&apos;m Drew 👋</h2>
       <div className={styles.imageContainer}>
+        <AboutImage src="/images/stark.jpg" alt="Drew Stark" />
         <AboutImage src="/images/headshot-full.jpg" alt="Drew Johnson" />
         <AboutImage src="/images/mando1.jpg" alt="Mandalorian" />
       </div>
@@ -43,7 +44,6 @@ const AboutPage = () => {
       <br />
       <div className={styles.imageContainer}>
         <AboutImage src="/images/jedi1.jpg" alt="Jedi Drew" />
-        <AboutImage src="/images/stark.jpg" alt="Drew Stark" />
         <AboutImage src="/images/wake.jpeg" alt="Mandalorian" />
         <AboutImage src="/images/mando3.jpg" alt="Mandalorian" />
         <AboutImage src="/images/sith.jpg" alt="Sith Drew" />

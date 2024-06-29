@@ -11,7 +11,7 @@
 }
 
 .icon {
-  color: var(--colorMidEmphasis);
+  color: var(--chakra-colors-chakra-body-bg);
   width: calc(var(--cubeSize) * 0.65);
   height: calc(var(--cubeSize) * 0.65);
   opacity: 1;
@@ -29,7 +29,7 @@
   position: absolute;
   width: var(--cubeSize);
   height: var(--cubeSize);
-  border: 1px solid var(--colorMidEmphasis);
+  border: 1px solid var(--chakra-colors-chakra-body-bg);
   display: flex;
   align-items: center;
   justify-content: center;

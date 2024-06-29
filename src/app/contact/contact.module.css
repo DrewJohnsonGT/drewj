@@ -7,11 +7,11 @@
 }
 
 .root a {
-  color: var(--colorHighEmphasis);
+  color: var(--chakra-colors-orange-500);
   text-decoration: none;
 }
 
 .root a:hover {
-  color: var(--colorMidEmphasis);
+  color: var(--chakra-colors-orange-600);
   text-decoration: underline;
 }
