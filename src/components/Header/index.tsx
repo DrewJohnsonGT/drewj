@@ -88,16 +88,22 @@ export const Header = () => {
         {ROUTES[findRouteIndex()]?.label}
       </h1>
       <ThemeToggle />
-      <Menu>
-        <MenuButton as={IconButton} aria-label="Options" icon={<MenuIcon />} />
-        <MenuList>
-          {ROUTES.map((route) => (
-            <MenuItem key={route.value} icon={<route.icon />} command="⌘T">
-              {route.label}
-            </MenuItem>
-          ))}
-        </MenuList>
-      </Menu>
+      <Box className={styles.mobileNav}>
+        <Menu>
+          <MenuButton
+            as={IconButton}
+            aria-label="Navigation menu"
+            icon={<MenuIcon />}
+          />
+          <MenuList>
+            {ROUTES.map((route) => (
+              <MenuItem key={route.value} icon={<route.icon />}>
+                {route.label}
+              </MenuItem>
+            ))}
+          </MenuList>
+        </Menu>
+      </Box>
     </Box>
   );
 };

@@ -3,10 +3,10 @@
   position: absolute;
   backdrop-filter: blur(10px);
   height: var(--headerHeight);
-  color: white;
   display: flex;
   align-items: center;
   width: 100%;
+  padding-right: 0.5rem;
 }
 
 .navBar {
@@ -24,26 +24,24 @@
 .navItem {
   padding: 0.5rem;
   font-size: 1.25rem;
-  color: var(--colorMidEmphasis);
   cursor: pointer;
   font-family: Qube;
 }
 
 .navItem:hover {
-  color: var(--colorMidEmphasis);
+  color: var(--chakra-colors-orange-500);
 }
 
 .navItemLink {
-  color: inherit;
   text-decoration: none;
 }
 .navItem.active {
-  color: var(--colorHighEmphasis);
+  color: var(--chakra-colors-orange-500);
 }
 
 .underline {
   height: 4px;
-  background-color: var(--colorHighEmphasis);
+  background-color: var(--chakra-colors-orange-500);
   position: absolute;
   transition:
     left 0.5s ease-in-out,
@@ -58,7 +56,10 @@
   font-size: 0.65rem;
   font-weight: bold;
   font-family: Cube;
-  color: var(--textColor);
+}
+
+.mobileNav {
+  display: none;
 }
 
 /* Media Queries */
@@ -67,7 +68,7 @@
     display: none;
   }
 
-  .mobileNavBar {
+  .mobileNav {
     display: flex;
   }
 

@@ -1,14 +1,13 @@
 .root {
-  --icon-size: 40px;
+  --icon-size: 45px;
   margin-left: auto;
+  margin-right: 0.5rem;
   padding: 0;
 }
 
-.rebels,
-.empire {
+.icon {
   transition: all 0.7s ease;
-  fill: var(--offBackground);
-  stroke: var(--textColor);
+  fill: var(--chakra-colors-chakra-body-bg);
   height: var(--icon-size);
   width: var(--icon-size);
 }

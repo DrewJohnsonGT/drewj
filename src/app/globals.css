@@ -93,40 +93,14 @@ body {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  /* Default to dark theme */
-  background-color: #1b130e;
-}
-
-.light {
-  --background: #f2f5f7;
-  --offBackground: #fff0e6;
-  --accentBackground: #ffcfae;
-  --accentBackgroundLight: #ffcfaeaa;
-  --textColor: black;
-  --colorHighEmphasis: #ff7400;
-  --colorMidEmphasis: #21232c;
-  --colorLowEmphasis: #7e8c9a;
-}
-
-.dark {
-  --background: #1b130e;
-  --offBackground: #182635;
-  --accentBackground: #d25401;
-  --accentBackgroundLight: #d25401aa;
-  --textColor: white;
-  --colorLowEmphasis: #6c7693;
-  --colorMidEmphasis: #f2f5f7;
-  --colorHighEmphasis: #ff9651;
 }
 
 main {
   flex: 1;
-  display: flex !important;
+  display: flex;
   overflow-y: auto;
   flex-direction: column;
   min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
-  background-color: var(--background);
-  color: var(--textColor);
 }
 
 .not-found-image {
