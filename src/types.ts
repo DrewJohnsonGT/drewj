@@ -12,6 +12,10 @@ export enum Technology {
   Python = 'Python',
   RaspberryPi = 'Raspberry Pi',
   Arduino = 'Arduino',
+  HTML = 'HTML',
+  CSS = 'CSS',
+  Firebase = 'Firebase',
+  ChromeAPI = 'Chrome API',
 }
 
 export interface Project {

@@ -1,3 +1,6 @@
+import { AiOutlineZoomIn } from 'react-icons/ai';
+import { AiOutlineLink } from 'react-icons/ai';
+import { RiGitRepositoryLine } from 'react-icons/ri';
 import {
   Box,
   Button,
@@ -22,7 +25,7 @@ const ProjectsPage = async () => {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   return (
-    <SimpleGrid minChildWidth="300px" spacing="2rem" m={4}>
+    <SimpleGrid minChildWidth="350px" spacing="2rem" m={4}>
       {projectsSortedByDate.map((project) => (
         <Card maxW="xxl" key={project.title}>
           <CardBody p={4}>
@@ -50,15 +53,17 @@ const ProjectsPage = async () => {
                 <Button
                   as="a"
                   href={project.repository}
+                  rightIcon={<RiGitRepositoryLine />}
                   target="_blank"
                   rel="noopener noreferrer">
-                  Repository
+                  Repo
                 </Button>
               )}
               {project.link && (
                 <Button
                   as="a"
                   href={project.link}
+                  rightIcon={<AiOutlineLink />}
                   target="_blank"
                   rel="noopener noreferrer">
                   Visit
@@ -66,7 +71,7 @@ const ProjectsPage = async () => {
               )}
               {project.slug && (
                 <Link href={`/projects/${project.slug}`}>
-                  <Button>Details</Button>
+                  <Button rightIcon={<AiOutlineZoomIn />}>Details</Button>
                 </Link>
               )}
             </ButtonGroup>

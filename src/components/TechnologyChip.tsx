@@ -3,8 +3,12 @@ import { FaReact } from 'react-icons/fa';
 import { FaNodeJs } from 'react-icons/fa';
 import { FaPython } from 'react-icons/fa6';
 import { FaRaspberryPi } from 'react-icons/fa6';
+import { FaCss3Alt } from 'react-icons/fa6';
+import { FaHtml5 } from 'react-icons/fa6';
+import { FaChrome } from 'react-icons/fa6';
 import { RiNextjsLine } from 'react-icons/ri';
 import { RiTailwindCssFill } from 'react-icons/ri';
+import { RiFirebaseFill } from 'react-icons/ri';
 import { SiTypescript } from 'react-icons/si';
 import { SiMatterdotjs } from 'react-icons/si';
 import { SiVite } from 'react-icons/si';
@@ -96,6 +100,30 @@ const TECHNOLOGY_CHIP_MAP: Record<
     color: '#9AE6B4',
     icon: SiArduino,
     label: 'Arduino',
+  },
+  [Technology.HTML]: {
+    backgroundColor: '#e34c26',
+    color: '#fce8e0',
+    icon: FaHtml5,
+    label: 'HTML',
+  },
+  [Technology.CSS]: {
+    backgroundColor: '#274de5',
+    color: '#bcccf7',
+    icon: FaCss3Alt,
+    label: 'CSS',
+  },
+  [Technology.Firebase]: {
+    backgroundColor: '#ff9103',
+    color: '#dd2c01',
+    icon: RiFirebaseFill,
+    label: 'Firebase',
+  },
+  [Technology.ChromeAPI]: {
+    backgroundColor: '#057ccc',
+    color: '#fcea00',
+    icon: FaChrome,
+    label: 'Chrome API',
   },
 };
 
