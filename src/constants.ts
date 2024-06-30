@@ -1,24 +1,22 @@
-import {
-  BriefcaseIcon,
-  InfoIcon,
-  MailIcon,
-  ScrollTextIcon,
-} from 'lucide-react';
+import { FaUserCircle } from 'react-icons/fa';
+import { FaRegAddressCard } from 'react-icons/fa6';
+import { FiLayers } from 'react-icons/fi';
+import { RiFileUserLine } from 'react-icons/ri';
 
 export const ROUTES = [
   {
-    icon: BriefcaseIcon,
+    icon: FiLayers,
     label: 'Projects',
     value: 'projects',
   },
   {
-    icon: ScrollTextIcon,
+    icon: RiFileUserLine,
     label: 'Resume',
     value: 'resume',
   },
-  { icon: InfoIcon, label: 'About', value: 'about' },
+  { icon: FaUserCircle, label: 'About', value: 'about' },
   {
-    icon: MailIcon,
+    icon: FaRegAddressCard,
     label: 'Contact',
     value: 'contact',
   },

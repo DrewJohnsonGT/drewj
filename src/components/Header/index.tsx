@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { MdMenu } from 'react-icons/md';
 import {
   Box,
   IconButton,
@@ -9,7 +10,6 @@ import {
   MenuItem,
   MenuList,
 } from '@chakra-ui/react';
-import { MenuIcon } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Cube } from '~/components/Header/Cube';
@@ -93,7 +93,7 @@ export const Header = () => {
           <MenuButton
             as={IconButton}
             aria-label="Navigation menu"
-            icon={<MenuIcon />}
+            icon={<MdMenu />}
           />
           <MenuList>
             {ROUTES.map((route) => (

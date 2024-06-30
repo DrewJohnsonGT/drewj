@@ -1,23 +1,25 @@
+import { FaGithub } from 'react-icons/fa6';
+import { FaInstagram } from 'react-icons/fa6';
+import { FaLinkedin } from 'react-icons/fa6';
 import { Box, Tooltip } from '@chakra-ui/react';
 import { IconButton } from '@chakra-ui/react';
-import { GithubIcon, InstagramIcon, LinkedinIcon } from 'lucide-react';
 import { GITHUB_URL, INSTAGRAM_URL, LINKED_IN_URL } from '~/constants';
 import styles from './footer.module.css';
 
 const LINKS = [
   {
     href: LINKED_IN_URL,
-    icon: LinkedinIcon,
+    icon: FaLinkedin,
     title: 'LinkedIn',
   },
   {
     href: INSTAGRAM_URL,
-    icon: InstagramIcon,
+    icon: FaInstagram,
     title: 'Instagram',
   },
   {
     href: GITHUB_URL,
-    icon: GithubIcon,
+    icon: FaGithub,
     title: 'GitHub',
   },
 ];

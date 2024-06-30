@@ -1,46 +1,44 @@
 'use client';
 
 import React from 'react';
-import {
-  BriefcaseIcon,
-  Gamepad2Icon,
-  InfoIcon,
-  LightbulbIcon,
-  MailIcon,
-  NewspaperIcon,
-} from 'lucide-react';
+import { FaRegNewspaper } from 'react-icons/fa';
+import { FaUserCircle } from 'react-icons/fa';
+import { FaRegAddressCard } from 'react-icons/fa6';
+import { FiLayers } from 'react-icons/fi';
+import { MdOutlineGamepad } from 'react-icons/md';
+import { RiFileUserLine } from 'react-icons/ri';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import styles from './cube.module.css';
 
 const SIDES = [
   {
-    icon: Gamepad2Icon,
+    icon: MdOutlineGamepad,
     position: 'front',
     route: 'games',
   },
   {
-    icon: InfoIcon,
+    icon: FaUserCircle,
     position: 'back',
     route: 'about',
   },
   {
-    icon: NewspaperIcon,
+    icon: FaRegNewspaper,
     position: 'top',
     route: 'posts',
   },
   {
-    icon: LightbulbIcon,
+    icon: FiLayers,
     position: 'bottom',
     route: 'projects',
   },
   {
-    icon: BriefcaseIcon,
+    icon: RiFileUserLine,
     position: 'left',
     route: 'resume',
   },
   {
-    icon: MailIcon,
+    icon: FaRegAddressCard,
     position: 'right',
     route: 'contact',
   },

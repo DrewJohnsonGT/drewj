@@ -1,33 +1,9 @@
+'use server';
+
 import { access, readdir, readFile } from 'fs/promises';
 import { compileMDX } from 'next-mdx-remote/rsc';
+import { Project } from '~/types';
 import path from 'path';
-
-export enum Technology {
-  React = 'React',
-  Next = 'Next.js',
-  TypeScript = 'TypeScript',
-  Tailwind = 'Tailwind CSS',
-  MDX = 'MDX',
-  Node = 'Node.js',
-  Express = 'Express',
-  MongoDB = 'MongoDB',
-  GraphQL = 'GraphQL',
-  Apollo = 'Apollo',
-  Postgres = 'Postgres',
-}
-
-export interface Project {
-  slug: string;
-  date: string;
-  thumbnail: string;
-  icon: string;
-  title: string;
-  description: string;
-  tags: string[];
-  technologies: Technology[];
-  repository?: string;
-  link?: string;
-}
 
 const PROJECTS_FOLDER = path.join(process.cwd(), '_projects');
 

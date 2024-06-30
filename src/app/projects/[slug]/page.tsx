@@ -1,7 +1,12 @@
+import { FaGithub } from 'react-icons/fa6';
+import { Button, Heading, IconButton, Text } from '@chakra-ui/react';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import Head from 'next/head';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { Project, readProjectsFile } from '~/utils/projects';
+import { TechnologyChip } from '~/components/TechnologyChip';
+import { Project } from '~/types';
+import { readProjectsFile } from '~/utils/projects';
 
 const ProjectsPage = async ({
   params: { slug },
@@ -28,23 +33,35 @@ const ProjectsPage = async ({
           content={frontmatter.description}
           key="ogtitle"
         />
-        <meta property="og:image" content={frontmatter.thumbnail} key="ogimg" />
+        <meta property="og:image" content={frontmatter.banner} key="ogimg" />
         <meta property="og:type" content="article" />
       </Head>
       <article className="container">
+        {frontmatter.banner && (
+          <Image
+            src={frontmatter.banner}
+            alt={frontmatter.title}
+            width={800}
+            height={800}
+          />
+        )}
         <div>
+          {frontmatter.title && <Heading>{frontmatter.title}</Heading>}
+          {frontmatter.description && <Text>{frontmatter.description}</Text>}
+          {frontmatter.technologies?.map((technology) => (
+            <TechnologyChip key={technology} technology={technology} />
+          ))}
           <div>
-            {/* {frontmatter.thumbnail && (
-                <Thumbnail
-                  title={frontmatter.title ? frontmatter.title : ''}
-                  src={frontmatter.thumbnail}
-                />
-              )} */}
-          </div>
-          <div>
-            {frontmatter.title && <h1>{frontmatter.title}</h1>}
-            {frontmatter.description && <p>{frontmatter.description}</p>}
-            {/* {frontmatter.tags && <Tags tags={frontmatter.tags} />} */}
+            {frontmatter.repository && (
+              <IconButton
+                as="a"
+                aria-label="GitHub Repository"
+                href={frontmatter.repository}
+                target="_blank"
+                rel="noopener noreferrer"
+                icon={<FaGithub />}
+              />
+            )}
           </div>
         </div>
       </article>
