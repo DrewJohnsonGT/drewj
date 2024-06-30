@@ -20,80 +20,80 @@ const TECHNOLOGY_CHIP_MAP: Record<
   { icon?: IconType; label: string; color: string; backgroundColor: string }
 > = {
   [Technology.React]: {
-    backgroundColor: 'blue.600',
-    color: 'blue.100',
+    backgroundColor: '#2B6CB0',
+    color: '#BEE3F8',
     icon: FaReact,
     label: 'React',
   },
   [Technology.TypeScript]: {
-    backgroundColor: 'blue.700',
-    color: 'blue.200',
+    backgroundColor: '#2C5282',
+    color: '#90CDF4',
     icon: SiTypescript,
     label: 'TypeScript',
   },
   [Technology.Next]: {
-    backgroundColor: 'gray.900',
-    color: 'gray.200',
+    backgroundColor: '#171923',
+    color: '#E2E8F0',
     icon: RiNextjsLine,
     label: 'Next.js',
   },
   [Technology.Tailwind]: {
-    backgroundColor: 'blue.500',
-    color: 'blue.100',
+    backgroundColor: '#3182CE',
+    color: '#BEE3F8',
     icon: RiTailwindCssFill,
     label: 'Tailwind CSS',
   },
   [Technology.MatterJS]: {
-    backgroundColor: 'green.500',
-    color: 'green.100',
+    backgroundColor: '#38A169',
+    color: '#C6F6D5',
     icon: SiMatterdotjs,
     label: 'Matter.js',
   },
   [Technology.Vite]: {
-    backgroundColor: 'purple.500',
-    color: 'purple.100',
+    backgroundColor: '#805AD5',
+    color: '#E9D8FD',
     icon: SiVite,
     label: 'Vite',
   },
   [Technology.NodeJS]: {
-    backgroundColor: 'green.700',
-    color: 'green.200',
+    backgroundColor: '#276749',
+    color: '#9AE6B4',
     icon: FaNodeJs,
     label: 'Node.js',
   },
   [Technology.Redux]: {
-    backgroundColor: 'purple.700',
-    color: 'purple.200',
+    backgroundColor: '#553C9A',
+    color: '#D6BCFA',
     icon: SiRedux,
     label: 'Redux',
   },
   [Technology.MSSQL]: {
-    backgroundColor: 'grey.700',
-    color: 'grey.200',
+    backgroundColor: '#2D3748',
+    color: '#E2E8F0',
     icon: SiMicrosoftsqlserver,
     label: 'MSSQL',
   },
   [Technology.Printing]: {
-    backgroundColor: 'gray.500',
-    color: 'gray.100',
+    backgroundColor: '#718096',
+    color: '#EDF2F7',
     icon: TbCube3dSphere,
     label: '3D Printing',
   },
   [Technology.Python]: {
-    backgroundColor: 'blue.700',
-    color: 'yellow.400',
+    backgroundColor: '#2C5282',
+    color: '#ECC94B',
     icon: FaPython,
     label: 'Python',
   },
   [Technology.RaspberryPi]: {
-    backgroundColor: 'red.600',
-    color: 'red.100',
+    backgroundColor: '#C53030',
+    color: '#FED7D7',
     icon: FaRaspberryPi,
     label: 'Raspberry Pi',
   },
   [Technology.Arduino]: {
-    backgroundColor: 'blue.500',
-    color: 'green.200',
+    backgroundColor: '#3182CE',
+    color: '#9AE6B4',
     icon: SiArduino,
     label: 'Arduino',
   },
@@ -105,7 +105,8 @@ export const TechnologyChip = ({ technology }: { technology: Technology }) => {
     <Badge
       color={tech.color}
       backgroundColor={tech.backgroundColor}
-      variant="subtle"
+      boxShadow={`inset 0 0 0px 1px ${tech.color}`}
+      rounded="md"
       sx={{
         alignContent: 'center',
         display: 'inline-flex',

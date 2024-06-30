@@ -20,6 +20,18 @@ const theme = extendTheme(
         900: '#200100',
       },
     },
+    components: {
+      Button: {
+        defaultProps: {
+          variant: 'outline',
+        },
+      },
+      IconButton: {
+        defaultProps: {
+          variant: 'outline',
+        },
+      },
+    },
   },
   withDefaultColorScheme({ colorScheme: 'orange' }),
   {

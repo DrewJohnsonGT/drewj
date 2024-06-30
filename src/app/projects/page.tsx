@@ -24,7 +24,7 @@ const ProjectsPage = async () => {
   return (
     <SimpleGrid minChildWidth="300px" spacing="2rem" m={4}>
       {projectsSortedByDate.map((project) => (
-        <Card maxW="xxl" key={project.title} cursor="pointer">
+        <Card maxW="xxl" key={project.title}>
           <CardBody p={4}>
             <Image
               src={project.banner}

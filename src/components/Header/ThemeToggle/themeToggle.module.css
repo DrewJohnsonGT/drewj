@@ -7,7 +7,7 @@
 
 .icon {
   transition: all 0.7s ease;
-  fill: var(--chakra-colors-chakra-body-bg);
+  fill: var(--chakra-colors-orange-200);
   height: var(--icon-size);
   width: var(--icon-size);
 }

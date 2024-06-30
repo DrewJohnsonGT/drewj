@@ -35,7 +35,6 @@ export const Footer = () => {
                 <IconButton
                   aria-label={link.title}
                   icon={<Icon className={styles[link.title.toLowerCase()]} />}
-                  variant="outline"
                 />
               </a>
             </Tooltip>
