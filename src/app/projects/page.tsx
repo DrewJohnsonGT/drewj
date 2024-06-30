@@ -18,13 +18,21 @@ import { getAllProjectsFrontMatter } from '~/utils/projects';
 
 const ProjectsPage = async () => {
   const projects = await getAllProjectsFrontMatter();
-  console.log(projects[0]);
+  const projectsSortedByDate = projects.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
   return (
     <SimpleGrid minChildWidth="300px" spacing="2rem" m={4}>
-      {projects.map((project) => (
+      {projectsSortedByDate.map((project) => (
         <Card maxW="xxl" key={project.title} cursor="pointer">
-          <CardBody>
-            <Image src={project.banner} alt={project.title} borderRadius="lg" />
+          <CardBody p={4}>
+            <Image
+              src={project.banner}
+              alt={project.title}
+              borderRadius="lg"
+              maxHeight={200}
+              mx="auto"
+            />
             <Stack mt="6" spacing="3">
               <Heading size="md">{project.title}</Heading>
               <Text>{project.description}</Text>

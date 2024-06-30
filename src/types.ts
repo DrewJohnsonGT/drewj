@@ -5,6 +5,13 @@ export enum Technology {
   Tailwind = 'Tailwind CSS',
   MatterJS = 'Matter.js',
   Vite = 'Vite',
+  NodeJS = 'Node.js',
+  Redux = 'Redux',
+  MSSQL = 'MSSQL',
+  Printing = '3D Printing',
+  Python = 'Python',
+  RaspberryPi = 'Raspberry Pi',
+  Arduino = 'Arduino',
 }
 
 export interface Project {
@@ -13,6 +20,7 @@ export interface Project {
   title: string;
   description: string;
   technologies: Technology[];
+  date: string;
   repository?: string;
   link?: string;
 }
