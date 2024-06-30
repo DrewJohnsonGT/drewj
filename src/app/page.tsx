@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { CyclingText } from '~/components/CyclingText';
 import { SKILLS } from '~/constants';
 import { useElementSize } from '~/utils/useElementSize';
+import clsx from 'clsx';
 import styles from './page.module.css';
 
 interface SkillProps {
@@ -50,13 +51,22 @@ export default function Home() {
   return (
     <section className={styles.root} ref={sectionRef}>
       <Box className={styles.blurryBackdrop}>
-        <Image
-          className={styles.headshot}
-          src="/images/headshot.png"
-          alt="Drew Johnson"
-          width={150}
-          height={150}
-        />
+        <div className={styles.headshots}>
+          <Image
+            className={clsx(styles.headshot, styles.regularHeadshot)}
+            src="/images/headshot.png"
+            alt="Drew Johnson"
+            width={150}
+            height={150}
+          />
+          <Image
+            className={clsx(styles.headshot, styles.mandoHeadshot)}
+            src="/images/mando-headshot.png"
+            alt="Drew Johnson the Mandalorian"
+            width={150}
+            height={150}
+          />
+        </div>
         <div className={styles.headerText}>
           <CyclingText text="Drew Johnson" />
           <h3 className={styles.slogan}>
