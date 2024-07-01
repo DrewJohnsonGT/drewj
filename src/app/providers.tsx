@@ -35,7 +35,7 @@ const theme = extendTheme(
   },
   withDefaultColorScheme({ colorScheme: 'orange' }),
   {
-    initialColorMode: 'system',
+    initialColorMode: 'dark',
     useSystemColorMode: true,
   },
 );
