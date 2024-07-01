@@ -16,6 +16,11 @@
   gap: 1rem;
 }
 
+.icon {
+  height: 2rem;
+  width: 2rem;
+}
+
 .instagram {
   color: var(--instagram);
 }

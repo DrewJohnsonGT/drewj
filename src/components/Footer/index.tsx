@@ -4,6 +4,7 @@ import { FaLinkedin } from 'react-icons/fa6';
 import { Box, Tooltip } from '@chakra-ui/react';
 import { IconButton } from '@chakra-ui/react';
 import { GITHUB_URL, INSTAGRAM_URL, LINKED_IN_URL } from '~/constants';
+import clsx from 'clsx';
 import styles from './footer.module.css';
 
 const LINKS = [
@@ -33,8 +34,16 @@ export const Footer = () => {
             <Tooltip key={link.title} label={link.title}>
               <a href={link.href} target="_blank" rel="noreferrer">
                 <IconButton
+                  p={0}
                   aria-label={link.title}
-                  icon={<Icon className={styles[link.title.toLowerCase()]} />}
+                  icon={
+                    <Icon
+                      className={clsx(
+                        styles[link.title.toLowerCase()],
+                        styles.icon,
+                      )}
+                    />
+                  }
                 />
               </a>
             </Tooltip>
