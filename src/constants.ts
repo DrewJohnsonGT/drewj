@@ -1,9 +1,16 @@
 import { FaUserCircle } from 'react-icons/fa';
+import { FaHome } from 'react-icons/fa';
 import { FaRegAddressCard } from 'react-icons/fa6';
 import { FiLayers } from 'react-icons/fi';
 import { RiFileUserLine } from 'react-icons/ri';
 
 export const ROUTES = [
+  {
+    icon: FaHome,
+    label: 'Home',
+    title: '',
+    value: '',
+  },
   {
     icon: FiLayers,
     label: 'Projects',

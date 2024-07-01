@@ -85,7 +85,7 @@ export const Header = () => {
         <div className={styles.underline} ref={underlineRef} />
       </nav>
       <h1 className={styles.mobileNavTitle}>
-        {ROUTES[findRouteIndex()]?.label}
+        {ROUTES[findRouteIndex()]?.title ?? ROUTES[findRouteIndex()]?.label}
       </h1>
       <ThemeToggle />
       <Box className={styles.mobileNav}>
