@@ -136,12 +136,13 @@ export const TechnologyChip = ({ technology }: { technology: Technology }) => {
       boxShadow={`inset 0 0 0px 1px ${tech.color}`}
       rounded="md"
       sx={{
-        alignContent: 'center',
+        alignItems: 'center',
         display: 'inline-flex',
         gap: '0.15rem',
         justifyContent: 'center',
       }}
       p={1}
+      px={1.5}
       m={1}>
       {tech?.icon && (
         <Icon fontSize={22} color={tech.color}>
