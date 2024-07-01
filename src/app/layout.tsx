@@ -1,6 +1,7 @@
 import { Providers } from './providers';
 import { Analytics } from '@vercel/analytics/react';
 import { Inter } from 'next/font/google';
+import { cookies } from 'next/headers';
 import { Footer, Header } from '~/components';
 import type { Metadata } from 'next';
 import './globals.css';
@@ -20,10 +21,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookiesList = cookies();
+  const colorMode = cookiesList.get('chakra-ui-color-mode');
   return (
     <html lang="en" className={inter.className}>
       <body>
-        <Providers>
+        <Providers colorMode={colorMode?.value}>
           <Header />
           <main className="main">{children}</main>
           <Footer />

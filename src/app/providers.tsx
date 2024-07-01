@@ -1,8 +1,10 @@
 'use client';
 
+import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { withDefaultColorScheme } from '@chakra-ui/react';
 import { ColorModeScript } from '@chakra-ui/react';
+import { setCookie } from 'cookies-next';
 
 const theme = extendTheme(
   {
@@ -32,19 +34,37 @@ const theme = extendTheme(
         },
       },
     },
-  },
-  withDefaultColorScheme({ colorScheme: 'orange' }),
-  {
     initialColorMode: 'dark',
     useSystemColorMode: true,
   },
+  withDefaultColorScheme({ colorScheme: 'orange' }),
 );
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export function Providers({
+  children,
+  colorMode,
+}: {
+  children: React.ReactNode;
+  colorMode?: string;
+}) {
   return (
-    <ChakraProvider theme={theme}>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      {children}
-    </ChakraProvider>
+    <CacheProvider>
+      <ChakraProvider
+        colorModeManager={{
+          get: () => (colorMode as 'dark' | 'light') ?? 'dark',
+          set: (value) => {
+            setCookie('chakra-ui-color-mode', value);
+          },
+          ssr: true,
+          type: 'cookie',
+        }}
+        theme={theme}>
+        <ColorModeScript
+          initialColorMode={theme.config.initialColorMode}
+          type="cookie"
+        />
+        {children}
+      </ChakraProvider>
+    </CacheProvider>
   );
 }
