@@ -69,4 +69,7 @@ export const SKILLS = [
   { icon: 'jenkins', score: 45 },
   { icon: 'docker', score: 70 },
   { icon: 'git', score: 65 },
+  { icon: 'openai', score: 20 },
+  { icon: 'tailwind', score: 40 },
+  { icon: 'nextjs', score: 50 },
 ];
