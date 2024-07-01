@@ -1,5 +1,6 @@
 import { Providers } from './providers';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Inter } from 'next/font/google';
 import { cookies } from 'next/headers';
 import { Footer, Header } from '~/components';
@@ -31,6 +32,7 @@ export default function RootLayout({
           <main className="main">{children}</main>
           <Footer />
           <Analytics />
+          <SpeedInsights />
         </Providers>
       </body>
     </html>
