@@ -1,11 +1,19 @@
 import React from 'react';
+import { Box, Heading, Link } from '@chakra-ui/react';
 import Image from 'next/image';
 import { PUG_SEARCH } from '~/constants';
 
 const NotFoundPage = () => (
-  <section>
-    <h2>404: NOT FOUND</h2>
-    <a href={PUG_SEARCH} target="_blank" rel="noopener noreferrer">
+  <Box
+    sx={{
+      alignItems: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      m: 'auto',
+    }}>
+    <Heading>404: NOT FOUND</Heading>
+    <Link href={PUG_SEARCH} target="_blank" rel="noopener noreferrer">
       <Image
         src="/images/pug.png"
         alt="Sad pug"
@@ -13,9 +21,9 @@ const NotFoundPage = () => (
         width={200}
         height={200}
       />
-    </a>
+    </Link>
     <h5>This page does not exist </h5>
-  </section>
+  </Box>
 );
 
 export default NotFoundPage;
