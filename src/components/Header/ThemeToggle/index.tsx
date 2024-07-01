@@ -13,13 +13,8 @@ export const ThemeToggle = () => {
         label={`Change to ${colorMode === 'dark' ? 'light' : 'dark'} theme`}>
         <IconButton
           onClick={() => toggleColorMode()}
-          icon={
-            colorMode === 'dark' ? (
-              <EmpireSVG className={styles.icon} />
-            ) : (
-              <RebelsSVG className={styles.icon} />
-            )
-          }
+          className={styles.icon}
+          icon={colorMode === 'dark' ? <EmpireSVG /> : <RebelsSVG />}
           aria-label="Change theme"
         />
       </Tooltip>
