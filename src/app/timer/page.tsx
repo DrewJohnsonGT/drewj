@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import styles from './timer.module.css';
+import { Flex, Heading } from '@chakra-ui/react';
 
 export interface TimeSince {
   days: number;
@@ -63,21 +63,23 @@ const TimeSincePage = () => {
   const { days, hours, minutes, percentOfMonth, seconds } =
     timeSince?.[0] || {};
   return (
-    <div className={styles.root}>
-      <h2>
-        {days} <span className={styles.label}>days</span>
-      </h2>
-      <h2>
-        {hours} <span className={styles.label}>hours</span>
-      </h2>
-      <h2>
-        {minutes} <span className={styles.label}>minutes</span>
-      </h2>
-      <h2>
-        {seconds} <span className={styles.label}>seconds</span>
-      </h2>
-      {percentOfMonth && <h2>{percentOfMonth?.toFixed(2)}%</h2>}
-    </div>
+    <Flex direction="column" justify="center" align="center">
+      <Heading>
+        {days} <span>days</span>
+      </Heading>
+      <Heading>
+        {hours} <span>hours</span>
+      </Heading>
+      <Heading>
+        {minutes} <span>minutes</span>
+      </Heading>
+      <Heading>
+        {seconds} <span>seconds</span>
+      </Heading>
+      {percentOfMonth && (
+        <Heading mt={4}>{percentOfMonth?.toFixed(2)}%</Heading>
+      )}
+    </Flex>
   );
 };
 
