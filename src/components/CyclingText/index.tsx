@@ -14,6 +14,11 @@ const fonts = [
   'Cookies',
   'Identify',
   'demo',
+  'street',
+  'monkey',
+  'gotrix',
+  'mallcity',
+  'spooky',
 ];
 const FINAL_FONT = 'Qube';
 

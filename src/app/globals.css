@@ -38,6 +38,26 @@
   font-family: 'demo';
   src: url('/fonts/demo.woff2');
 }
+@font-face {
+  font-family: 'street';
+  src: url('/fonts/street.ttf');
+}
+@font-face {
+  font-family: 'monkey';
+  src: url('/fonts/monkey.ttf');
+}
+@font-face {
+  font-family: 'gotrix';
+  src: url('/fonts/gotrix.otf');
+}
+@font-face {
+  font-family: 'mallcity';
+  src: url('/fonts/mallcity.otf');
+}
+@font-face {
+  font-family: 'spooky';
+  src: url('/fonts/spooky.otf');
+}
 
 * {
   box-sizing: border-box;
