@@ -1,6 +1,7 @@
 import { AiOutlineZoomIn } from 'react-icons/ai';
 import { AiOutlineLink } from 'react-icons/ai';
 import { RiGitRepositoryLine } from 'react-icons/ri';
+import { Link } from 'react-transition-progress/next';
 import {
   Box,
   Button,
@@ -15,7 +16,6 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import Link from 'next/link';
 import { TechnologyChip } from '~/components/TechnologyChip';
 import { getAllProjectsFrontMatter } from '~/utils/projects';
 

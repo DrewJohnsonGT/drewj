@@ -1,3 +1,4 @@
+import { ProgressBar } from 'react-transition-progress';
 import { Providers } from './providers';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -26,15 +27,16 @@ export default function RootLayout({
   const colorMode = cookiesList.get('chakra-ui-color-mode');
   return (
     <html lang="en" className={inter.className}>
-      <body>
-        <Providers colorMode={colorMode?.value}>
+      <Providers colorMode={colorMode?.value}>
+        <body>
+          <ProgressBar className="progress-bar" />
           <Header />
           <main className="main">{children}</main>
           <Footer />
           <Analytics />
           <SpeedInsights />
-        </Providers>
-      </body>
+        </body>
+      </Providers>
     </html>
   );
 }

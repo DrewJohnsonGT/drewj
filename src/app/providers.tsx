@@ -1,5 +1,6 @@
 'use client';
 
+import { ProgressBar, ProgressBarProvider } from 'react-transition-progress';
 import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { withDefaultColorScheme } from '@chakra-ui/react';
@@ -63,7 +64,7 @@ export function Providers({
           initialColorMode={theme.config.initialColorMode}
           type="cookie"
         />
-        {children}
+        <ProgressBarProvider>{children}</ProgressBarProvider>
       </ChakraProvider>
     </CacheProvider>
   );

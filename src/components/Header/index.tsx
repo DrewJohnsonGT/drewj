@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { MdMenu } from 'react-icons/md';
+import { Link } from 'react-transition-progress/next';
 import {
   Box,
   IconButton,
@@ -10,7 +11,6 @@ import {
   MenuItem,
   MenuList,
 } from '@chakra-ui/react';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Cube } from '~/components/Header/Cube';
 import { ThemeToggle } from '~/components/Header/ThemeToggle';
