@@ -18,6 +18,10 @@ const TIMES = [
     goal: ONE_MONTH,
     time: new Date('Jul 11 2024 00:16:00 GMT-0400 (Eastern Daylight Time)'),
   },
+  {
+    goal: ONE_MONTH,
+    time: new Date('Jul 14 2024 11:39:00 GMT-0400 (Eastern Daylight Time)'),
+  },
 ];
 
 const getPercentOfGoal = (date: Date, goal: number) => {
@@ -58,12 +62,15 @@ const useHomeLogic = () => {
   };
 };
 
-const TimeSincePage = () => {
-  const { timeSince } = useHomeLogic();
-  const { days, hours, minutes, percentOfMonth, seconds } =
-    timeSince?.[0] || {};
+const TimeSinceItem = ({
+  days,
+  hours,
+  minutes,
+  percentOfMonth,
+  seconds,
+}: TimeSince) => {
   return (
-    <Flex direction="column" justify="center" align="center">
+    <Flex align="center" justify="center" direction="column">
       <Heading>
         {days} <span>days</span>
       </Heading>
@@ -79,6 +86,15 @@ const TimeSincePage = () => {
       {percentOfMonth && (
         <Heading mt={4}>{percentOfMonth?.toFixed(2)}%</Heading>
       )}
+    </Flex>
+  );
+};
+
+const TimeSincePage = () => {
+  const { timeSince } = useHomeLogic();
+  return (
+    <Flex align="center" justify="center" h="100vh" direction="column" gap={12}>
+      {timeSince?.map((ts, index) => <TimeSinceItem key={index} {...ts} />)}
     </Flex>
   );
 };
