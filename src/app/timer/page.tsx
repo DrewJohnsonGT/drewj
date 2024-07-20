@@ -16,7 +16,7 @@ const ONE_MONTH = 1000 * 60 * 60 * 24 * 30;
 const TIMES = [
   {
     goal: ONE_MONTH,
-    time: new Date('Jul 17 2024 00:49:00 GMT-0400 (Eastern Daylight Time)'),
+    time: new Date('Jul 20 2024 01:48:00 GMT-0400 (Eastern Daylight Time)'),
   },
 ];
 
