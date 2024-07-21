@@ -18,6 +18,10 @@ const TIMES = [
     goal: ONE_MONTH,
     time: new Date('Jul 21 2024 15:37:00 GMT-0400 (Eastern Daylight Time)'),
   },
+  {
+    goal: ONE_MONTH,
+    time: new Date('Jul 21 2024 19:30:00 GMT-0400 (Eastern Daylight Time)'),
+  },
 ];
 
 const getPercentOfGoal = (date: Date, goal: number) => {
