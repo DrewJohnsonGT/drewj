@@ -27,16 +27,16 @@ export default function RootLayout({
   const colorMode = cookiesList.get('chakra-ui-color-mode');
   return (
     <html lang="en" className={inter.className}>
-      <Providers colorMode={colorMode?.value}>
-        <body>
+      <body>
+        <Providers colorMode={colorMode?.value}>
           <ProgressBar className="progress-bar" />
           <Header />
           <main className="main">{children}</main>
           <Footer />
           <Analytics />
           <SpeedInsights />
-        </body>
-      </Providers>
+        </Providers>
+      </body>
     </html>
   );
 }
