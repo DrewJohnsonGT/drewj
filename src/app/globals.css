@@ -23,24 +23,8 @@
   src: url('/fonts/Sikat.woff2');
 }
 @font-face {
-  font-family: 'Gravis';
-  src: url('/fonts/Gravis.woff2');
-}
-@font-face {
   font-family: 'Beking';
   src: url('/fonts/Beking.woff2');
-}
-@font-face {
-  font-family: 'Convert';
-  src: url('/fonts/Convert.woff2');
-}
-@font-face {
-  font-family: 'Craftsman';
-  src: url('/fonts/Craftsman.woff2');
-}
-@font-face {
-  font-family: 'Knight';
-  src: url('/fonts/Knight.woff2');
 }
 @font-face {
   font-family: 'Cookies';
