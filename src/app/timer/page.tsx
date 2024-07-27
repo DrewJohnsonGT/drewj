@@ -20,7 +20,7 @@ const TIMES = [
   },
   {
     goal: ONE_MONTH,
-    time: new Date('Jul 25 2024 00:00:00 GMT-0400 (Eastern Daylight Time)'),
+    time: new Date('Jul 27 2024 00:00:00 GMT-0400 (Eastern Daylight Time)'),
   },
 ];
 
