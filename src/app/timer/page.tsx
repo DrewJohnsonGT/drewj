@@ -12,11 +12,16 @@ export interface TimeSince {
 }
 
 const ONE_MONTH = 1000 * 60 * 60 * 24 * 30;
+const ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
 
 const TIMES = [
   {
     goal: ONE_MONTH,
     time: new Date('Jul 30 2024 09:12:00 GMT-0400 (Eastern Daylight Time)'),
+  },
+  {
+    goal: ONE_WEEK,
+    time: new Date('Jul 31 2024 09:45:00 GMT-0400 (Eastern Daylight Time)'),
   },
 ];
 
