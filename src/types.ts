@@ -16,6 +16,11 @@ export enum Technology {
   CSS = 'CSS',
   Firebase = 'Firebase',
   ChromeAPI = 'Chrome API',
+  iOS = 'iOS',
+  Android = 'Android',
+  Capacitor = 'Capacitor',
+  Ionic = 'Ionic',
+  P5 = 'P5.js',
 }
 
 export interface Project {

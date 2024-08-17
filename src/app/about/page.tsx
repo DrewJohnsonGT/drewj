@@ -19,27 +19,10 @@ const AboutPage = () => {
         <AboutImage src="/images/headshot-full.jpg" alt="Drew Johnson" />
         <AboutImage src="/images/mando1.jpg" alt="Mandalorian" />
       </div>
-      <p>My LinkedIn overview says I&apos;m a -</p>
-      <br />
-      <i className={styles.description}>
-        ... <br />
-        A product-focused engineer and leader with a passion for
-        problem-solving, a commitment to action, and a dedication to delivering
-        quality results while empowering the team. My proficiency as a
-        generalist allows me to swiftly acquire and apply new knowledge and
-        skills. I excel in managing complexity, creating maintainable and
-        extensible systems, and thrive on tackling challenging problems.
-        <br />
-        ...
-      </i>
-      <br />
-      <br />
-      <p>
-        That is all very much true.
-        <br />
-        I&apos;m also a pretty big nerd, and I <b>love</b> making things. <br />
-        I often have multiple ongoing 3D printing, embedded device/IoT,
-        web/mobile app or other miscellaneous projects on the side.{' '}
+      <p style={{ fontSize: '1.25rem' }}>
+        I&apos;m a pretty big nerd, and I <b>love</b> making things. <br />I
+        often have multiple ongoing 3D printing, embedded device/IoT, web/mobile
+        app, SaaS or other miscellaneous projects on the side.{' '}
       </p>
       <br />
       <div className={styles.imageContainer}>

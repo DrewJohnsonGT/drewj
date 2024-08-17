@@ -1,5 +1,4 @@
-import { AiOutlineZoomIn } from 'react-icons/ai';
-import { AiOutlineLink } from 'react-icons/ai';
+import { AiOutlineLink, AiOutlineZoomIn } from 'react-icons/ai';
 import { RiGitRepositoryLine } from 'react-icons/ri';
 import { Link } from 'react-transition-progress/next';
 import {

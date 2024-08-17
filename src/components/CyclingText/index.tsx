@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './cyclingText.module.css';
 
-const CYCLE_COUNT = 25;
+const CYCLE_COUNT = 35;
 const CYCLE_PERIOD = 450;
 
 const fonts = [

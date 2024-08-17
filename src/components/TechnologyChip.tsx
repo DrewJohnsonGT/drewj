@@ -1,20 +1,29 @@
 import { IconType } from 'react-icons';
-import { FaReact } from 'react-icons/fa';
-import { FaNodeJs } from 'react-icons/fa';
-import { FaPython } from 'react-icons/fa6';
-import { FaRaspberryPi } from 'react-icons/fa6';
-import { FaCss3Alt } from 'react-icons/fa6';
-import { FaHtml5 } from 'react-icons/fa6';
-import { FaChrome } from 'react-icons/fa6';
-import { RiNextjsLine } from 'react-icons/ri';
-import { RiTailwindCssFill } from 'react-icons/ri';
-import { RiFirebaseFill } from 'react-icons/ri';
-import { SiTypescript } from 'react-icons/si';
-import { SiMatterdotjs } from 'react-icons/si';
-import { SiVite } from 'react-icons/si';
-import { SiArduino } from 'react-icons/si';
-import { SiRedux } from 'react-icons/si';
-import { SiMicrosoftsqlserver } from 'react-icons/si';
+import { FaApple, FaNodeJs, FaReact } from 'react-icons/fa';
+import {
+  FaChrome,
+  FaCss3Alt,
+  FaHtml5,
+  FaPython,
+  FaRaspberryPi,
+} from 'react-icons/fa6';
+import { IoLogoAndroid } from 'react-icons/io';
+import {
+  RiFirebaseFill,
+  RiNextjsLine,
+  RiTailwindCssFill,
+} from 'react-icons/ri';
+import {
+  SiArduino,
+  SiCapacitor,
+  SiIonic,
+  SiMatterdotjs,
+  SiMicrosoftsqlserver,
+  SiP5Dotjs,
+  SiRedux,
+  SiTypescript,
+  SiVite,
+} from 'react-icons/si';
 import { TbCube3dSphere } from 'react-icons/tb';
 import { Badge, Icon, Text } from '@chakra-ui/react';
 import { Technology } from '~/types';
@@ -124,6 +133,36 @@ const TECHNOLOGY_CHIP_MAP: Record<
     color: '#fcea00',
     icon: FaChrome,
     label: 'Chrome API',
+  },
+  [Technology.iOS]: {
+    backgroundColor: '#000000',
+    color: '#ffffff',
+    icon: FaApple,
+    label: 'iOS',
+  },
+  [Technology.Android]: {
+    backgroundColor: '#3ddc84',
+    color: '#000000',
+    icon: IoLogoAndroid,
+    label: 'Android',
+  },
+  [Technology.Capacitor]: {
+    backgroundColor: '#3880ff',
+    color: '#ffffff',
+    icon: SiCapacitor,
+    label: 'Capacitor',
+  },
+  [Technology.Ionic]: {
+    backgroundColor: '#3880ff',
+    color: '#ffffff',
+    icon: SiIonic,
+    label: 'Ionic',
+  },
+  [Technology.P5]: {
+    backgroundColor: '#f1678e',
+    color: '#000000',
+    icon: SiP5Dotjs,
+    label: 'P5.js',
   },
 };
 

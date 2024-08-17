@@ -21,7 +21,9 @@ export const readProjectsFile = async (slug: string) => {
 
 export const getAllProjectsFrontMatter = async () => {
   const fileNames = await readdir(PROJECTS_FOLDER);
-  const projects = fileNames.map(async (fileName) => {
+  // Filter filenames that don't end with .mdx
+  const mdxFileNames = fileNames.filter((fileName) => /\.mdx$/.test(fileName));
+  const projects = mdxFileNames.map(async (fileName) => {
     const slug = fileName.replace(/\.mdx$/, '');
     const markdown = await readProjectsFile(slug);
     const { frontmatter } = await compileMDX<Project>({
