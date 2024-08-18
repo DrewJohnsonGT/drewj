@@ -8,7 +8,6 @@ import {
   Card,
   CardBody,
   CardFooter,
-  Divider,
   Heading,
   Image,
   SimpleGrid,
@@ -36,7 +35,7 @@ const ProjectsPage = async () => {
               mx="auto"
             />
             <Stack mt="6" spacing="3">
-              <Heading size="md">{project.title}</Heading>
+              <Heading size="lg">{project.title}</Heading>
               <Text>{project.description}</Text>
               <Box>
                 {project.technologies?.map((technology) => (
@@ -45,7 +44,6 @@ const ProjectsPage = async () => {
               </Box>
             </Stack>
           </CardBody>
-          <Divider />
           <CardFooter>
             <ButtonGroup spacing="2">
               {project.repository && (
