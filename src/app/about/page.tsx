@@ -1,3 +1,4 @@
+import { Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import { MANDO_VIDEO_URL } from '~/constants';
 import styles from './about.module.css';
@@ -13,7 +14,9 @@ const AboutImage = ({ alt, src }: { alt: string; src: string }) => {
 const AboutPage = () => {
   return (
     <div className={styles.root}>
-      <h2 className={styles.name}>Hey, I&apos;m Drew 👋</h2>
+      <Text fontSize="4xl" className={styles.name}>
+        Hey, I&apos;m Drew 👋
+      </Text>
       <div className={styles.imageContainer}>
         <AboutImage src="/images/stark.jpg" alt="Drew Stark" />
         <AboutImage src="/images/headshot-full.jpg" alt="Drew Johnson" />
@@ -32,7 +35,9 @@ const AboutPage = () => {
         <AboutImage src="/images/sith.jpg" alt="Sith Drew" />
       </div>
       <br />
-      <p>A montage of my full Mandalorian build from Halloween last year - </p>
+      <Text fontSize="xl">
+        A montage of my full Mandalorian build from Halloween last year
+      </Text>
       <br />
       <iframe
         className={styles.mandoVideo}
