@@ -48,7 +48,7 @@
 }
 
 .blurryBackdrop {
-  z-index: 10;
+  z-index: 2;
   padding: 20px;
   display: inline-flex;
   backdrop-filter: blur(8px);
