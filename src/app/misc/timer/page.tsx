@@ -17,11 +17,11 @@ const ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
 const TIMES = [
   {
     goal: ONE_MONTH,
-    time: new Date('Aug 31 2024 05:17:00 GMT-0400 (Eastern Daylight Time)'),
+    time: new Date('Sep 03 2024 13:06:00 GMT-0400 (Eastern Daylight Time)'),
   },
   {
     goal: ONE_WEEK,
-    time: new Date('Aug 30 2024 1:06:00 GMT-0400 (Eastern Daylight Time)'),
+    time: new Date('Sep 03 2024 13:06:00 GMT-0400 (Eastern Daylight Time)'),
   },
 ];
 
