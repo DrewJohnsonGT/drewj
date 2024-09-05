@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-const PrivacyPolicy = () => {
+const ThreeBodyPrivacyPolicy = () => {
   return (
     <>
       <h1>Privacy Policy</h1>
@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
         accordance with this Privacy Policy. This Privacy Policy has been
         created with the help of the{' '}
         <a
-          href="https://www.freeprivacypolicy.com/free-privacy-policy-generator/"
+          href="https://www.free3Bodyprivacypolicy.com/free-privacy-policy-generator/"
           target="_blank"
           rel="noreferrer">
           Free Privacy Policy Generator
@@ -195,7 +195,7 @@ const PrivacyPolicy = () => {
         when You go offline, while Session Cookies are deleted as soon as You
         close Your web browser. Learn more about cookies on the{' '}
         <a
-          href="https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking"
+          href="https://www.free3Bodyprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking"
           target="_blank"
           rel="noreferrer">
           Free Privacy Policy website
@@ -510,4 +510,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default ThreeBodyPrivacyPolicy;
