@@ -26,30 +26,29 @@ const LINKS = [
 ];
 export const Footer = () => {
   return (
-    <Box className={styles.root}>
-      <div className={styles.links}>
-        {LINKS.map((link) => {
-          const Icon = link.icon;
-          return (
-            <Tooltip key={link.title} label={link.title}>
-              <a href={link.href} target="_blank" rel="noreferrer">
-                <IconButton
-                  p={0}
-                  aria-label={link.title}
-                  icon={
-                    <Icon
-                      className={clsx(
-                        styles[link.title.toLowerCase()],
-                        styles.icon,
-                      )}
-                    />
-                  }
-                />
-              </a>
-            </Tooltip>
-          );
-        })}
-      </div>
+    <Box className={styles.root} display="flex" justifyContent="center" gap={2}>
+      {LINKS.map((link) => {
+        const Icon = link.icon;
+        return (
+          <Tooltip key={link.title} label={link.title}>
+            <a href={link.href} target="_blank" rel="noreferrer">
+              <IconButton
+                size="sm"
+                p={0}
+                aria-label={link.title}
+                icon={
+                  <Icon
+                    className={clsx(
+                      styles[link.title.toLowerCase()],
+                      styles.icon,
+                    )}
+                  />
+                }
+              />
+            </a>
+          </Tooltip>
+        );
+      })}
     </Box>
   );
 };

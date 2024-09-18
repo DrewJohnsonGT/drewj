@@ -23,7 +23,7 @@ const ProjectsPage = async () => {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   return (
-    <SimpleGrid minChildWidth="350px" spacing={4} className="container">
+    <SimpleGrid spacing={4} className="container">
       {projectsSortedByDate.map((project) => (
         <Card maxW="xxl" key={project.title} p={1}>
           <CardBody p={2}>

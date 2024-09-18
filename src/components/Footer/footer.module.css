@@ -9,16 +9,9 @@
   height: var(--footerHeight);
 }
 
-.links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
 .icon {
-  height: 2rem;
-  width: 2rem;
+  height: 1.75rem;
+  width: 1.75rem;
 }
 
 .instagram {
