@@ -1,7 +1,9 @@
 import { AiOutlineLink } from 'react-icons/ai';
 import { FaGithub } from 'react-icons/fa6';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 import {
   Box,
+  Button,
   CSSReset,
   Flex,
   Heading,
@@ -12,6 +14,7 @@ import {
 import { compileMDX } from 'next-mdx-remote/rsc';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { TechnologyChip } from '~/components/TechnologyChip';
 import { Project } from '~/types';
@@ -72,13 +75,26 @@ const ProjectsPage = async ({
         align="center"
         justify="center"
         gap="1rem"
-        mb="4rem">
+        mb="4rem"
+        width="100%">
         <div>
           <Flex justify="space-between">
             <Heading size="xl" mb={4}>
               {frontmatter.title}
             </Heading>
             <Flex gap={2}>
+              <Tooltip
+                label="Back to All Projects"
+                aria-label="Back to All Projects">
+                <Link href="/projects" passHref>
+                  <IconButton
+                    as="a"
+                    aria-label="Back to All Projects"
+                    icon={<IoMdArrowRoundBack />}
+                    variant="outline"
+                  />
+                </Link>
+              </Tooltip>
               {frontmatter.repository && (
                 <Tooltip
                   label="GitHub Repository"
