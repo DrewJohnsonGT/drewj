@@ -23,7 +23,7 @@ const ProjectsPage = async () => {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   return (
-    <SimpleGrid spacing={4} className="container">
+    <SimpleGrid minChildWidth="350px" spacing={4} className="container">
       {projectsSortedByDate.map((project) => (
         <Card maxW="xxl" key={project.title} p={1}>
           <CardBody p={2}>
@@ -60,6 +60,7 @@ const ProjectsPage = async () => {
                   href={project.repository}
                   rightIcon={<RiGitRepositoryLine />}
                   target="_blank"
+                  variant="solid"
                   rel="noopener noreferrer">
                   Repo
                 </Button>
@@ -68,6 +69,7 @@ const ProjectsPage = async () => {
                 <Button
                   as="a"
                   size="sm"
+                  variant="solid"
                   href={project.link}
                   rightIcon={<AiOutlineLink />}
                   target="_blank"
@@ -77,7 +79,10 @@ const ProjectsPage = async () => {
               )}
               {project.slug && (
                 <Link href={`/projects/${project.slug}`}>
-                  <Button size="sm" rightIcon={<AiOutlineZoomIn />}>
+                  <Button
+                    size="sm"
+                    variant="solid"
+                    rightIcon={<AiOutlineZoomIn />}>
                     Details
                   </Button>
                 </Link>

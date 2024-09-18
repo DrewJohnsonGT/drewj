@@ -29,6 +29,13 @@ const theme = extendTheme(
           variant: 'outline',
         },
       },
+      Card: {
+        baseStyle: {
+          container: {
+            bg: 'card-bg',
+          },
+        },
+      },
       IconButton: {
         defaultProps: {
           variant: 'outline',
@@ -36,6 +43,14 @@ const theme = extendTheme(
       },
     },
     initialColorMode: 'dark',
+    semanticTokens: {
+      colors: {
+        'card-bg': {
+          _dark: 'gray.700',
+          default: 'orange.50',
+        },
+      },
+    },
     useSystemColorMode: true,
   },
   withDefaultColorScheme({ colorScheme: 'orange' }),
