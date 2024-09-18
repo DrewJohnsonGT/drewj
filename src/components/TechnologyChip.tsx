@@ -142,7 +142,7 @@ const TECHNOLOGY_CHIP_MAP: Record<
   },
   [Technology.Android]: {
     backgroundColor: '#3ddc84',
-    color: '#000000',
+    color: '#185634',
     icon: IoLogoAndroid,
     label: 'Android',
   },
@@ -159,8 +159,8 @@ const TECHNOLOGY_CHIP_MAP: Record<
     label: 'Ionic',
   },
   [Technology.P5]: {
-    backgroundColor: '#f1678e',
-    color: '#000000',
+    backgroundColor: '#6b1b32',
+    color: '#fa9bb6',
     icon: SiP5Dotjs,
     label: 'P5.js',
   },
@@ -172,8 +172,8 @@ export const TechnologyChip = ({ technology }: { technology: Technology }) => {
     <Badge
       color={tech.color}
       backgroundColor={tech.backgroundColor}
-      boxShadow={`inset 0 0 0px 1px ${tech.color}`}
-      rounded="md"
+      boxShadow={`inset 0 0 0px 2px ${tech.color}`}
+      rounded="sm"
       size="xs"
       sx={{
         alignItems: 'center',
@@ -182,7 +182,6 @@ export const TechnologyChip = ({ technology }: { technology: Technology }) => {
         justifyContent: 'center',
       }}
       p={1}
-      py={0}
       m={0.5}>
       {tech?.icon && (
         <Icon fontSize={22} color={tech.color}>

@@ -27,6 +27,9 @@ const ProjectsPage = async () => {
       {projectsSortedByDate.map((project) => (
         <Card maxW="xxl" key={project.title} p={1}>
           <CardBody p={2}>
+            <Heading size="lg" textAlign="center" mb={2}>
+              {project.title}
+            </Heading>
             <Image
               src={project.banner}
               alt={project.title}
@@ -35,17 +38,21 @@ const ProjectsPage = async () => {
               mx="auto"
             />
             <Stack mt="2" spacing="1">
-              <Heading size="lg">{project.title}</Heading>
-              <Text lineHeight={1.5}>{project.description}</Text>
-              <Box mt={4}>
+              <Text lineHeight={1.25}>{project.description}</Text>
+              <Box
+                mt={2}
+                justifyContent="center"
+                alignItems="center"
+                display="flex"
+                flexWrap="wrap">
                 {project.technologies?.map((technology) => (
                   <TechnologyChip key={technology} technology={technology} />
                 ))}
               </Box>
             </Stack>
           </CardBody>
-          <CardFooter>
-            <ButtonGroup spacing="2">
+          <CardFooter p={2} justifyContent="center" alignItems="center">
+            <ButtonGroup>
               {project.repository && (
                 <Button
                   as="a"
