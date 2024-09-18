@@ -1,9 +1,9 @@
 /* eslint-disable max-lines */
 const ThreeBodyPrivacyPolicy = () => {
   return (
-    <>
-      <h1>Privacy Policy</h1>
-      <p>Last updated: August 18, 2024</p>
+    <div className="container">
+      <h1 style={{ fontSize: '2rem', textAlign: 'center' }}>Privacy Policy</h1>
+      <p style={{ textAlign: 'center' }}>Last updated: August 18, 2024</p>
       <p>
         This Privacy Policy describes Our policies and procedures on the
         collection, use and disclosure of Your information when You use the
@@ -506,7 +506,7 @@ const ThreeBodyPrivacyPolicy = () => {
       <ul>
         <li>By email: DrewJLLC@gmail.com</li>
       </ul>
-    </>
+    </div>
   );
 };
 

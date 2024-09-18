@@ -174,6 +174,7 @@ export const TechnologyChip = ({ technology }: { technology: Technology }) => {
       backgroundColor={tech.backgroundColor}
       boxShadow={`inset 0 0 0px 1px ${tech.color}`}
       rounded="md"
+      size="xs"
       sx={{
         alignItems: 'center',
         display: 'inline-flex',
@@ -181,8 +182,8 @@ export const TechnologyChip = ({ technology }: { technology: Technology }) => {
         justifyContent: 'center',
       }}
       p={1}
-      px={1.5}
-      m={1}>
+      py={0}
+      m={0.5}>
       {tech?.icon && (
         <Icon fontSize={22} color={tech.color}>
           <tech.icon />

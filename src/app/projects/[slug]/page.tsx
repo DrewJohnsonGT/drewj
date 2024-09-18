@@ -51,9 +51,10 @@ const ProjectsPage = async ({
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'column',
+        fontSize: '1.25rem',
         justifyContent: 'center',
         margin: '0 auto',
-        maxWidth: '800px',
+        maxWidth: 'clamp(300px, 90vw, 550px)',
       }}>
       <Head>
         <title>{frontmatter?.title}</title>
@@ -71,8 +72,7 @@ const ProjectsPage = async ({
         align="center"
         justify="center"
         gap="1rem"
-        mb="4rem"
-        maxWidth={600}>
+        mb="4rem">
         <div>
           <Flex justify="space-between">
             <Heading size="xl" mb={4}>

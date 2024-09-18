@@ -3,18 +3,13 @@ import Image from 'next/image';
 import { MANDO_VIDEO_URL } from '~/constants';
 import styles from './about.module.css';
 
-const IMAGE_WIDTH = 200;
-const IMAGE_HEIGHT = 266;
-
 const AboutImage = ({ alt, src }: { alt: string; src: string }) => {
-  return (
-    <Image src={src} alt={alt} width={IMAGE_WIDTH} height={IMAGE_HEIGHT} />
-  );
+  return <Image src={src} alt={alt} width={200} height={266} />;
 };
 const AboutPage = () => {
   return (
-    <div className={styles.root}>
-      <Text fontSize="4xl" className={styles.name}>
+    <div className="container">
+      <Text fontSize="5xl" className={styles.name}>
         Hey, I&apos;m Drew 👋
       </Text>
       <div className={styles.imageContainer}>
@@ -35,7 +30,7 @@ const AboutPage = () => {
         <AboutImage src="/images/sith.jpg" alt="Sith Drew" />
       </div>
       <br />
-      <Text fontSize="xl">
+      <Text fontSize="xl" align="center">
         A montage of my full Mandalorian build from Halloween last year
       </Text>
       <br />

@@ -23,10 +23,10 @@ const ProjectsPage = async () => {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   return (
-    <SimpleGrid minChildWidth="350px" spacing="2rem" m={4}>
+    <SimpleGrid minChildWidth="350px" spacing={4} className="container">
       {projectsSortedByDate.map((project) => (
-        <Card maxW="xxl" key={project.title}>
-          <CardBody p={4}>
+        <Card maxW="xxl" key={project.title} p={1}>
+          <CardBody p={2}>
             <Image
               src={project.banner}
               alt={project.title}
@@ -34,10 +34,10 @@ const ProjectsPage = async () => {
               maxHeight={200}
               mx="auto"
             />
-            <Stack mt="6" spacing="3">
+            <Stack mt="2" spacing="1">
               <Heading size="lg">{project.title}</Heading>
-              <Text>{project.description}</Text>
-              <Box>
+              <Text lineHeight={1.5}>{project.description}</Text>
+              <Box mt={4}>
                 {project.technologies?.map((technology) => (
                   <TechnologyChip key={technology} technology={technology} />
                 ))}
@@ -49,6 +49,7 @@ const ProjectsPage = async () => {
               {project.repository && (
                 <Button
                   as="a"
+                  size="sm"
                   href={project.repository}
                   rightIcon={<RiGitRepositoryLine />}
                   target="_blank"
@@ -59,6 +60,7 @@ const ProjectsPage = async () => {
               {project.link && (
                 <Button
                   as="a"
+                  size="sm"
                   href={project.link}
                   rightIcon={<AiOutlineLink />}
                   target="_blank"
@@ -68,7 +70,9 @@ const ProjectsPage = async () => {
               )}
               {project.slug && (
                 <Link href={`/projects/${project.slug}`}>
-                  <Button rightIcon={<AiOutlineZoomIn />}>Details</Button>
+                  <Button size="sm" rightIcon={<AiOutlineZoomIn />}>
+                    Details
+                  </Button>
                 </Link>
               )}
             </ButtonGroup>
