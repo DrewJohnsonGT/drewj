@@ -11,13 +11,16 @@ export interface TimeSince {
   percentOfMonth: number;
 }
 
-const ONE_MONTH = 1000 * 60 * 60 * 24 * 30;
 const ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
 
 const TIMES = [
   {
     goal: ONE_WEEK,
     time: new Date('Sep 17 2024 14:21:00 GMT-0400 (Eastern Daylight Time)'),
+  },
+  {
+    goal: ONE_WEEK,
+    time: new Date('Sep 19 2024 00:10:00 GMT-0400 (Eastern Daylight Time)'),
   },
 ];
 
