@@ -20,7 +20,7 @@ const TIMES = [
   },
   {
     goal: ONE_WEEK,
-    time: new Date('Oct 6 2024 11:20:00 GMT-0400 (Eastern Daylight Time)'),
+    time: new Date('Oct 7 2024 18:45:00 GMT-0400 (Eastern Daylight Time)'),
   },
 ];
 
