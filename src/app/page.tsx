@@ -31,7 +31,7 @@ export default function Home() {
       const top = Math.random() * (sectionSize.height - size / 2);
 
       const travelTime = getRandomVariance(10, 175);
-      const delay = -10; // getRandomVariance(-10, 30);
+      const delay = getRandomVariance(-5, 30);
 
       return {
         icon,

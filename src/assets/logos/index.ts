@@ -16,7 +16,6 @@ export { default as Java } from './java';
 export { default as JavaScript } from './javascript';
 export { default as Jenkins } from './jenkins';
 export { default as Jest } from './jest';
-export { default as JetBrains } from './jetbrains';
 export { default as Kafka } from './kafka';
 export { default as MSSQL } from './mssql';
 export { default as NetSuite } from './netsuite';
