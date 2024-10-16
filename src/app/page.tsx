@@ -24,14 +24,15 @@ export default function Home() {
 
   useEffect(() => {
     const maxIconSize = sectionSize.height * 0.25;
-    const minIconSize = sectionSize.height * 0.015;
+    const minIconSize = sectionSize.height * 0.025;
 
     const newSkillStyles = SKILLS.map(({ icon, logo, score }) => {
       const size = minIconSize + (maxIconSize - minIconSize) * (score / 100);
       const top = Math.random() * (sectionSize.height - size / 2);
 
-      const travelTime = getRandomVariance(10, 175);
-      const delay = getRandomVariance(-5, 30);
+      const baseTravelTime = getRandomVariance(10, 60);
+      const travelTime = baseTravelTime * (sectionSize.width / 1000);
+      const delay = getRandomVariance(0, 30);
 
       return {
         icon,
@@ -46,7 +47,7 @@ export default function Home() {
       };
     });
     setSkillStyles(newSkillStyles);
-  }, [sectionSize.height]);
+  }, [sectionSize.height, sectionSize.width]);
 
   return (
     <section className={styles.root} ref={sectionRef}>
