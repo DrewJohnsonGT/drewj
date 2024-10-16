@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import styles from './cyclingText.module.css';
 
-const CYCLE_COUNT = 35;
-const CYCLE_PERIOD = 450;
+const CYCLE_COUNT = 40;
+const CYCLE_PERIOD = 750;
 
 const fonts = [
   'Qube',
