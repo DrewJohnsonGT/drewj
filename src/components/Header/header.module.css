@@ -1,7 +1,7 @@
 .root {
   z-index: 10;
   position: absolute;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
   height: var(--headerHeight);
   display: flex;
   align-items: center;
