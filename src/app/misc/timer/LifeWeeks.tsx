@@ -19,7 +19,6 @@ export const LifeWeeks = ({ birthDate }: { birthDate: string }) => {
 
     calculateWeeksLived();
 
-    // Optional: Recalculate every week to keep the component up-to-date
     const interval = setInterval(calculateWeeksLived, 1000 * 60 * 60 * 24 * 7);
 
     return () => clearInterval(interval);
