@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Flex, Heading } from '@chakra-ui/react';
+import { LifeWeeks } from './LifeWeeks';
+import { TimeSinceItem } from './TimeSinceItem';
+import { Flex } from '@chakra-ui/react';
 
 export interface TimeSince {
   days: number;
@@ -62,39 +64,14 @@ const useHomeLogic = () => {
   };
 };
 
-const TimeSinceItem = ({
-  days,
-  hours,
-  minutes,
-  percentOfMonth,
-  seconds,
-}: TimeSince) => {
-  return (
-    <Flex align="center" justify="center" direction="column">
-      <Heading>
-        {days} <span>days</span>
-      </Heading>
-      <Heading>
-        {hours} <span>hours</span>
-      </Heading>
-      <Heading>
-        {minutes} <span>minutes</span>
-      </Heading>
-      <Heading>
-        {seconds} <span>seconds</span>
-      </Heading>
-      {percentOfMonth && (
-        <Heading mt={4}>{percentOfMonth?.toFixed(2)}%</Heading>
-      )}
-    </Flex>
-  );
-};
-
 const TimeSincePage = () => {
   const { timeSince } = useHomeLogic();
   return (
-    <Flex align="center" justify="center" h="100vh" direction="column" gap={12}>
-      {timeSince?.map((ts, index) => <TimeSinceItem key={index} {...ts} />)}
+    <Flex direction="column" gap={4}>
+      <Flex direction="row" gap={12} align="center" justify="center">
+        {timeSince?.map((ts, index) => <TimeSinceItem key={index} {...ts} />)}
+      </Flex>
+      <LifeWeeks birthDate="1995-05-30" />
     </Flex>
   );
 };
