@@ -18,7 +18,11 @@ const ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
 const TIMES = [
   {
     goal: ONE_WEEK,
-    time: new Date('Nov 21 2024 23:31:00 GMT-0400 (Eastern Daylight Time)'),
+    time: new Date('Nov 21 2024 23:31:00 GMT-0500 (Eastern Standard Time)'),
+  },
+  {
+    goal: ONE_WEEK,
+    time: new Date('Nov 22 2024 19:15:00 GMT-0500 (Eastern Standard Time)'),
   },
 ];
 
@@ -63,7 +67,7 @@ const useHomeLogic = () => {
 const TimeSincePage = () => {
   const { timeSince } = useHomeLogic();
   return (
-    <Flex direction="column" gap={4}>
+    <Flex direction="column" gap={4} padding={8}>
       <Flex direction="row" gap={12} align="center" justify="center">
         {timeSince?.map((ts, index) => <TimeSinceItem key={index} {...ts} />)}
       </Flex>
