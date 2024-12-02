@@ -34,6 +34,7 @@ export const LifeWeeks = ({ birthDate }: { birthDate: string }) => {
             key={week}
             width={2.5}
             height={2.5}
+            margin="auto"
             bg={week < weeksLived ? 'orange.500' : 'gray.200'}
             borderRadius="full"
           />
