@@ -4,6 +4,9 @@ import { FiLayers } from 'react-icons/fi';
 import { RiFileUserLine } from 'react-icons/ri';
 import * as LOGOS from './assets/logos';
 
+export const NO_HEADER_ROUTES = ['/misc/timer'];
+export const NO_FOOTER_ROUTES = ['/misc/timer'];
+
 export const ROUTES = [
   {
     icon: FaHome,

@@ -14,12 +14,14 @@ import {
 import { usePathname } from 'next/navigation';
 import { Cube } from '~/components/Header/Cube';
 import { ThemeToggle } from '~/components/Header/ThemeToggle';
-import { ROUTES } from '~/constants';
+import { NO_HEADER_ROUTES, ROUTES } from '~/constants';
 import clsx from 'clsx';
 import styles from './header.module.css';
 
 export const Header = () => {
-  const currentPath = usePathname().split('/')[1];
+  const pathname = usePathname();
+  const currentPath = pathname.split('/')[1];
+
   const navRef = useRef<(HTMLLIElement | null)[]>([]);
   const underlineRef = useRef<HTMLDivElement>(null);
 
@@ -51,6 +53,10 @@ export const Header = () => {
       }
     }
   }, [activeIndex]);
+
+  if (NO_HEADER_ROUTES.includes(pathname)) {
+    return null;
+  }
 
   return (
     <Box className={styles.root}>

@@ -1,9 +1,14 @@
-import { FaGithub } from 'react-icons/fa6';
-import { FaInstagram } from 'react-icons/fa6';
-import { FaLinkedin } from 'react-icons/fa6';
-import { Box, Tooltip } from '@chakra-ui/react';
-import { IconButton } from '@chakra-ui/react';
-import { GITHUB_URL, INSTAGRAM_URL, LINKED_IN_URL } from '~/constants';
+'use client';
+
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
+import { Box, IconButton, Tooltip } from '@chakra-ui/react';
+import { usePathname } from 'next/navigation';
+import {
+  GITHUB_URL,
+  INSTAGRAM_URL,
+  LINKED_IN_URL,
+  NO_FOOTER_ROUTES,
+} from '~/constants';
 import clsx from 'clsx';
 import styles from './footer.module.css';
 
@@ -25,6 +30,11 @@ const LINKS = [
   },
 ];
 export const Footer = () => {
+  const pathname = usePathname();
+  if (NO_FOOTER_ROUTES.includes(pathname)) {
+    return null;
+  }
+
   return (
     <Box className={styles.root} display="flex" justifyContent="center" gap={2}>
       {LINKS.map((link) => {
