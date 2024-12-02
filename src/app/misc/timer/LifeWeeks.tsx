@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Box, SimpleGrid } from '@chakra-ui/react';
 
-const EXPECTED_LIFESPAN = 90;
+const EXPECTED_LIFESPAN = 80;
 
 export const LifeWeeks = ({ birthDate }: { birthDate: string }) => {
   const WEEKS_PER_YEAR = 52;

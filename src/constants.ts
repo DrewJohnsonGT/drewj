@@ -1,5 +1,4 @@
-import { FaUserCircle } from 'react-icons/fa';
-import { FaHome } from 'react-icons/fa';
+import { FaHome, FaUserCircle } from 'react-icons/fa';
 import { FaRegAddressCard } from 'react-icons/fa6';
 import { FiLayers } from 'react-icons/fi';
 import { RiFileUserLine } from 'react-icons/ri';
@@ -73,3 +72,5 @@ export const SKILLS = [
   { icon: 'terraform', logo: LOGOS.Terraform, score: 60 },
   { icon: 'typescript', logo: LOGOS.TypeScript, score: 80 },
 ];
+
+export const CRYPTO_REFRESH_RATE = 1000 * 60 * 30; // 30 minutes

@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    await fetch(
+    const response = await fetch(
       `https://rest.coinapi.io/v1/ohlcv/${String(
         symbol,
       )}/latest?period_id=30MIN&limit=1`,
@@ -20,17 +20,11 @@ export async function GET(req: NextRequest) {
           'X-CoinAPI-Key': process.env.CRYPTO_API_KEY,
         },
       },
-    )
-      .then(async (res) => await res.json())
-      .then((price) => {
-        console.log(price);
-        const priceHigh = price[0]?.price_high;
-        return NextResponse.json(parseInt(priceHigh));
-      })
-      .catch((e) => {
-        console.error(e);
-        return NextResponse.json({ error: e }, { status: 500 });
-      });
+    );
+
+    const jsonResponse = await response.json();
+    const priceHigh = jsonResponse[0]?.price_high;
+    return NextResponse.json(parseInt(priceHigh));
   } catch (e) {
     console.error(e);
     return NextResponse.json({ error: e }, { status: 500 });

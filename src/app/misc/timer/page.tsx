@@ -3,26 +3,8 @@
 import { useEffect, useState } from 'react';
 import { LifeWeeks } from './LifeWeeks';
 import { TimeSinceItem } from './TimeSinceItem';
-import { Flex, Text } from '@chakra-ui/react';
-
-async function fetchCryptoPrice(symbol: string): Promise<number | null> {
-  try {
-    const response = await fetch(`/api/crypto?symbol=${String(symbol)}`);
-
-    if (!response.ok) {
-      console.log('ERROR FETCHING CRYPTO');
-      console.error(`HTTP error! status: ${response.status}`);
-      return null;
-    }
-
-    const price = await response.json();
-    return price ? parseInt(price) : null;
-  } catch (e) {
-    console.log('ERROR FETCHING CRYPTO');
-    console.error(e);
-    return null;
-  }
-}
+import { Flex } from '@chakra-ui/react';
+import { MarketPriceTicker } from '~/components/MarketPriceTickter';
 
 export interface TimeSince {
   days: number;
@@ -50,8 +32,6 @@ const getPercentOfGoal = (date: Date, goal: number) => {
 
 const useHomeLogic = () => {
   const [timeSince, setTimeSince] = useState<TimeSince[]>();
-  const [btcPrice, setBtcPrice] = useState<number | null>(null);
-  const [ethPrice, setEthPrice] = useState<number | null>(null);
 
   // Find time since TIME and update every second
   const getTimeSince = (time: Date) => {
@@ -76,31 +56,26 @@ const useHomeLogic = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    fetchCryptoPrice('BITSTAMP_SPOT_BTC_USD').then((price) => {
-      setBtcPrice(price);
-    });
-    fetchCryptoPrice('BITSTAMP_SPOT_ETH_USD').then((price) => {
-      setEthPrice(price);
-    });
-  }, []);
-
   return {
-    btcPrice,
-    ethPrice,
     timeSince,
   };
 };
 
 const TimeSincePage = () => {
-  const { btcPrice, ethPrice, timeSince } = useHomeLogic();
+  const { timeSince } = useHomeLogic();
   return (
     <Flex direction="column" gap={4} padding={8}>
       <Flex direction="row" gap={12} align="center" justify="center">
         {timeSince?.map((ts, index) => <TimeSinceItem key={index} {...ts} />)}
-        <Flex direction="column" gap={4}>
-          <Text>BTC: {btcPrice}</Text>
-          <Text>ETH: {ethPrice}</Text>
+        <Flex direction="column" marginLeft="auto">
+          <MarketPriceTicker
+            symbol="BITSTAMP_SPOT_ETH_USD"
+            iconImage="/ethereum-icon.png"
+          />
+          <MarketPriceTicker
+            symbol="BITSTAMP_SPOT_BTC_USD"
+            iconImage="/bitcoin-icon.png"
+          />
         </Flex>
       </Flex>
       <LifeWeeks birthDate="1995-05-30" />
