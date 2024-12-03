@@ -5,6 +5,13 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(1000000);
   }
 
+  if (!process.env.CRYPTO_API_KEY) {
+    return NextResponse.json(
+      { error: 'CRYPTO_API_KEY is not set' },
+      { status: 500 },
+    );
+  }
+
   const symbol = req.nextUrl.searchParams.get('symbol');
   if (!symbol) {
     return NextResponse.json({ error: 'Symbol is required' }, { status: 400 });
@@ -23,6 +30,8 @@ export async function GET(req: NextRequest) {
     );
 
     const jsonResponse = await response.json();
+    console.log(jsonResponse);
+    console.log('process.env.CRYPTO_API_KEY', process.env.CRYPTO_API_KEY);
     const priceHigh = jsonResponse[0]?.price_high;
     return NextResponse.json(parseInt(priceHigh));
   } catch (e) {
