@@ -30,8 +30,6 @@ export async function GET(req: NextRequest) {
     );
 
     const jsonResponse = await response.json();
-    console.log(jsonResponse);
-    console.log('process.env.CRYPTO_API_KEY', process.env.CRYPTO_API_KEY);
     const priceHigh = jsonResponse[0]?.price_high;
     return NextResponse.json(parseInt(priceHigh));
   } catch (e) {
