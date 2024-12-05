@@ -20,11 +20,7 @@ const ONE_MONTH = ONE_WEEK * 4;
 const TIMES = [
   {
     goal: ONE_MONTH,
-    time: new Date('Dec 03 2024 12:42:00 GMT-0500 (Eastern Standard Time)'),
-  },
-  {
-    goal: ONE_WEEK,
-    time: new Date('Dec 04 2024 20:00:00 GMT-0500 (Eastern Standard Time)'),
+    time: new Date('Dec 05 2024 15:25:00 GMT-0500 (Eastern Standard Time)'),
   },
 ];
 
