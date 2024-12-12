@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { LifeWeeks } from './LifeWeeks';
 import { TimeSinceItem } from './TimeSinceItem';
 import { Flex } from '@chakra-ui/react';
-import { MarketPriceTicker } from '~/components/MarketPriceTickter';
 
 export interface TimeSince {
   days: number;
@@ -68,16 +67,6 @@ const TimeSincePage = () => {
     <Flex direction="column" gap={4} padding={8}>
       <Flex direction="row" gap={12} align="center" justify="center">
         {timeSince?.map((ts, index) => <TimeSinceItem key={index} {...ts} />)}
-        <Flex direction="column" marginLeft="auto">
-          <MarketPriceTicker
-            symbol="BITSTAMP_SPOT_ETH_USD"
-            iconImage="/ethereum-icon.png"
-          />
-          <MarketPriceTicker
-            symbol="BITSTAMP_SPOT_BTC_USD"
-            iconImage="/bitcoin-icon.png"
-          />
-        </Flex>
       </Flex>
       <LifeWeeks birthDate="1995-05-30" />
     </Flex>
