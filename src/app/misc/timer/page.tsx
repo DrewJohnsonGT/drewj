@@ -21,6 +21,10 @@ const TIMES = [
     goal: ONE_MONTH,
     time: new Date('Jan 16 2025 13:20:00 GMT-0500 (Eastern Standard Time)'),
   },
+  {
+    goal: ONE_MONTH,
+    time: new Date('Jan 16 2025 22:16:00 GMT-0500 (Eastern Standard Time)'),
+  },
 ];
 
 const getPercentOfGoal = (date: Date, goal: number) => {
