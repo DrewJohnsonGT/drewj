@@ -3,7 +3,6 @@ import { FaGithub } from 'react-icons/fa6';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import {
   Box,
-  Button,
   CSSReset,
   Flex,
   Heading,
@@ -77,63 +76,57 @@ const ProjectsPage = async ({
         gap="1rem"
         mb="4rem"
         width="100%">
-        <div>
-          <Flex justify="space-between">
-            <Heading size="xl" mb={4}>
-              {frontmatter.title}
-            </Heading>
-            <Flex gap={2}>
-              <Tooltip
-                label="Back to All Projects"
-                aria-label="Back to All Projects">
-                <Link href="/projects" passHref>
-                  <IconButton
-                    as="a"
-                    aria-label="Back to All Projects"
-                    icon={<IoMdArrowRoundBack />}
-                    variant="outline"
-                  />
-                </Link>
+        <Flex justify="space-between">
+          <Heading size="xl" mb={4}>
+            {frontmatter.title}
+          </Heading>
+          <Flex gap={2}>
+            <Tooltip
+              label="Back to All Projects"
+              aria-label="Back to All Projects">
+              <Link href="/projects" passHref>
+                <IconButton
+                  as="a"
+                  aria-label="Back to All Projects"
+                  icon={<IoMdArrowRoundBack />}
+                  variant="outline"
+                />
+              </Link>
+            </Tooltip>
+            {frontmatter.repository && (
+              <Tooltip label="GitHub Repository" aria-label="GitHub Repository">
+                <IconButton
+                  as="a"
+                  aria-label="GitHub Repository"
+                  href={frontmatter.repository}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  icon={<FaGithub />}
+                />
               </Tooltip>
-              {frontmatter.repository && (
-                <Tooltip
-                  label="GitHub Repository"
-                  aria-label="GitHub Repository">
-                  <IconButton
-                    as="a"
-                    aria-label="GitHub Repository"
-                    href={frontmatter.repository}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    icon={<FaGithub />}
-                  />
-                </Tooltip>
-              )}
-              {frontmatter.link && (
-                <Tooltip
-                  label="Live Project Link"
-                  aria-label="Live Project Link">
-                  <IconButton
-                    as="a"
-                    aria-label="Project link"
-                    href={frontmatter.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    icon={<AiOutlineLink />}
-                  />
-                </Tooltip>
-              )}
-            </Flex>
+            )}
+            {frontmatter.link && (
+              <Tooltip label="Live Project Link" aria-label="Live Project Link">
+                <IconButton
+                  as="a"
+                  aria-label="Project link"
+                  href={frontmatter.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  icon={<AiOutlineLink />}
+                />
+              </Tooltip>
+            )}
           </Flex>
-          {frontmatter.description && (
-            <Text mb={4}>{frontmatter.description}</Text>
-          )}
-          <Flex justifyContent="center">
-            {frontmatter.technologies?.map((technology) => (
-              <TechnologyChip key={technology} technology={technology} />
-            ))}
-          </Flex>
-        </div>
+        </Flex>
+        {frontmatter.description && (
+          <Text mb={4}>{frontmatter.description}</Text>
+        )}
+        <Flex justifyContent="center">
+          {frontmatter.technologies?.map((technology) => (
+            <TechnologyChip key={technology} technology={technology} />
+          ))}
+        </Flex>
         {frontmatter.banner && (
           <Image
             src={frontmatter.banner}

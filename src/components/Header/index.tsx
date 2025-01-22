@@ -16,7 +16,6 @@ import { Cube } from '~/components/Header/Cube';
 import { ThemeToggle } from '~/components/Header/ThemeToggle';
 import { NO_HEADER_ROUTES, ROUTES } from '~/constants';
 import clsx from 'clsx';
-import styles from './header.module.css';
 
 export const Header = () => {
   const pathname = usePathname();
@@ -59,18 +58,18 @@ export const Header = () => {
   }
 
   return (
-    <Box className={styles.root}>
+    <Box className="z-10 absolute backdrop-blur-sm h-[var(--headerHeight)] flex items-center w-full pr-2">
       <Link href="/">
         <Cube />
       </Link>
-      <nav className={styles.navBar}>
-        <ul className={styles.navList}>
+      <nav className="ml-[calc(var(--headerHeight)*0.2)] relative">
+        <ul className="inline-flex list-none p-0 m-0">
           {ROUTES.map((route, index) => (
             <li
               className={clsx(
-                styles.navItem,
+                'p-2 cursor-pointer font-[Qube] hover:text-[--chakra-colors-orange-500]',
                 (index === activeIndex || currentPath === route.value) &&
-                  styles.active,
+                  'text-[--chakra-colors-orange-500]',
               )}
               key={route.value}
               ref={(el) => {
@@ -82,19 +81,22 @@ export const Header = () => {
               <Link
                 href={`/${route.value}`}
                 key={route.value}
-                className={styles.navItemLink}>
+                className="no-underline">
                 {route.label}
               </Link>
             </li>
           ))}
         </ul>
-        <div className={styles.underline} ref={underlineRef} />
+        <div
+          className="h-1 bg-[--chakra-colors-orange-500] absolute transition-[left,width] duration-500 ease-in-out bottom-0"
+          ref={underlineRef}
+        />
       </nav>
-      <h1 className={styles.mobileNavTitle}>
+      <h1 className="hidden ml-4 text-[0.5rem] font-bold font-[Cube] md:block">
         {ROUTES[findRouteIndex()]?.title ?? ROUTES[findRouteIndex()]?.label}
       </h1>
       <ThemeToggle />
-      <Box className={styles.mobileNav}>
+      <Box className="hidden md:flex">
         <Menu>
           <MenuButton
             as={IconButton}

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import styles from './cyclingText.module.css';
 
 const CYCLE_COUNT = 40;
 const CYCLE_PERIOD = 750;
@@ -23,7 +22,7 @@ const fonts = [
 const FINAL_FONT = 'Qube';
 
 const setFinalFont = () => {
-  const letters = document.querySelectorAll(`.${styles.letter}`);
+  const letters = document.querySelectorAll('.cycling-letter');
   letters.forEach((letter) => {
     (letter as HTMLElement).style.fontFamily = FINAL_FONT;
   });
@@ -34,7 +33,7 @@ export const CyclingText = ({ text }: { text: string }) => {
 
   useEffect(() => {
     const rollIntro = () => {
-      const letters = document.querySelectorAll(`.${styles.letter}`);
+      const letters = document.querySelectorAll('.cycling-letter');
       letters.forEach((letter) => {
         const randomFontIndex = Math.floor(Math.random() * fonts.length);
         const randomFont = fonts[randomFontIndex];
@@ -57,10 +56,12 @@ export const CyclingText = ({ text }: { text: string }) => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.text}>
+    <div className="w-full grid place-content-center bg-cover font-[Qube]">
+      <h2 className="text-[3rem] leading-none flex items-center justify-between flex-wrap md:text-[1.75rem]">
         {text.split('').map((letter, index) => (
-          <p key={index} className={styles.letter}>
+          <p
+            key={index}
+            className="cycling-letter text-[--textColor] w-12 md:w-6 [text-shadow:0_0_0.4em_var(--chakra-colors-orange-500),0_0_0.5em_var(--chakra-colors-orange-500),0_0_0.25em_var(--chakra-colors-orange-500)]">
             {letter}
           </p>
         ))}
