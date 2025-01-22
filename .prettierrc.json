@@ -1,20 +1,21 @@
 {
-  "trailingComma": "all",
-  "tabWidth": 2,
-  "singleQuote": true,
-  "jsxBracketSameLine": true,
-  "proseWrap": "always",
   "endOfLine": "lf",
   "importOrder": [
-    "^react",
+    "^react$",
     "<THIRD_PARTY_MODULES>",
-    "^[~/]",
-    "^\\w+$",
-    "^[./].*\\.(?!css$)",
-    "type",
-    "^[./].*\\.css$"
+    "^@pcit/(.*)$",
+    "^~/(.*)$",
+    "",
+    "^.*\\.(css|scss|sass)$"
   ],
-  "importOrderSeparation": false,
-  "importOrderSortSpecifiers": false,
-  "plugins": ["@trivago/prettier-plugin-sort-imports"]
+  "jsxBracketSameLine": false,
+  "plugins": [
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindFunctions": ["cn", "cva"],
+  "proseWrap": "always",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all"
 }
