@@ -30,13 +30,15 @@ export default function RootLayout({
       <body className={inter.className}>
         <NextThemesProvider attribute="class">
           <TooltipProvider>
-            <main className="main">
+            <div className="relative flex min-h-screen flex-col">
               <Header />
-              <ScrollArea className="flex-1">
-                <ProgressProvider>{children}</ProgressProvider>
-              </ScrollArea>
+              <div className="-mt-[var(--headerHeight)] mb-[-var(--footerHeight)] flex-1">
+                <ScrollArea className="pb-[var(--footerHeight)] pt-[var(--headerHeight)]">
+                  <ProgressProvider>{children}</ProgressProvider>
+                </ScrollArea>
+              </div>
               <Footer />
-            </main>
+            </div>
           </TooltipProvider>
           <Analytics />
         </NextThemesProvider>

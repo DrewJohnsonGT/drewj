@@ -53,7 +53,7 @@ export const Header = () => {
   }, [activeIndex]);
 
   return (
-    <header className="sticky top-0 z-10 flex h-[var(--headerHeight)] w-full items-center pr-2 backdrop-blur-sm">
+    <header className="sticky top-0 z-10 flex min-h-[var(--headerHeight)] items-center bg-primary/10 pr-2 backdrop-blur-sm">
       <Link href="/">
         <Cube />
       </Link>

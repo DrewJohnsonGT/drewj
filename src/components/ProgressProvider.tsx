@@ -13,7 +13,7 @@ export const ProgressProvider = ({
       <ProgressBar
         height="4px"
         color="hsl(var(--primary))"
-        options={{ parent: '#main', showSpinner: false }}
+        options={{  showSpinner: false }}
         shallowRouting
       />
     </>

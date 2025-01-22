@@ -173,10 +173,6 @@ body {
   @apply flex h-screen w-screen flex-1 flex-col bg-accent antialiased dark:[color-scheme:dark];
 }
 
-main {
-  @apply flex h-full flex-col relative min-h-screen;
-}
-
 @keyframes moveAndRotate {
   0% {
     transform: translateX(0) rotate(0deg);

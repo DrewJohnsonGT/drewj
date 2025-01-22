@@ -51,7 +51,7 @@ export default function Home() {
       ref={sectionRef}
       className="relative flex flex-1 flex-col items-center justify-center overflow-hidden"
     >
-      <div className="z-10 inline-flex rounded-lg p-4 text-2xl backdrop-blur-sm md:m-2 md:flex-col md:items-center md:gap-2 md:text-center">
+      <div className="z-10 inline-flex rounded-lg text-2xl backdrop-blur-sm md:m-2 md:flex-col md:items-center md:gap-2 md:text-center">
         <div className="relative mr-4 h-[150px] w-[150px] md:mr-0">
           <NextImage
             className="absolute mr-4 rounded-full border-[5px] border-[var(--chakra-colors-orange-500)] bg-white/10 opacity-100 transition-all duration-500"

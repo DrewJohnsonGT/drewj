@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
+import Image from 'next/image';
 import { Button } from '~/components/ui/Button';
 import { Dialog, DialogContent } from '~/components/ui/Dialog';
 
@@ -15,7 +15,10 @@ const ResumePage = () => {
   };
 
   return (
-    <div className="flex w-full p-4 text-center" onClick={() => isModalOpen && toggleModal()}>
+    <div
+      className="flex text-center"
+      onClick={() => isModalOpen && toggleModal()}
+    >
       <div className="mx-auto">
         <Button asChild className="my-4">
           <a href="/resume.pdf" download="DrewJohnson_resume.pdf">
