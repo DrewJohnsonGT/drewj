@@ -1,9 +1,9 @@
 'use client';
 
+import { useCallback, useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useCallback, useEffect, useRef, useState } from 'react';
 import { MdMenu } from 'react-icons/md';
 import { Cube } from '~/components/Header/Cube';
 import { ThemeToggle } from '~/components/Header/ThemeToggle';
@@ -14,7 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '~/components/ui/DropdownMenu';
-import { NO_HEADER_ROUTES, ROUTES } from '~/constants';
+import { ROUTES } from '~/constants';
 
 export const Header = () => {
   const pathname = usePathname();
@@ -52,23 +52,19 @@ export const Header = () => {
     }
   }, [activeIndex]);
 
-  if (NO_HEADER_ROUTES.includes(pathname)) {
-    return null;
-  }
-
   return (
-    <header className="z-10 absolute backdrop-blur-sm h-[var(--headerHeight)] flex items-center w-full pr-2 bg-primary/50 top-[var(--headerHeight)]">
+    <header className="sticky top-0 z-10 flex h-[var(--headerHeight)] w-full items-center pr-2 backdrop-blur-sm">
       <Link href="/">
         <Cube />
       </Link>
-      <nav className="ml-[calc(var(--headerHeight)*0.2)] relative">
-        <ul className="inline-flex list-none p-0 m-0">
+      <nav className="relative ml-[calc(var(--headerHeight)*0.2)]">
+        <ul className="m-0 inline-flex list-none p-0">
           {ROUTES.map((route, index) => (
             <li
               className={clsx(
-                'p-2 cursor-pointer font-[Qube] hover:text-orange-500',
+                'cursor-pointer p-2 font-[Qube] hover:text-primary',
                 (index === activeIndex || currentPath === route.value) &&
-                  'text-orange-500',
+                  'text-primary',
               )}
               key={route.value}
               ref={(el) => {
@@ -76,22 +72,24 @@ export const Header = () => {
               }}
               onMouseEnter={() => setActiveIndex(index)}
               onMouseLeave={() => setActiveIndex(findRouteIndex())}
-              onClick={() => setActiveIndex(index)}>
+              onClick={() => setActiveIndex(index)}
+            >
               <Link
                 href={`/${route.value}`}
                 key={route.value}
-                className="no-underline">
+                className="no-underline"
+              >
                 {route.label}
               </Link>
             </li>
           ))}
         </ul>
         <div
-          className="h-1 bg-orange-500 absolute transition-[left,width] duration-500 ease-in-out bottom-0"
+          className="absolute bottom-0 h-1 bg-primary transition-[left,width] duration-500 ease-in-out"
           ref={underlineRef}
         />
       </nav>
-      <h1 className="hidden ml-4 text-[0.5rem] font-bold font-[Cube] md:block">
+      <h1 className="ml-4 mr-auto hidden font-[Cube] text-[0.5rem] font-bold md:block">
         {ROUTES[findRouteIndex()]?.title ?? ROUTES[findRouteIndex()]?.label}
       </h1>
       <ThemeToggle />

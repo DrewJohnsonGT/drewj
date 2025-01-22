@@ -66,28 +66,30 @@ export const Cube = () => {
   };
 
   return (
-    <div className="ml-[calc(var(--headerHeight)*0.1)] w-[var(--cubeSize)] h-[var(--cubeSize)] flex justify-center items-center perspective-[calc(var(--cubeSize)*5)]">
+    <div className="perspective-[calc(var(--cubeSize)*5)] ml-[calc(var(--headerHeight)*0.1)] flex h-[var(--cubeSize)] w-[var(--cubeSize)] items-center justify-center">
       <div
         className={clsx(
-          'w-[var(--cubeSize)] h-[var(--cubeSize)] relative transform-style-3d transition-transform duration-1000',
+          'transform-style-3d relative h-[var(--cubeSize)] w-[var(--cubeSize)] transition-transform duration-1000',
           focusedSide &&
             showClasses[
               `show-${focusedSide.position}` as keyof typeof showClasses
             ],
           Boolean(focusedSide)
-            ? 'hover:rotate-y-[1440deg] hover:rotate-x-[1440deg] hover:transition-transform hover:duration-4000 hover:linear'
+            ? 'hover:rotate-y-[1440deg] hover:rotate-x-[1440deg] hover:duration-4000 hover:linear hover:transition-transform'
             : 'animate-[rotating_20s_linear_infinite]',
-        )}>
+        )}
+      >
         {SIDES.map((side) => {
           const Icon = side.icon;
           return (
             <div
               className={clsx(
-                'absolute w-[var(--cubeSize)] h-[var(--cubeSize)] border border-[var(--chakra-colors-chakra-body-bg)] flex items-center justify-center text-xl opacity-80',
+                'absolute flex h-[var(--cubeSize)] w-[var(--cubeSize)] items-center justify-center border border-foreground text-xl opacity-80',
                 sideClasses[side.position as keyof typeof sideClasses],
               )}
-              key={side.route}>
-              <Icon className="text-[var(--chakra-colors-chakra-body-bg)] w-[calc(var(--cubeSize)*0.65)] h-[calc(var(--cubeSize)*0.65)] opacity-100" />
+              key={side.route}
+            >
+              <Icon className="h-[calc(var(--cubeSize)*0.65)] w-[calc(var(--cubeSize)*0.65)] text-foreground opacity-100" />
             </div>
           );
         })}

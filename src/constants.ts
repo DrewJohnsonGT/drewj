@@ -1,11 +1,9 @@
+import { SVGProps, JSX } from 'react';
+import * as LOGOS from './assets/logos';
 import { FaHome, FaUserCircle } from 'react-icons/fa';
 import { FaRegAddressCard } from 'react-icons/fa6';
 import { FiLayers } from 'react-icons/fi';
 import { RiFileUserLine } from 'react-icons/ri';
-import * as LOGOS from './assets/logos';
-
-export const NO_HEADER_ROUTES = ['/misc/timer'];
-export const NO_FOOTER_ROUTES = ['/misc/timer'];
 
 export const ROUTES = [
   {
@@ -41,7 +39,11 @@ export const INSTAGRAM_URL = 'https://www.instagram.com/sdrewjohnson/';
 
 export const MANDO_VIDEO_URL = 'https://www.youtube.com/embed/I97jYWG01Ss';
 
-export const SKILLS = [
+export const SKILLS: {
+  icon: string;
+  logo: (props: SVGProps<SVGElement>) => JSX.Element;
+  score: number;
+}[] = [
   { icon: 'angular', logo: LOGOS.Angular, score: 20 },
   { icon: 'aws', logo: LOGOS.AWS, score: 80 },
   { icon: 'aws2', logo: LOGOS.AWS2, score: 80 },

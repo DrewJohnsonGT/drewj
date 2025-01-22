@@ -139,7 +139,8 @@
 :root {
   --headerHeight: 80px;
   --footerHeight: 50px;
-
+  --cubeSize: calc(var(--headerHeight) * 0.6);
+  --translateZ: calc(var(--cubeSize) / 2);
   --disabled: #dfdfdf;
   --disabledText: #b2b2b2;
   --githubLight: #b802b8;
@@ -172,8 +173,8 @@ body {
   @apply flex h-screen w-screen flex-1 flex-col bg-accent antialiased dark:[color-scheme:dark];
 }
 
-#main {
-  @apply flex h-full flex-1 flex-col;
+main {
+  @apply flex h-full flex-col relative min-h-screen;
 }
 
 @keyframes moveAndRotate {
