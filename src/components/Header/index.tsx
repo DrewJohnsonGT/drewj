@@ -57,12 +57,12 @@ export const Header = () => {
       <Link href="/">
         <Cube />
       </Link>
-      <nav className="relative ml-[calc(var(--headerHeight)*0.2)]">
+      <nav className="relative ml-[calc(var(--headerHeight)*0.2)] mr-auto">
         <ul className="m-0 inline-flex list-none p-0">
           {ROUTES.map((route, index) => (
             <li
               className={clsx(
-                'cursor-pointer p-2 font-[Qube] hover:text-primary',
+                'cursor-pointer p-2 px-3 font-[Qube] text-2xl hover:text-primary',
                 (index === activeIndex || currentPath === route.value) &&
                   'text-primary',
               )}
@@ -89,11 +89,11 @@ export const Header = () => {
           ref={underlineRef}
         />
       </nav>
-      <h1 className="ml-4 mr-auto hidden font-[Cube] text-[0.5rem] font-bold md:block">
+      <h1 className="ml-4 block font-[Cube] text-[0.5rem] font-bold md:hidden">
         {ROUTES[findRouteIndex()]?.title ?? ROUTES[findRouteIndex()]?.label}
       </h1>
       <ThemeToggle />
-      <div className="hidden md:flex">
+      <div className="flex md:hidden">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button

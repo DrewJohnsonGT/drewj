@@ -5,7 +5,12 @@ const ContactPage = () => {
     <div className="flex flex-1 flex-col items-center justify-center">
       <p className="text-xl">
         Reaching out and connecting on{' '}
-        <a href={LINKED_IN_URL} target="_blank" rel="noreferrer">
+        <a
+          href={LINKED_IN_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="text-[var(--linkedin)] hover:text-[var(--linkedinLight)]"
+        >
           LinkedIn
         </a>{' '}
         is the best way to get a hold of me

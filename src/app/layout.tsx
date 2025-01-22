@@ -28,12 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <NextThemesProvider attribute="class">
+        <NextThemesProvider attribute="class" defaultTheme="dark">
           <TooltipProvider>
             <div className="relative flex min-h-screen flex-col">
               <Header />
               <ScrollArea className="-mb-[var(--footerHeight)] -mt-[var(--headerHeight)] flex h-full flex-1 flex-col">
-                <div className="flex h-full flex-1 flex-col pb-[var(--footerHeight)] pt-[var(--headerHeight)]">
+                <div className="flex h-[100vh] flex-1 flex-col pb-[var(--footerHeight)] pt-[var(--headerHeight)]">
                   <ProgressProvider>{children}</ProgressProvider>
                 </div>
               </ScrollArea>

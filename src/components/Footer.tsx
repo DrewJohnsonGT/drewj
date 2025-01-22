@@ -5,6 +5,7 @@ import {
   TooltipTrigger,
 } from '~/components/ui/Tooltip';
 import { GITHUB_URL, INSTAGRAM_URL, LINKED_IN_URL } from '~/constants';
+import { cn } from '~/utils/cn';
 
 const LINKS = [
   {
@@ -39,9 +40,9 @@ export const Footer = () => {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center rounded-md border p-2 hover:bg-muted/10"
+                className="flex items-center justify-center px-2 transition-transform hover:scale-125"
               >
-                <Icon className={`h-7 w-7 ${link.color}`} />
+                <Icon className={cn('size-7', link.color)} />
               </a>
             </TooltipTrigger>
             <TooltipContent>{link.title}</TooltipContent>

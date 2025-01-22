@@ -1,4 +1,4 @@
-import { SVGProps, JSX } from 'react';
+import { JSX, SVGProps } from 'react';
 import * as LOGOS from './assets/logos';
 import { FaHome, FaUserCircle } from 'react-icons/fa';
 import { FaRegAddressCard } from 'react-icons/fa6';
@@ -41,7 +41,7 @@ export const MANDO_VIDEO_URL = 'https://www.youtube.com/embed/I97jYWG01Ss';
 
 export const SKILLS: {
   icon: string;
-  logo: (props: SVGProps<SVGElement>) => JSX.Element;
+  logo: (props: SVGProps<SVGSVGElement>) => JSX.Element;
   score: number;
 }[] = [
   { icon: 'angular', logo: LOGOS.Angular, score: 20 },
@@ -67,6 +67,7 @@ export const SKILLS: {
   { icon: 'nextjs', logo: LOGOS.Next, score: 90 },
   { icon: 'nodejs', logo: LOGOS.NodeJS, score: 90 },
   { icon: 'openai', logo: LOGOS.OpenAI, score: 50 },
+  { icon: 'prisma', logo: LOGOS.Prisma, score: 80 },
   { icon: 'python', logo: LOGOS.Python, score: 80 },
   { icon: 'react', logo: LOGOS.React, score: 95 },
   { icon: 'redux', logo: LOGOS.Redux, score: 75 },

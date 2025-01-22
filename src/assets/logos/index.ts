@@ -23,6 +23,7 @@ export { default as NewRelic } from './newrelic';
 export { default as Next } from './nextjs';
 export { default as NodeJS } from './nodejs';
 export { default as OpenAI } from './openai';
+export { default as Prisma } from './prisma';
 export { default as Python } from './python';
 export { default as React } from './react';
 export { default as Redux } from './redux';

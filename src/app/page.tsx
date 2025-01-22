@@ -8,7 +8,7 @@ import { useElementSize } from '~/utils/useElementSize';
 
 interface SkillProps {
   icon: string;
-  logo: (props: SVGProps<SVGElement>) => JSX.Element;
+  logo: (props: SVGProps<SVGSVGElement>) => JSX.Element;
   style: Record<string, string>;
 }
 
@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-1 flex-col items-center justify-center overflow-hidden"
+      className="flex flex-1 flex-col items-center justify-center overflow-hidden"
     >
       <div className="z-10 inline-flex rounded-lg text-2xl backdrop-blur-sm md:m-2 md:flex-col md:items-center md:gap-2 md:text-center">
         <div className="relative mr-4 h-[150px] w-[150px] md:mr-0">
@@ -70,7 +70,7 @@ export default function Home() {
         </div>
         <div className="m-auto flex flex-col">
           <CyclingText text="Drew Johnson" />
-          <h3 className="mt-2 font-['Qube'] text-sm text-[var(--chakra-colors-orange-500)]">
+          <h3 className="mt-2 font-['Qube'] text-sm text-primary">
             <i>Always Building Something</i>
           </h3>
         </div>
