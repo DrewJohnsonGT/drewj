@@ -1,7 +1,7 @@
 'use client';
 
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
 import { usePathname } from 'next/navigation';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
 import {
   GITHUB_URL,
   INSTAGRAM_URL,

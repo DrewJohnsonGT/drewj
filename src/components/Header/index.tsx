@@ -1,21 +1,20 @@
 'use client';
 
+import clsx from 'clsx';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { MdMenu } from 'react-icons/md';
-import { Link } from 'react-transition-progress/next';
-import {
-  Box,
-  IconButton,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-} from '@chakra-ui/react';
-import { usePathname } from 'next/navigation';
 import { Cube } from '~/components/Header/Cube';
 import { ThemeToggle } from '~/components/Header/ThemeToggle';
+import { Button } from '~/components/ui/Button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '~/components/ui/DropdownMenu';
 import { NO_HEADER_ROUTES, ROUTES } from '~/constants';
-import clsx from 'clsx';
 
 export const Header = () => {
   const pathname = usePathname();
@@ -58,7 +57,7 @@ export const Header = () => {
   }
 
   return (
-    <Box className="z-10 absolute backdrop-blur-sm h-[var(--headerHeight)] flex items-center w-full pr-2">
+    <div className="z-10 absolute backdrop-blur-sm h-[var(--headerHeight)] flex items-center w-full pr-2">
       <Link href="/">
         <Cube />
       </Link>
@@ -67,9 +66,9 @@ export const Header = () => {
           {ROUTES.map((route, index) => (
             <li
               className={clsx(
-                'p-2 cursor-pointer font-[Qube] hover:text-[--chakra-colors-orange-500]',
+                'p-2 cursor-pointer font-[Qube] hover:text-orange-500',
                 (index === activeIndex || currentPath === route.value) &&
-                  'text-[--chakra-colors-orange-500]',
+                  'text-orange-500',
               )}
               key={route.value}
               ref={(el) => {
@@ -88,7 +87,7 @@ export const Header = () => {
           ))}
         </ul>
         <div
-          className="h-1 bg-[--chakra-colors-orange-500] absolute transition-[left,width] duration-500 ease-in-out bottom-0"
+          className="h-1 bg-orange-500 absolute transition-[left,width] duration-500 ease-in-out bottom-0"
           ref={underlineRef}
         />
       </nav>
@@ -96,24 +95,30 @@ export const Header = () => {
         {ROUTES[findRouteIndex()]?.title ?? ROUTES[findRouteIndex()]?.label}
       </h1>
       <ThemeToggle />
-      <Box className="hidden md:flex">
-        <Menu>
-          <MenuButton
-            as={IconButton}
-            aria-label="Navigation menu"
-            icon={<MdMenu />}
-          />
-          <MenuList>
+      <div className="hidden md:flex">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="relative"
+              aria-label="Navigation menu"
+            >
+              <MdMenu className="h-5 w-5" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
             {ROUTES.map((route) => (
               <Link href={`/${route.value}`} key={route.value}>
-                <MenuItem key={route.value} icon={<route.icon />}>
+                <DropdownMenuItem>
+                  <route.icon className="mr-2 h-4 w-4" />
                   {route.label}
-                </MenuItem>
+                </DropdownMenuItem>
               </Link>
             ))}
-          </MenuList>
-        </Menu>
-      </Box>
-    </Box>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+    </div>
   );
 };

@@ -1,12 +1,12 @@
 'use client';
 
+import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
 import { FaRegNewspaper, FaUserCircle } from 'react-icons/fa';
 import { FaRegAddressCard } from 'react-icons/fa6';
 import { FiLayers } from 'react-icons/fi';
 import { MdOutlineGamepad } from 'react-icons/md';
 import { RiFileUserLine } from 'react-icons/ri';
-import { usePathname } from 'next/navigation';
-import clsx from 'clsx';
 
 const SIDES = [
   {

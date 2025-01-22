@@ -1,5 +1,8 @@
-import React from 'react';
-import { Tooltip } from '@chakra-ui/react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '~/components/ui/Tooltip';
 
 const timeSince = (date: Date): string => {
   const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
@@ -29,9 +32,13 @@ export const TimeAgo = ({ date }: { date?: Date | string }) => {
   if (!date) return null;
   const dateObj = typeof date === 'string' ? new Date(date) : date;
   return (
-    <Tooltip
-      label={`${dateObj.toLocaleDateString()} - ${dateObj.toLocaleTimeString()}`}>
-      <span className="cursor-default">{timeSince(dateObj)}</span>
-    </Tooltip>
+  <Tooltip>
+        <TooltipTrigger asChild>
+          <span className="cursor-default">{timeSince(dateObj)}</span>
+        </TooltipTrigger>
+        <TooltipContent>
+          {`${dateObj.toLocaleDateString()} - ${dateObj.toLocaleTimeString()}`}
+        </TooltipContent>
+      </Tooltip>
   );
 };

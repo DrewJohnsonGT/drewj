@@ -1,6 +1,6 @@
 import { AiOutlineLink, AiOutlineZoomIn } from 'react-icons/ai';
 import { RiGitRepositoryLine } from 'react-icons/ri';
-import { Link } from 'react-transition-progress/next';
+import Link from 'next/link';
 import {
   Box,
   Button,

@@ -2,9 +2,10 @@ import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { Inter } from 'next/font/google';
-import { ProgressBar } from 'react-transition-progress';
+import { ProgressProvider } from '~/components/ProgressProvider';
 import { Footer } from '~/components/Footer';
 import { Header } from '~/components/Header';
+import { TooltipProvider } from '~/components/TooltipProvider';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -25,12 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body>
-      <NextThemesProvider attribute="class">
-      <ProgressBar className="progress-bar" />
-          <Header />
-          <main className="main">{children}</main>
-          <Footer />
-          <Analytics />
+        <NextThemesProvider attribute="class">
+          <ProgressProvider>
+            <TooltipProvider>
+              <Header />
+              <main className="main">{children}</main>
+              <Footer />
+              <Analytics />
+            </TooltipProvider>
+          </ProgressProvider>
         </NextThemesProvider>
       </body>
     </html>

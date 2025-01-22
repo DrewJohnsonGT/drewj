@@ -29,7 +29,7 @@ import {
   SiVite,
 } from 'react-icons/si';
 import { TbCube3dSphere } from 'react-icons/tb';
-import { Badge, Icon, Text } from '@chakra-ui/react';
+import { Badge } from '~/components/ui/Badge';
 import { Technology } from '~/types';
 
 const TECHNOLOGY_CHIP_MAP: Record<
@@ -198,25 +198,19 @@ export const TechnologyChip = ({ technology }: { technology: Technology }) => {
   const tech = TECHNOLOGY_CHIP_MAP[technology];
   return (
     <Badge
-      color={tech.color}
-      backgroundColor={tech.backgroundColor}
-      boxShadow={`inset 0 0 0px 2px ${tech.color}`}
-      rounded="sm"
-      size="xs"
-      sx={{
-        alignItems: 'center',
-        display: 'inline-flex',
-        gap: '0.15rem',
-        justifyContent: 'center',
-      }}
-      p={1}
-      m={0.5}>
+      className="inline-flex items-center justify-center gap-[0.15rem] p-1 m-0.5"
+      style={{
+        color: tech.color,
+        backgroundColor: tech.backgroundColor,
+        boxShadow: `inset 0 0 0px 2px ${tech.color}`,
+      }}>
       {tech?.icon && (
-        <Icon fontSize={22} color={tech.color}>
-          <tech.icon />
-        </Icon>
+        <tech.icon
+          style={{ color: tech.color }}
+          className="text-[22px]"
+        />
       )}
-      <Text color={tech.color}>{tech?.label}</Text>
+      <span style={{ color: tech.color }}>{tech?.label}</span>
     </Badge>
   );
 };

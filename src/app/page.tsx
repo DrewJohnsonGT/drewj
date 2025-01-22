@@ -10,7 +10,7 @@ import styles from './page.module.css';
 
 interface SkillProps {
   icon: string;
-  logo: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  logo: (props: SVGProps<SVGSVGElement>) => React.ReactNode;
   style: Record<string, string>;
 }
 
