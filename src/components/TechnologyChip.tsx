@@ -20,8 +20,12 @@ import {
   SiMatterdotjs,
   SiMicrosoftsqlserver,
   SiP5Dotjs,
+  SiPostgresql,
+  SiPrisma,
   SiRedux,
+  SiShadcnui,
   SiTypescript,
+  SiVercel,
   SiVite,
 } from 'react-icons/si';
 import { TbCube3dSphere } from 'react-icons/tb';
@@ -43,6 +47,30 @@ const TECHNOLOGY_CHIP_MAP: Record<
     color: '#90CDF4',
     icon: SiTypescript,
     label: 'TypeScript',
+  },
+  [Technology.PostgreSQL]: {
+    backgroundColor: '#2C5282',
+    color: '#90CDF4',
+    icon: SiPostgresql,
+    label: 'PostgreSQL',
+  },
+  [Technology.Prisma]: {
+    backgroundColor: '#090a15',
+    color: '#E2E8F0',
+    icon: SiPrisma,
+    label: 'Prisma',
+  },
+  [Technology.Vercel]: {
+    backgroundColor: '#171923',
+    color: '#E2E8F0',
+    icon: SiVercel,
+    label: 'Vercel',
+  },
+  [Technology.Shadcn]: {
+    backgroundColor: '#171923',
+    color: '#E2E8F0',
+    icon: SiShadcnui,
+    label: 'Shadcn',
   },
   [Technology.Next]: {
     backgroundColor: '#171923',
