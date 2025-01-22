@@ -32,11 +32,11 @@ export default function RootLayout({
           <TooltipProvider>
             <div className="relative flex min-h-screen flex-col">
               <Header />
-              <div className="-mt-[var(--headerHeight)] mb-[-var(--footerHeight)] flex-1">
-                <ScrollArea className="pb-[var(--footerHeight)] pt-[var(--headerHeight)]">
+              <ScrollArea className="-mb-[var(--footerHeight)] -mt-[var(--headerHeight)] flex h-full flex-1 flex-col">
+                <div className="flex h-full flex-1 flex-col pb-[var(--footerHeight)] pt-[var(--headerHeight)]">
                   <ProgressProvider>{children}</ProgressProvider>
-                </ScrollArea>
-              </div>
+                </div>
+              </ScrollArea>
               <Footer />
             </div>
           </TooltipProvider>
