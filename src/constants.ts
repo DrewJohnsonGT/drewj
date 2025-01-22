@@ -75,5 +75,3 @@ export const SKILLS = [
   { icon: 'terraform', logo: LOGOS.Terraform, score: 60 },
   { icon: 'typescript', logo: LOGOS.TypeScript, score: 80 },
 ];
-
-export const CRYPTO_REFRESH_RATE = 1000 * 60 * 30; // 30 minutes

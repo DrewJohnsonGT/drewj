@@ -1,12 +1,11 @@
 'use client';
 
-import { SVGProps, useEffect, useState } from 'react';
-import { Box } from '@chakra-ui/react';
+import clsx from 'clsx';
 import NextImage from 'next/image';
+import { SVGProps, useEffect, useState } from 'react';
 import { CyclingText } from '~/components/CyclingText';
 import { SKILLS } from '~/constants';
 import { useElementSize } from '~/utils/useElementSize';
-import clsx from 'clsx';
 import styles from './page.module.css';
 
 interface SkillProps {
@@ -51,33 +50,33 @@ export default function Home() {
 
   return (
     <section className={styles.root} ref={sectionRef}>
-      <Box className={styles.blurryBackdrop}>
-        <div className={styles.headshots}>
+      <div className="z-10 p-4 inline-flex backdrop-blur-sm rounded-lg text-2xl">
+        <div className="relative h-[150px] w-[150px] mr-4">
           <NextImage
-            className={clsx(styles.headshot, styles.regularHeadshot)}
+            className={clsx("absolute rounded-full border-[5px] border-primary mr-4 bg-white/10 transition-all duration-500 opacity-100", styles.regularHeadshot)}
             src="/images/headshot.png"
             alt="Drew Johnson"
             width={150}
             height={150}
           />
           <NextImage
-            className={clsx(styles.headshot, styles.mandoHeadshot)}
+            className={clsx("absolute rounded-full border-[5px] border-primary mr-4 bg-white/10 transition-all duration-500 opacity-0 hover:opacity-100", styles.mandoHeadshot)}
             src="/images/mando-headshot.png"
             alt="Drew Johnson the Mandalorian"
             width={150}
             height={150}
           />
         </div>
-        <div className={styles.headerText}>
+        <div className="flex flex-col m-auto">
           <CyclingText text="Drew Johnson" />
-          <h3 className={styles.slogan}>
+          <h3 className="text-primary font-['Qube'] mt-2 text-sm">
             <i>Always Building Something</i>
           </h3>
         </div>
-      </Box>
-      <div className={styles.skills}>
+      </div>
+      <div className="h-full w-full absolute top-0 left-0">
         {skillStyles.map(({ icon, logo: Logo, style }) => (
-          <Logo key={icon} style={style} className={styles.skill} />
+          <Logo key={icon} style={style} className="absolute bottom-0 will-change-[animation] transition-all duration-300 opacity-45" />
         ))}
       </div>
     </section>

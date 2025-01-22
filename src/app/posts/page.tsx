@@ -1,7 +1,5 @@
-import styles from './posts.module.css';
-
 const PostsPage = () => {
-  return <div className={styles.root}>Posts</div>;
+  return <div>Posts</div>;
 };
 
 export default PostsPage;

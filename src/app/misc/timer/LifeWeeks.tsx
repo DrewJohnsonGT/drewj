@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Box, SimpleGrid } from '@chakra-ui/react';
 
 const EXPECTED_LIFESPAN = 80;
 
@@ -27,19 +26,17 @@ export const LifeWeeks = ({ birthDate }: { birthDate: string }) => {
   const weeksArray = Array.from({ length: totalWeeks }, (_, index) => index);
 
   return (
-    <Box textAlign="center">
-      <SimpleGrid columns={[13, null, 26, 52]} spacing={1}>
+    <div className="text-center">
+      <div className="grid grid-cols-13 md:grid-cols-26 lg:grid-cols-52 gap-1">
         {weeksArray.map((week) => (
-          <Box
+          <div
             key={week}
-            width={2.5}
-            height={2.5}
-            margin="auto"
-            bg={week < weeksLived ? 'orange.500' : 'gray.200'}
-            borderRadius="full"
+            className={`w-2.5 h-2.5 mx-auto rounded-full ${
+              week < weeksLived ? 'bg-primary' : 'bg-muted'
+            }`}
           />
         ))}
-      </SimpleGrid>
-    </Box>
+      </div>
+    </div>
   );
 };
