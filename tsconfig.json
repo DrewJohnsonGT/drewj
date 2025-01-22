@@ -25,7 +25,8 @@
         "./src/*"
       ]
     },
-    "target": "ESNext"
+    "target": "ESNext",
+    "allowJs": true
   },
   "include": [
     "next-env.d.ts",

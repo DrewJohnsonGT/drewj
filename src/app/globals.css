@@ -169,13 +169,12 @@
 
 html,
 body {
-  @apply h-[100dvh] w-[100dvw] bg-accent antialiased dark:[color-scheme:dark];
+  @apply flex h-screen w-screen flex-1 flex-col bg-accent antialiased dark:[color-scheme:dark];
 }
 
 #main {
-  @apply h-full;
+  @apply flex h-full flex-1 flex-col;
 }
-
 
 @keyframes moveAndRotate {
   0% {

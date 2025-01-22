@@ -1,5 +1,4 @@
 import { TimeSince } from './page';
-import { Flex, Text } from '@chakra-ui/react';
 
 export const TimeSinceItem = ({
   days,
@@ -9,29 +8,29 @@ export const TimeSinceItem = ({
   seconds,
 }: TimeSince) => {
   return (
-    <Flex align="center" justify="center" direction="column">
-      <Flex direction="row" align="center" justify="center" gap={2}>
+    <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-row items-center justify-center gap-2">
         {[
           { label: 'D', value: days },
           { label: 'H', value: hours },
           { label: 'M', value: minutes },
           { label: 'S', value: seconds },
         ].map((unit, index) => (
-          <Flex key={index} direction="column" align="center">
-            <Text fontSize="2xl" fontWeight="bold">
+          <div key={index} className="flex flex-col items-center">
+            <span className="text-2xl font-bold">
               {unit.value}
-            </Text>
-            <Text fontSize="sm" color="gray.500">
+            </span>
+            <span className="text-sm text-muted-foreground">
               {unit.label}
-            </Text>
-          </Flex>
+            </span>
+          </div>
         ))}
-      </Flex>
+      </div>
       {percentOfMonth && (
-        <Text fontSize="lg" color="orange.500">
+        <span className="text-lg text-orange-500">
           {percentOfMonth?.toFixed(2)}%
-        </Text>
+        </span>
       )}
-    </Flex>
+    </div>
   );
 };

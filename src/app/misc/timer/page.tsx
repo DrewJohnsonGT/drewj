@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { LifeWeeks } from './LifeWeeks';
 import { TimeSinceItem } from './TimeSinceItem';
-import { Flex } from '@chakra-ui/react';
 
 export interface TimeSince {
   days: number;
@@ -64,12 +63,12 @@ const useHomeLogic = () => {
 const TimeSincePage = () => {
   const { timeSince } = useHomeLogic();
   return (
-    <Flex direction="column" gap={4} padding={8}>
-      <Flex direction="row" gap={12} align="center" justify="center">
+    <div className="flex flex-col gap-4 p-8">
+      <div className="flex flex-row gap-12 items-center justify-center">
         {timeSince?.map((ts, index) => <TimeSinceItem key={index} {...ts} />)}
-      </Flex>
+      </div>
       <LifeWeeks birthDate="1995-05-30" />
-    </Flex>
+    </div>
   );
 };
 

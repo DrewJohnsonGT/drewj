@@ -3,9 +3,8 @@ import type { Metadata } from 'next';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { Inter } from 'next/font/google';
 import { ProgressProvider } from '~/components/ProgressProvider';
-import { Footer } from '~/components/Footer';
-import { Header } from '~/components/Header';
-import { TooltipProvider } from '~/components/TooltipProvider';
+import { TooltipProvider } from '~/components/ui/Tooltip';
+
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -24,17 +23,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className}>
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
         <NextThemesProvider attribute="class">
-          <ProgressProvider>
+          <main className="main">
             <TooltipProvider>
-              <Header />
-              <main className="main">{children}</main>
-              <Footer />
-              <Analytics />
+              {/* <Header /> */}
+              <ProgressProvider>{children}</ProgressProvider>
+              {/* <Footer /> */}
             </TooltipProvider>
-          </ProgressProvider>
+          </main>
+          <Analytics />
         </NextThemesProvider>
       </body>
     </html>

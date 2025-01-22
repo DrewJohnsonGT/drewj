@@ -57,7 +57,7 @@ export const Header = () => {
   }
 
   return (
-    <div className="z-10 absolute backdrop-blur-sm h-[var(--headerHeight)] flex items-center w-full pr-2">
+    <header className="z-10 absolute backdrop-blur-sm h-[var(--headerHeight)] flex items-center w-full pr-2 bg-primary/50 top-[var(--headerHeight)]">
       <Link href="/">
         <Cube />
       </Link>
@@ -119,6 +119,6 @@ export const Header = () => {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-    </div>
+    </header>
   );
 };

@@ -1,21 +1,18 @@
-import { AiOutlineLink } from 'react-icons/ai';
-import { FaGithub } from 'react-icons/fa6';
-import { IoMdArrowRoundBack } from 'react-icons/io';
-import {
-  Box,
-  CSSReset,
-  Flex,
-  Heading,
-  IconButton,
-  Text,
-  Tooltip,
-} from '@chakra-ui/react';
 import { compileMDX } from 'next-mdx-remote/rsc';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { AiOutlineLink } from 'react-icons/ai';
+import { FaGithub } from 'react-icons/fa6';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 import { TechnologyChip } from '~/components/TechnologyChip';
+import { Button } from '~/components/ui/Button';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '~/components/ui/Tooltip';
 import { Project } from '~/types';
 import { readProjectsFile } from '~/utils/projects';
 
@@ -37,10 +34,7 @@ const ProjectsPage = async ({
           {...props}
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            color: 'var(--orange)',
-            display: 'inline-block',
-          }}
+          className="text-orange-500 inline-block"
         />
       ),
     },
@@ -48,85 +42,97 @@ const ProjectsPage = async ({
     source: markdown,
   });
   return (
-    <div
-      style={{
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        fontSize: '1.25rem',
-        justifyContent: 'center',
-        margin: '0 auto',
-        maxWidth: 'clamp(300px, 90vw, 550px)',
-      }}>
-      <Head>
-        <title>{frontmatter?.title}</title>
-        <meta property="og:title" content={frontmatter.title} key="ogtitle" />
-        <meta
-          property="og:description"
-          content={frontmatter.description}
-          key="ogtitle"
-        />
-        <meta property="og:image" content={frontmatter.banner} key="ogimg" />
-        <meta property="og:type" content="article" />
-      </Head>
-      <Flex
-        direction="column"
-        align="center"
-        justify="center"
-        gap="1rem"
-        mb="4rem"
-        width="100%">
-        <Flex justify="space-between">
-          <Heading size="xl" mb={4}>
-            {frontmatter.title}
-          </Heading>
-          <Flex gap={2}>
-            <Tooltip
-              label="Back to All Projects"
-              aria-label="Back to All Projects">
-              <Link href="/projects" passHref>
-                <IconButton
-                  as="a"
-                  aria-label="Back to All Projects"
-                  icon={<IoMdArrowRoundBack />}
-                  variant="outline"
-                />
-              </Link>
-            </Tooltip>
+    <div className="flex flex-col items-center justify-center mx-auto max-w-[clamp(300px,90vw,550px)] text-xl">
+      <meta property="og:title" content={frontmatter.title} key="ogtitle" />
+      <meta
+        property="og:description"
+        content={frontmatter.description}
+        key="ogtitle"
+      />
+      <meta property="og:image" content={frontmatter.banner} key="ogimg" />
+      <meta property="og:type" content="article" />
+
+      <div className="flex flex-col items-center justify-center gap-4 mb-16 w-full">
+        <div className="flex justify-between w-full">
+          <h1 className="text-4xl font-bold mb-4">{frontmatter.title}</h1>
+          <div className="flex gap-2">
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link href="/projects">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      aria-label="Back to All Projects"
+                    >
+                      <IoMdArrowRoundBack className="h-4 w-4" />
+                    </Button>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>Back to All Projects</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
             {frontmatter.repository && (
-              <Tooltip label="GitHub Repository" aria-label="GitHub Repository">
-                <IconButton
-                  as="a"
-                  aria-label="GitHub Repository"
-                  href={frontmatter.repository}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  icon={<FaGithub />}
-                />
-              </Tooltip>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      asChild
+                      aria-label="GitHub Repository"
+                    >
+                      <a
+                        href={frontmatter.repository}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaGithub className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>GitHub Repository</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             )}
+
             {frontmatter.link && (
-              <Tooltip label="Live Project Link" aria-label="Live Project Link">
-                <IconButton
-                  as="a"
-                  aria-label="Project link"
-                  href={frontmatter.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  icon={<AiOutlineLink />}
-                />
-              </Tooltip>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      asChild
+                      aria-label="Project Link"
+                    >
+                      <a
+                        href={frontmatter.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <AiOutlineLink className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>Live Project Link</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             )}
-          </Flex>
-        </Flex>
+          </div>
+        </div>
+
         {frontmatter.description && (
-          <Text mb={4}>{frontmatter.description}</Text>
+          <p className="mb-4">{frontmatter.description}</p>
         )}
-        <Flex justifyContent="center">
+
+        <div className="flex justify-center">
           {frontmatter.technologies?.map((technology) => (
             <TechnologyChip key={technology} technology={technology} />
           ))}
-        </Flex>
+        </div>
+
         {frontmatter.banner && (
           <Image
             src={frontmatter.banner}
@@ -135,18 +141,11 @@ const ProjectsPage = async ({
             height={300}
           />
         )}
-      </Flex>
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1rem',
-          justifyContent: 'center',
-        }}>
-        <CSSReset />
+      </div>
+
+      <div className="flex flex-col items-center justify-center gap-4">
         {content}
-      </Box>
+      </div>
     </div>
   );
 };

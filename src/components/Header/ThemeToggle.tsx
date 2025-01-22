@@ -1,6 +1,7 @@
 'use client';
 
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 import { EmpireSVG } from '~/assets/svg/empire';
 import { RebelsSVG } from '~/assets/svg/rebels';
 import { Button } from '~/components/ui/Button';
@@ -8,6 +9,15 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/Tooltip
 
 export const ThemeToggle = () => {
   const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <Tooltip>

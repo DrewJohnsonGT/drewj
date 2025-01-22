@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
+import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/Tooltip';
 import {
   GITHUB_URL,
   INSTAGRAM_URL,
@@ -37,22 +38,24 @@ export const Footer = () => {
   }
 
   return (
-    <footer className="absolute bottom-0 w-full flex justify-center items-center h-[var(--footerHeight)] backdrop-blur-sm gap-2">
+    <footer className="absolute bottom-0 w-full flex justify-center items-center bg-primary/50 h-[var(--footerHeight)] backdrop-blur-sm gap-2">
       {LINKS.map((link) => {
         const Icon = link.icon;
         return (
-          <div key={link.title} className="group relative">
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 border rounded-md flex items-center justify-center hover:bg-gray-100/10">
-              <Icon className={`h-7 w-7 ${link.color}`} />
-            </a>
-            <span className="absolute -top-8 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">
+          <Tooltip key={link.title}>
+            <TooltipTrigger asChild>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 border rounded-md flex items-center justify-center hover:bg-muted/10">
+                <Icon className={`h-7 w-7 ${link.color}`} />
+              </a>
+            </TooltipTrigger>
+            <TooltipContent>
               {link.title}
-            </span>
-          </div>
+            </TooltipContent>
+          </Tooltip>
         );
       })}
     </footer>

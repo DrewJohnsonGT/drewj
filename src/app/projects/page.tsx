@@ -1,20 +1,16 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import { AiOutlineLink, AiOutlineZoomIn } from 'react-icons/ai';
 import { RiGitRepositoryLine } from 'react-icons/ri';
-import Link from 'next/link';
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Card,
-  CardBody,
-  CardFooter,
-  Heading,
-  Image,
-  SimpleGrid,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
 import { TechnologyChip } from '~/components/TechnologyChip';
+import { Button } from '~/components/ui/Button';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '~/components/ui/Card';
 import { getAllProjectsFrontMatter } from '~/utils/projects';
 
 const ProjectsPage = async () => {
@@ -23,75 +19,82 @@ const ProjectsPage = async () => {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   return (
-    <SimpleGrid minChildWidth="350px" spacing={4} className="container">
+    <div className="container grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {projectsSortedByDate.map((project) => (
-        <Card maxW="xxl" key={project.title} p={1}>
-          <CardBody p={2}>
-            <Heading size="lg" textAlign="center" mb={2}>
-              {project.title}
-            </Heading>
-            <Image
-              src={project.banner}
-              alt={project.title}
-              borderRadius="lg"
-              maxHeight={200}
-              mx="auto"
-            />
-            <Stack mt="2" spacing="1">
-              <Text lineHeight={1.25}>{project.description}</Text>
-              <Box
-                mt={2}
-                justifyContent="center"
-                alignItems="center"
-                display="flex"
-                flexWrap="wrap">
-                {project.technologies?.map((technology) => (
-                  <TechnologyChip key={technology} technology={technology} />
-                ))}
-              </Box>
-            </Stack>
-          </CardBody>
-          <CardFooter p={2} justifyContent="center" alignItems="center">
-            <ButtonGroup>
-              {project.repository && (
-                <Button
-                  as="a"
-                  size="sm"
+        <Card key={project.title} className="p-1">
+          <CardHeader className="p-2 space-y-2">
+            <CardTitle className="text-center">{project.title}</CardTitle>
+            <div className="relative h-[200px] w-full">
+              <Image
+                src={project.banner}
+                alt={project.title}
+                fill
+                className="rounded-lg object-contain"
+              />
+            </div>
+          </CardHeader>
+          <CardContent className="p-2 space-y-2">
+            <p className="leading-snug">{project.description}</p>
+            <div className="flex flex-wrap justify-center items-center gap-1">
+              {project.technologies?.map((technology) => (
+                <TechnologyChip key={technology} technology={technology} />
+              ))}
+            </div>
+          </CardContent>
+          <CardFooter className="p-2 flex justify-center items-center gap-2">
+            {project.repository && (
+              <Button
+                asChild
+                size="sm"
+                variant="secondary"
+              >
+                <a
                   href={project.repository}
-                  rightIcon={<RiGitRepositoryLine />}
                   target="_blank"
-                  variant="solid"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1"
+                >
                   Repo
-                </Button>
-              )}
-              {project.link && (
-                <Button
-                  as="a"
-                  size="sm"
-                  variant="solid"
+                  <RiGitRepositoryLine />
+                </a>
+              </Button>
+            )}
+            {project.link && (
+              <Button
+                asChild
+                size="sm"
+                variant="secondary"
+              >
+                <a
                   href={project.link}
-                  rightIcon={<AiOutlineLink />}
                   target="_blank"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1"
+                >
                   Visit
-                </Button>
-              )}
-              {project.slug && (
-                <Link href={`/projects/${project.slug}`}>
-                  <Button
-                    size="sm"
-                    variant="solid"
-                    rightIcon={<AiOutlineZoomIn />}>
-                    Details
-                  </Button>
+                  <AiOutlineLink />
+                </a>
+              </Button>
+            )}
+            {project.slug && (
+              <Button
+                asChild
+                size="sm"
+                variant="secondary"
+              >
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="flex items-center gap-1"
+                >
+                  Details
+                  <AiOutlineZoomIn />
                 </Link>
-              )}
-            </ButtonGroup>
+              </Button>
+            )}
           </CardFooter>
         </Card>
       ))}
-    </SimpleGrid>
+    </div>
   );
 };
 
