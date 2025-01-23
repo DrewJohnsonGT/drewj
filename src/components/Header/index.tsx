@@ -54,7 +54,7 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-10 flex min-h-[var(--headerHeight)] items-center pr-2 backdrop-blur-sm">
-      <Link href="/">
+      <Link href="/" className="mr-auto">
         <Cube />
       </Link>
       <nav className="relative ml-[calc(var(--headerHeight)*0.2)] mr-auto hidden md:block">
@@ -92,24 +92,23 @@ export const Header = () => {
       <h1 className="ml-4 block font-[Cube] text-[0.5rem] font-bold md:hidden">
         {ROUTES[findRouteIndex()]?.title ?? ROUTES[findRouteIndex()]?.label}
       </h1>
-      <ThemeToggle />
       <div className="flex md:hidden">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
               variant="ghost"
               size="icon"
-              className="relative"
+              className="size-12"
               aria-label="Navigation menu"
             >
-              <MdMenu className="h-5 w-5" />
+              <MdMenu className="size-10" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
+          <DropdownMenuContent className="w-36">
             {ROUTES.map((route) => (
               <Link href={`/${route.value}`} key={route.value}>
-                <DropdownMenuItem>
-                  <route.icon className="mr-2 h-4 w-4" />
+                <DropdownMenuItem className="flex items-center">
+                  <route.icon className="mr-2 size-6" />
                   {route.label}
                 </DropdownMenuItem>
               </Link>
@@ -117,6 +116,7 @@ export const Header = () => {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
+      <ThemeToggle />
     </header>
   );
 };

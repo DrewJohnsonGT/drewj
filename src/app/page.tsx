@@ -63,7 +63,7 @@ export default function Home() {
       ref={sectionRef}
       className="flex flex-1 flex-col items-center justify-center overflow-hidden"
     >
-      <div className="z-10 inline-flex rounded-lg text-2xl backdrop-blur-sm md:m-2 md:flex-col md:items-center md:gap-2 md:text-center">
+      <div className="z-10 m-2 inline-flex flex-col items-center gap-2 rounded-lg text-center text-2xl backdrop-blur-sm md:flex-row">
         <div className="relative mr-4 h-[150px] w-[150px] md:mr-0">
           <NextImage
             className="absolute mr-4 rounded-full border-[5px] border-primary bg-white/10 opacity-100 transition-all duration-500"
@@ -82,7 +82,7 @@ export default function Home() {
         </div>
         <div className="m-auto flex flex-col">
           <CyclingText text="Drew Johnson" />
-          <h3 className="mt-2 font-['Qube'] text-sm text-primary">
+          <h3 className="mt-2 font-['Qube'] text-sm text-primary md:text-start">
             <i>Always Building Something</i>
           </h3>
         </div>
