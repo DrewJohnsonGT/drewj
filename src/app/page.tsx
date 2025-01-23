@@ -82,7 +82,7 @@ export default function Home() {
         </div>
         <div className="m-auto flex flex-col">
           <CyclingText text="Drew Johnson" />
-          <h3 className="mt-2 font-['Qube'] text-sm text-primary md:text-start">
+          <h3 className="mt-2 font-['Qube'] text-base text-primary md:text-start">
             <i>Always Building Something</i>
           </h3>
         </div>

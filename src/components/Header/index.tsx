@@ -89,7 +89,7 @@ export const Header = () => {
           ref={underlineRef}
         />
       </nav>
-      <h1 className="ml-4 block font-[Cube] text-[0.5rem] font-bold md:hidden">
+      <h1 className="mx-auto block font-[Cube] text-[0.65rem] font-bold md:hidden">
         {ROUTES[findRouteIndex()]?.title ?? ROUTES[findRouteIndex()]?.label}
       </h1>
       <div className="flex md:hidden">
