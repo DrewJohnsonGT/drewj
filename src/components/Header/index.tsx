@@ -53,11 +53,11 @@ export const Header = () => {
   }, [activeIndex]);
 
   return (
-    <header className="sticky top-0 z-10 flex min-h-[var(--headerHeight)] items-center bg-primary/10 pr-2 backdrop-blur-sm">
+    <header className="sticky top-0 z-10 flex min-h-[var(--headerHeight)] items-center pr-2 backdrop-blur-sm">
       <Link href="/">
         <Cube />
       </Link>
-      <nav className="relative ml-[calc(var(--headerHeight)*0.2)] mr-auto">
+      <nav className="relative ml-[calc(var(--headerHeight)*0.2)] mr-auto hidden md:block">
         <ul className="m-0 inline-flex list-none p-0">
           {ROUTES.map((route, index) => (
             <li
