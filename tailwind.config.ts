@@ -10,8 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
+        rotating: 'rotating 80s linear infinite',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -79,15 +78,17 @@ const config: Config = {
         input: INPUT_HEIGHT,
       },
       keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
+        rotating: {
+          '0%': {
+            // If you want the old "translateZ" style
+            transform:
+              'translateZ(calc(var(--translateZ)*-1)) rotateX(0deg) rotateY(0deg)',
+          },
+          '100%': {
+            transform:
+              'translateZ(calc(var(--translateZ)*-1)) rotateX(360deg) rotateY(360deg)',
+          },
         },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
-        },
-      
       },
       size: {
         input: INPUT_HEIGHT,

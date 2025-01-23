@@ -1,4 +1,5 @@
 import { IconType } from 'react-icons';
+import { DiMsqlServer } from 'react-icons/di';
 import { FaApple, FaNodeJs, FaReact } from 'react-icons/fa';
 import {
   FaChrome,
@@ -18,7 +19,6 @@ import {
   SiCapacitor,
   SiIonic,
   SiMatterdotjs,
-  SiMicrosoftsqlserver,
   SiP5Dotjs,
   SiPostgresql,
   SiPrisma,
@@ -111,7 +111,7 @@ const TECHNOLOGY_CHIP_MAP: Record<
   [Technology.MSSQL]: {
     backgroundColor: '#2D3748',
     color: '#E2E8F0',
-    icon: SiMicrosoftsqlserver,
+    icon: DiMsqlServer,
     label: 'MSSQL',
   },
   [Technology.Printing]: {
@@ -198,17 +198,15 @@ export const TechnologyChip = ({ technology }: { technology: Technology }) => {
   const tech = TECHNOLOGY_CHIP_MAP[technology];
   return (
     <Badge
-      className="inline-flex items-center justify-center gap-[0.15rem] p-1 m-0.5"
+      className="m-0.5 inline-flex items-center justify-center gap-[0.15rem] p-1"
       style={{
         color: tech.color,
         backgroundColor: tech.backgroundColor,
         boxShadow: `inset 0 0 0px 2px ${tech.color}`,
-      }}>
+      }}
+    >
       {tech?.icon && (
-        <tech.icon
-          style={{ color: tech.color }}
-          className="text-[22px]"
-        />
+        <tech.icon style={{ color: tech.color }} className="text-[22px]" />
       )}
       <span style={{ color: tech.color }}>{tech?.label}</span>
     </Badge>

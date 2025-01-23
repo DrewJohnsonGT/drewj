@@ -215,3 +215,14 @@ body {
     transform: translateX(200vw) rotate(-360deg);
   }
 }
+
+@keyframes rotating {
+  from {
+    transform: translateZ(calc(var(--translateZ) * -1)) rotateY(0deg)
+      rotateX(0deg);
+  }
+  to {
+    transform: translateZ(calc(var(--translateZ) * -1)) rotateY(360deg)
+      rotateX(360deg);
+  }
+}

@@ -9,7 +9,7 @@ export const useElementSize = () => {
   const elementRef = useRef<HTMLElement | null>(null);
   const [size, setSize] = useState<Size>({ height: 0, width: 0 });
 
-  const resizeTimeout = useRef<NodeJS.Timeout>();
+  const resizeTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleResize = () => {

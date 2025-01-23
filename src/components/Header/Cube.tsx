@@ -45,54 +45,70 @@ export const Cube = () => {
   const currentPath = usePathname().split('/')[1];
   const focusedSide = SIDES.find((s) => s.route === currentPath);
 
-  const sideClasses = {
+  // Each face transform: rotate + translateZ in one bracket
+  const sideClasses: Record<string, string> = {
     front:
-      'rotate-y-0 translate-z-[calc(var(--cubeSize)/2)] bg-[var(--orange)]',
-    back: 'rotate-y-180 translate-z-[calc(var(--cubeSize)/2)] bg-[var(--orange)]',
-    right: 'rotate-y-90 translate-z-[calc(var(--cubeSize)/2)] bg-[var(--red)]',
-    left: '-rotate-y-90 translate-z-[calc(var(--cubeSize)/2)] bg-[var(--lightOrange)]',
-    top: '-rotate-x-90 translate-z-[calc(var(--cubeSize)/2)] bg-[var(--lightOrange)]',
+      '[transform:rotateY(0deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--orange)]',
+    back: '[transform:rotateY(180deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--orange)]',
+    right:
+      '[transform:rotateY(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--red)]',
+    left: '[transform:rotateY(-90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--lightOrange)]',
+    top: '[transform:rotateX(-90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--lightOrange)]',
     bottom:
-      'rotate-x-90 translate-z-[calc(var(--cubeSize)/2)] bg-[var(--yellow)]',
+      '[transform:rotateX(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--yellow)]',
   };
 
-  const showClasses = {
-    'show-front': 'rotate-y-0',
-    'show-back': 'rotate-y-180',
-    'show-right': 'rotate-y-90',
-    'show-left': '-rotate-y-90',
-    'show-top': '-rotate-x-90',
-    'show-bottom': 'rotate-x-90',
+  // How to rotate the *entire cube* to show a certain side.
+  // Again, must be bracketed if we're using rotateX or rotateY not covered by built-in classes.
+  const showClasses: Record<string, string> = {
+    'show-front': '[transform:rotateY(0deg)]',
+    'show-back': '[transform:rotateY(180deg)]',
+    'show-right': '[transform:rotateY(90deg)]',
+    'show-left': '[transform:rotateY(-90deg)]',
+    'show-top': '[transform:rotateX(-90deg)]',
+    'show-bottom': '[transform:rotateX(90deg)]',
   };
 
   return (
-    <div className="perspective-[calc(var(--cubeSize)*5)] ml-[calc(var(--headerHeight)*0.1)] flex h-[var(--cubeSize)] w-[var(--cubeSize)] items-center justify-center">
+    <div
+      className={clsx(
+        // Outer container: apply perspective & ensure it's big enough
+        'overflow-visible',
+        'ml-[calc(var(--headerHeight)*0.2)] h-[var(--cubeSize)] w-[var(--cubeSize)]',
+        'flex items-center justify-center',
+        // Single bracket for perspective
+        '[perspective:calc(var(--cubeSize)*5)]',
+      )}
+    >
       <div
         className={clsx(
-          'transform-style-3d relative h-[var(--cubeSize)] w-[var(--cubeSize)] transition-transform duration-1000',
+          // The cube wrapper: preserve-3D so child transforms combine in 3D
+          'relative h-full w-full [transform-style:preserve-3d]',
+          // Smooth transform
+          'transition-transform duration-1000',
+          // If no side is focused => spin infinitely
+          !focusedSide && 'animate-rotating [animation-duration:20s]',
+          // If a side is focused => rotate so that side is forward
+          focusedSide && showClasses[`show-${focusedSide.position}`],
+          // Also spin on hover (4 turns) if a side is focused
           focusedSide &&
-            showClasses[
-              `show-${focusedSide.position}` as keyof typeof showClasses
-            ],
-          Boolean(focusedSide)
-            ? 'hover:rotate-y-[1440deg] hover:rotate-x-[1440deg] hover:duration-4000 hover:linear hover:transition-transform'
-            : 'animate-[rotating_20s_linear_infinite]',
+            'hover:duration-[4000ms] hover:ease-linear hover:[transform:rotateX(1440deg)_rotateY(1440deg)]',
         )}
       >
-        {SIDES.map((side) => {
-          const Icon = side.icon;
-          return (
-            <div
-              className={clsx(
-                'absolute flex h-[var(--cubeSize)] w-[var(--cubeSize)] items-center justify-center border border-foreground text-xl opacity-80',
-                sideClasses[side.position as keyof typeof sideClasses],
-              )}
-              key={side.route}
-            >
-              <Icon className="h-[calc(var(--cubeSize)*0.65)] w-[calc(var(--cubeSize)*0.65)] text-foreground opacity-100" />
-            </div>
-          );
-        })}
+        {SIDES.map(({ icon: Icon, position, route }) => (
+          <div
+            key={route}
+            className={clsx(
+              // Each face is absolutely positioned in the 3D space
+              'absolute h-[var(--cubeSize)] w-[var(--cubeSize)]',
+              'flex items-center justify-center border border-foreground opacity-80',
+              // Combine rotation + translateZ in a single bracket
+              sideClasses[position],
+            )}
+          >
+            <Icon className="h-[calc(var(--cubeSize)*0.65)] w-[calc(var(--cubeSize)*0.65)] text-foreground opacity-100" />
+          </div>
+        ))}
       </div>
     </div>
   );

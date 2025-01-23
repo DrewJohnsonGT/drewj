@@ -17,11 +17,12 @@ import { Project } from '~/types';
 import { readProjectsFile } from '~/utils/projects';
 
 const ProjectsPage = async ({
-  params: { slug },
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) => {
-  const markdown = await readProjectsFile(slug);
+  const resolvedParams = await params;
+  const markdown = await readProjectsFile(resolvedParams.slug);
 
   if (!markdown) {
     notFound();
