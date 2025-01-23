@@ -18,6 +18,18 @@ const getRandomVariance = (min: number, max: number): number =>
 export default function Home() {
   const { ref: sectionRef, size: sectionSize } = useElementSize();
   const [skillStyles, setSkillStyles] = useState<SkillProps[]>([]);
+  const [showMando, setShowMando] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowMando(true);
+      setTimeout(() => {
+        setShowMando(false);
+      }, 3000);
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const maxIconSize = sectionSize.height * 0.25;
@@ -54,14 +66,14 @@ export default function Home() {
       <div className="z-10 inline-flex rounded-lg text-2xl backdrop-blur-sm md:m-2 md:flex-col md:items-center md:gap-2 md:text-center">
         <div className="relative mr-4 h-[150px] w-[150px] md:mr-0">
           <NextImage
-            className="absolute mr-4 rounded-full border-[5px] border-[var(--chakra-colors-orange-500)] bg-white/10 opacity-100 transition-all duration-500"
+            className="absolute mr-4 rounded-full border-[5px] border-primary bg-white/10 opacity-100 transition-all duration-500"
             src="/images/headshot.png"
             alt="Drew Johnson"
             width={150}
             height={150}
           />
           <NextImage
-            className="absolute mr-4 rounded-full border-[5px] border-[var(--chakra-colors-orange-500)] bg-white/10 opacity-0 transition-all duration-500 hover:opacity-100"
+            className={`absolute mr-4 rounded-full border-[5px] border-primary bg-white/10 transition-all duration-500 ${showMando ? 'opacity-100' : 'opacity-0 hover:opacity-100'}`}
             src="/images/mando-headshot.png"
             alt="Drew Johnson the Mandalorian"
             width={150}

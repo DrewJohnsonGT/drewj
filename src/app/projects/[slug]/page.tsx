@@ -34,7 +34,7 @@ const ProjectsPage = async ({
           {...props}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-orange-500 inline-block"
+          className="inline-block text-orange-500"
         />
       ),
     },
@@ -42,19 +42,19 @@ const ProjectsPage = async ({
     source: markdown,
   });
   return (
-    <div className="flex flex-col items-center justify-center mx-auto max-w-[clamp(300px,90vw,550px)] text-xl">
+    <div className="mx-auto flex max-w-[clamp(300px,90vw,550px)] flex-col items-center justify-center text-xl">
       <meta property="og:title" content={frontmatter.title} key="ogtitle" />
       <meta
         property="og:description"
         content={frontmatter.description}
-        key="ogtitle"
+        key="ogdescription"
       />
-      <meta property="og:image" content={frontmatter.banner} key="ogimg" />
+      <meta property="og:image" content={frontmatter.banner} key="ogimage" />
       <meta property="og:type" content="article" />
 
-      <div className="flex flex-col items-center justify-center gap-4 mb-16 w-full">
-        <div className="flex justify-between w-full">
-          <h1 className="text-4xl font-bold mb-4">{frontmatter.title}</h1>
+      <div className="mb-16 flex w-full flex-col items-center justify-center gap-4">
+        <div className="flex w-full justify-between">
+          <h1 className="mb-4 text-4xl font-bold">{frontmatter.title}</h1>
           <div className="flex gap-2">
             <TooltipProvider>
               <Tooltip>
