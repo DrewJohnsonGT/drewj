@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { LifeWeeks } from './LifeWeeks';
 import { TimeSinceItem } from './TimeSinceItem';
+import { ScrollArea } from '~/components/ui/ScrollArea';
 
 export interface TimeSince {
   days: number;
@@ -63,11 +64,13 @@ const useHomeLogic = () => {
 const TimeSincePage = () => {
   const { timeSince } = useHomeLogic();
   return (
-    <div className="flex flex-col gap-4 p-8">
-      <div className="flex flex-row gap-12 items-center justify-center">
-        {timeSince?.map((ts, index) => <TimeSinceItem key={index} {...ts} />)}
-      </div>
-      <LifeWeeks birthDate="1995-05-30" />
+    <div className="flex flex-1 flex-col gap-4">
+      <ScrollArea className="flex flex-1">
+        <div className="flex flex-row items-center justify-center gap-12">
+          {timeSince?.map((ts, index) => <TimeSinceItem key={index} {...ts} />)}
+        </div>
+        <LifeWeeks birthDate="1995-05-30" />
+      </ScrollArea>
     </div>
   );
 };

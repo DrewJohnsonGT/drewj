@@ -1,10 +1,18 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from '~/components/ui/Tooltip';
-import { GITHUB_URL, INSTAGRAM_URL, LINKED_IN_URL } from '~/constants';
+import {
+  GITHUB_URL,
+  INSTAGRAM_URL,
+  LINKED_IN_URL,
+  NO_HEADER_FOOTER_ROUTES,
+} from '~/constants';
 import { cn } from '~/utils/cn';
 
 const LINKS = [
@@ -29,6 +37,11 @@ const LINKS = [
 ];
 
 export const Footer = () => {
+  const pathname = usePathname();
+  if (NO_HEADER_FOOTER_ROUTES.includes(pathname)) {
+    return <footer className="min-h-[var(--footerHeight)]" />;
+  }
+
   return (
     <footer className="sticky bottom-0 z-10 flex min-h-[var(--footerHeight)] w-full items-center justify-center gap-2 backdrop-blur-sm">
       {LINKS.map((link) => {

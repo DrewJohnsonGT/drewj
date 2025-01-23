@@ -5,6 +5,8 @@ import { FaRegAddressCard } from 'react-icons/fa6';
 import { FiLayers } from 'react-icons/fi';
 import { RiFileUserLine } from 'react-icons/ri';
 
+export const NO_HEADER_FOOTER_ROUTES = ['/misc/timer'];
+
 export const ROUTES = [
   {
     icon: FaHome,

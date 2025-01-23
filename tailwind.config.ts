@@ -74,6 +74,11 @@ const config: Config = {
           foreground: 'hsl(var(--warning-foreground))',
         },
       },
+      gridTemplateColumns: {
+        13: 'repeat(13, minmax(0, 1fr))',
+        26: 'repeat(26, minmax(0, 1fr))',
+        52: 'repeat(52, minmax(0, 1fr))',
+      },
       height: {
         input: INPUT_HEIGHT,
       },

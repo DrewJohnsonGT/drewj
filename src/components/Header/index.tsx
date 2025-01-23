@@ -14,7 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '~/components/ui/DropdownMenu';
-import { ROUTES } from '~/constants';
+import { NO_HEADER_FOOTER_ROUTES, ROUTES } from '~/constants';
 
 export const Header = () => {
   const pathname = usePathname();
@@ -51,6 +51,10 @@ export const Header = () => {
       }
     }
   }, [activeIndex]);
+
+  if (NO_HEADER_FOOTER_ROUTES.includes(pathname)) {
+    return <header className="min-h-[var(--headerHeight)]" />;
+  }
 
   return (
     <header className="sticky top-0 z-10 flex min-h-[var(--headerHeight)] items-center pr-2 backdrop-blur-sm">
