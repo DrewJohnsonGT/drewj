@@ -43,7 +43,7 @@ const ProjectsPage = async ({
     source: markdown,
   });
   return (
-    <div className="mx-auto flex max-w-[clamp(300px,90vw,550px)] flex-col items-center justify-center text-xl">
+    <div className="mx-auto flex max-w-[clamp(300px,90vw,550px)] flex-col items-center justify-center pb-[var(--footerHeight)] text-xl">
       <meta property="og:title" content={frontmatter.title} key="ogtitle" />
       <meta
         property="og:description"
@@ -128,7 +128,7 @@ const ProjectsPage = async ({
           <p className="mb-4">{frontmatter.description}</p>
         )}
 
-        <div className="flex justify-center">
+        <div className="flex max-w-lg flex-1 flex-wrap items-center justify-center gap-1">
           {frontmatter.technologies?.map((technology) => (
             <TechnologyChip key={technology} technology={technology} />
           ))}

@@ -12,7 +12,7 @@ const ResumePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="flex flex-col items-center justify-center pb-20 text-center">
+    <div className="flex flex-col items-center justify-center pb-[var(--footerHeight)] text-center">
       <div className="mx-auto">
         <Button className="my-4">
           <a

@@ -80,7 +80,6 @@ const config: Config = {
       keyframes: {
         rotating: {
           '0%': {
-            // If you want the old "translateZ" style
             transform:
               'translateZ(calc(var(--translateZ)*-1)) rotateX(0deg) rotateY(0deg)',
           },

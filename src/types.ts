@@ -2,7 +2,7 @@ export enum Technology {
   React = 'React',
   Next = 'Next.js',
   TypeScript = 'TypeScript',
-  Tailwind = 'Tailwind CSS',
+  Tailwind = 'Tailwind',
   Shadcn = 'Shadcn',
   MatterJS = 'Matter.js',
   Vite = 'Vite',

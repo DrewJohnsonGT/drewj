@@ -33,7 +33,7 @@ export default function RootLayout({
             <div className="relative flex min-h-screen flex-col">
               <Header />
               <ScrollArea className="-mb-[var(--footerHeight)] -mt-[var(--headerHeight)] flex h-full flex-1 flex-col">
-                <div className="flex h-screen flex-1 flex-col pb-[calc(var(--footerHeight)+1rem)] pt-[calc(var(--headerHeight)+1rem)]">
+                <div className="flex h-screen flex-1 flex-col pb-[var(--footerHeight)] pt-[calc(var(--headerHeight)+1rem)]">
                   <ProgressProvider>{children}</ProgressProvider>
                 </div>
               </ScrollArea>

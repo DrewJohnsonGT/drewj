@@ -82,7 +82,7 @@ const TECHNOLOGY_CHIP_MAP: Record<
     backgroundColor: '#3182CE',
     color: '#BEE3F8',
     icon: RiTailwindCssFill,
-    label: 'Tailwind CSS',
+    label: 'Tailwind',
   },
   [Technology.MatterJS]: {
     backgroundColor: '#38A169',
@@ -198,7 +198,7 @@ export const TechnologyChip = ({ technology }: { technology: Technology }) => {
   const tech = TECHNOLOGY_CHIP_MAP[technology];
   return (
     <Badge
-      className="m-0.5 inline-flex items-center justify-center gap-[0.15rem] p-1"
+      className="inline-flex items-center justify-center gap-[0.15rem] p-1"
       style={{
         color: tech.color,
         backgroundColor: tech.backgroundColor,

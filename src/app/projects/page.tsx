@@ -19,31 +19,34 @@ const ProjectsPage = async () => {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   return (
-    <div className="grid grid-cols-1 justify-center gap-4 px-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 justify-center gap-4 px-4 pb-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {projectsSortedByDate.map((project) => (
         <Card key={project.title} className="p-1">
-          <CardHeader className="space-y-2 p-2">
-            <CardTitle className="text-center">{project.title}</CardTitle>
-            <div className="relative h-[200px] w-full">
+          <CardHeader className="p-0">
+            <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
               <Image
                 src={project.banner}
                 alt={project.title}
+                placeholder="empty"
+                className="object-cover"
                 fill
-                className="rounded-lg object-contain"
               />
             </div>
+            <div className="p-2 text-center">
+              <CardTitle>{project.title}</CardTitle>
+            </div>
           </CardHeader>
-          <CardContent className="space-y-2 p-2">
+          <CardContent className="flex flex-1 flex-col p-0">
             <p className="leading-snug">{project.description}</p>
-            <div className="flex flex-wrap items-center justify-center gap-1">
+            <div className="mt-auto flex flex-wrap items-end justify-center gap-1">
               {project.technologies?.map((technology) => (
                 <TechnologyChip key={technology} technology={technology} />
               ))}
             </div>
           </CardContent>
-          <CardFooter className="flex items-center justify-center gap-2 p-2">
+          <CardFooter className="mt-2 flex items-center justify-center gap-2 p-2">
             {project.repository && (
-              <Button asChild size="sm" variant="secondary">
+              <Button variant="outline" className="flex-1">
                 <a
                   href={project.repository}
                   target="_blank"
@@ -56,7 +59,7 @@ const ProjectsPage = async () => {
               </Button>
             )}
             {project.link && (
-              <Button asChild size="sm" variant="secondary">
+              <Button variant="outline" className="flex-1">
                 <a
                   href={project.link}
                   target="_blank"
@@ -69,7 +72,7 @@ const ProjectsPage = async () => {
               </Button>
             )}
             {project.slug && (
-              <Button asChild size="sm" variant="secondary">
+              <Button variant="outline" className="flex-1">
                 <Link
                   href={`/projects/${project.slug}`}
                   className="flex items-center gap-1"
