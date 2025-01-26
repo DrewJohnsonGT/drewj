@@ -92,7 +92,7 @@ export const Cube = () => {
           focusedSide && showClasses[`show-${focusedSide.position}`],
           // Also spin on hover (4 turns) if a side is focused
           focusedSide &&
-            'hover:duration-[8000ms] hover:ease-linear hover:[transform:rotateX(1440deg)_rotateY(1440deg)]',
+            'hover:duration-4000 hover:ease-linear hover:[transform:rotateX(1440deg)_rotateY(1440deg)]',
         )}
       >
         {SIDES.map(({ icon: Icon, position, route }) => (

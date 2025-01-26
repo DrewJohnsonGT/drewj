@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        rotating: 'rotating 80s linear infinite',
+        rotating: 'rotating linear infinite',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -96,6 +96,18 @@ const config: Config = {
       },
       size: {
         input: INPUT_HEIGHT,
+      },
+      transitionDuration: {
+        DEFAULT: '150ms',
+        75: '75ms',
+        100: '100ms',
+        150: '150ms',
+        200: '200ms',
+        300: '300ms',
+        500: '500ms',
+        700: '700ms',
+        1000: '1000ms',
+        4000: '4000ms',
       },
     },
   },
