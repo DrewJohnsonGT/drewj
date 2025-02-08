@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { AiOutlineLink, AiOutlineZoomIn } from 'react-icons/ai';
 import { RiGitRepositoryLine } from 'react-icons/ri';
 import { TechnologyChip } from '~/components/TechnologyChip';
-import { Button } from '~/components/ui/Button';
+import { buttonVariants } from '~/components/ui/Button';
 import {
   Card,
   CardContent,
@@ -11,6 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from '~/components/ui/Card';
+import { cn } from '~/utils/cn';
 import { getAllProjectsFrontMatter } from '~/utils/projects';
 
 const ProjectsPage = async () => {
@@ -46,41 +47,44 @@ const ProjectsPage = async () => {
           </CardContent>
           <CardFooter className="mt-2 flex items-center justify-center gap-2 p-2">
             {project.repository && (
-              <Button variant="outline" className="flex-1">
-                <a
-                  href={project.repository}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1"
-                >
-                  Repo
-                  <RiGitRepositoryLine />
-                </a>
-              </Button>
+              <a
+                href={project.repository}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ variant: 'outline' }),
+                  'flex flex-1 items-center gap-1',
+                )}
+              >
+                Repo
+                <RiGitRepositoryLine />
+              </a>
             )}
             {project.link && (
-              <Button variant="outline" className="flex-1">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1"
-                >
-                  Visit
-                  <AiOutlineLink />
-                </a>
-              </Button>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ variant: 'outline' }),
+                  'flex flex-1 items-center gap-1',
+                )}
+              >
+                Visit
+                <AiOutlineLink />
+              </a>
             )}
             {project.slug && (
-              <Button variant="outline" className="flex-1">
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="flex items-center gap-1"
-                >
-                  Details
-                  <AiOutlineZoomIn />
-                </Link>
-              </Button>
+              <Link
+                href={`/projects/${project.slug}`}
+                className={cn(
+                  buttonVariants({ variant: 'outline' }),
+                  'flex flex-1 items-center gap-1',
+                )}
+              >
+                Details
+                <AiOutlineZoomIn />
+              </Link>
             )}
           </CardFooter>
         </Card>
