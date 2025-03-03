@@ -26,7 +26,7 @@ const TIMES = [
   {
     goal: ONE_MONTH,
     time: new Date(
-      'Sun Mar 2nd 2025 14:09:00 GMT-0500 (Eastern Standard Time)',
+      'Sun Mar 2nd 2025 21:02:00 GMT-0500 (Eastern Standard Time)',
     ),
   },
 ];
