@@ -16,44 +16,38 @@ export interface TimeSince {
 const ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
 const ONE_MONTH = ONE_WEEK * 4;
 
-const TIMES = [
-  {
-    goal: ONE_MONTH,
-    time: new Date('Tue Mar 18 2025 14:45:00 GMT-0500 (Eastern Standard Time)'),
-  },
-];
+const TIME = {
+  goal: ONE_MONTH,
+  time: new Date('Tue Mar 18 2025 14:45:39 GMT-0400 (Eastern Daylight Time)'),
+};
 
 const getPercentOfGoal = (date: Date, goal: number) => {
-  const currentDateEastern = new Date(
-    new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
-  );
-  const ms = currentDateEastern.getTime() - date.getTime();
+  const ms = Date.now() - date.getTime();
   const percentage = (ms / goal) * 100;
   return Math.round(percentage * 100) / 100;
 };
 
-const useHomeLogic = () => {
-  const [timeSince, setTimeSince] = useState<TimeSince[]>();
+const getTimeSince = (time: Date) => {
+  const now = new Date();
+  const diff = now.getTime() - time.getTime();
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  return { days, hours, minutes, seconds };
+};
 
-  // Find time since TIME and update every second
-  const getTimeSince = (time: Date) => {
-    const now = new Date();
-    const diff = now.getTime() - time.getTime();
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    return { days, hours, minutes, seconds };
-  };
+const useHomeLogic = () => {
+  const [timeSince, setTimeSince] = useState<TimeSince>();
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeSince(
-        TIMES.map(({ goal, time }) => ({
-          ...getTimeSince(time),
-          percentOfMonth: getPercentOfGoal(time, goal),
-        })),
-      );
+      const timeSince = getTimeSince(TIME.time);
+      const percentOfGoal = getPercentOfGoal(TIME.time, TIME.goal);
+      setTimeSince({
+        ...timeSince,
+        percentOfMonth: percentOfGoal,
+      });
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -69,7 +63,7 @@ const TimeSincePage = () => {
     <div className="flex flex-1 flex-col gap-4">
       <ScrollArea className="flex flex-1">
         <div className="flex flex-row items-center justify-center gap-12">
-          {timeSince?.map((ts, index) => <TimeSinceItem key={index} {...ts} />)}
+          {timeSince && <TimeSinceItem {...timeSince} />}
         </div>
         <LifeWeeks birthDate="1995-05-30" />
       </ScrollArea>
