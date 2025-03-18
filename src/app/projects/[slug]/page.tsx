@@ -62,7 +62,7 @@ const ProjectsPage = async ({
                 <TooltipTrigger asChild>
                   <Link href="/projects">
                     <Button
-                      variant="outline"
+                      variant="primary"
                       size="icon"
                       aria-label="Back to All Projects"
                     >

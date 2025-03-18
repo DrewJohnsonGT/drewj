@@ -22,7 +22,7 @@ const ProjectsPage = async () => {
   return (
     <div className="grid grid-cols-1 justify-center gap-4 px-4 pb-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {projectsSortedByDate.map((project) => (
-        <Card key={project.title} className="p-1">
+        <Card key={project.title} className="p-4">
           <CardHeader className="p-0">
             <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
               <Image
@@ -52,7 +52,7 @@ const ProjectsPage = async () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  buttonVariants({ variant: 'outline' }),
+                  buttonVariants({ variant: 'secondary' }),
                   'flex flex-1 items-center gap-1',
                 )}
               >
@@ -66,7 +66,7 @@ const ProjectsPage = async () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  buttonVariants({ variant: 'outline' }),
+                  buttonVariants({ variant: 'secondary' }),
                   'flex flex-1 items-center gap-1',
                 )}
               >
@@ -78,7 +78,7 @@ const ProjectsPage = async () => {
               <Link
                 href={`/projects/${project.slug}`}
                 className={cn(
-                  buttonVariants({ variant: 'outline' }),
+                  buttonVariants({ variant: 'primary' }),
                   'flex flex-1 items-center gap-1',
                 )}
               >

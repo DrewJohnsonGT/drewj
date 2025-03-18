@@ -53,7 +53,7 @@ const buttonVariants = cva(
         primary:
           'border border-primary bg-primary text-primary-foreground shadow hover:border-primary-foreground hover:bg-primary/90',
         secondary:
-          'border border-border bg-input-background text-foreground shadow-sm hover:border-primary hover:bg-accent hover:text-primary',
+          'border border-border bg-input-background text-foreground shadow-sm hover:border-primary hover:bg-accent/10 hover:text-primary',
       },
     },
   },
