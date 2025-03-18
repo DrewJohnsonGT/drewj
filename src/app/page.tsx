@@ -49,7 +49,7 @@ export default function Home() {
         style: {
           animation: `${Math.random() > 0.5 ? 'moveAndRotate' : 'moveAndRotateCounter'} ${travelTime}s infinite ${delay}s linear`,
           height: `${size}px`,
-          left: `-${maxIconSize + getRandomVariance(0, size)}px`,
+          left: `-${size}px`,
           top: `${top}px`,
           width: `${size}px`,
         },
