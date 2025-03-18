@@ -8,7 +8,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     height={44}
     viewBox="0 0 44 44"
     fill="none"
-    {...props}>
+    {...props}
+  >
     <g fillRule="evenodd" clipRule="evenodd">
       <path
         fill="#623ce4"

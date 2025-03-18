@@ -1,6 +1,6 @@
+import * as React from 'react';
 import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
-import * as React from 'react';
 import { cn } from '~/utils/cn';
 
 export const badgeVariants = cva(
@@ -18,10 +18,10 @@ export const badgeVariants = cva(
       },
       variant: {
         default: 'bg-card text-card-foreground',
-        primary:
-          'border border-primary-foreground bg-primary text-primary-foreground',
         destructive: 'bg-destructive text-destructive-foreground',
         outline: 'text-foreground',
+        primary:
+          'border border-primary-foreground bg-primary text-primary-foreground',
         secondary: 'bg-input-background text-foreground',
         success: 'border border-success bg-success/20 text-success',
         warning: 'border-amber-500 bg-amber-500/30',

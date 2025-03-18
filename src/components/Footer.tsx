@@ -17,22 +17,22 @@ import { cn } from '~/utils/cn';
 
 const LINKS = [
   {
+    color: 'text-[#0077B5] hover:text-[#0099E0]',
     href: LINKED_IN_URL,
     icon: FaLinkedin,
     title: 'LinkedIn',
-    color: 'text-[#0077B5] hover:text-[#0099E0]',
   },
   {
+    color: 'text-[#E4405F] hover:text-[#FF6B84]',
     href: INSTAGRAM_URL,
     icon: FaInstagram,
     title: 'Instagram',
-    color: 'text-[#E4405F] hover:text-[#FF6B84]',
   },
   {
+    color: 'text-[#333333] hover:text-[#6E7681]',
     href: GITHUB_URL,
     icon: FaGithub,
     title: 'GitHub',
-    color: 'text-[#333333] hover:text-[#6E7681]',
   },
 ];
 

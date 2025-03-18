@@ -7,7 +7,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     width={2500}
     height={2500}
     viewBox="0 0 400 400"
-    {...props}>
+    {...props}
+  >
     <path
       d="M0 200V0h400v400H0"
       style={{

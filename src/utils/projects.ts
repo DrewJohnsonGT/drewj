@@ -1,9 +1,9 @@
 'use server';
 
 import { access, readdir, readFile } from 'fs/promises';
+import path from 'path';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import { Project } from '~/types';
-import path from 'path';
 
 const PROJECTS_FOLDER = path.join(process.cwd(), '_projects');
 

@@ -17,12 +17,8 @@ export const TimeSinceItem = ({
           { label: 'S', value: seconds },
         ].map((unit, index) => (
           <div key={index} className="flex flex-col items-center">
-            <span className="text-2xl font-bold">
-              {unit.value}
-            </span>
-            <span className="text-sm text-muted-foreground">
-              {unit.label}
-            </span>
+            <span className="text-2xl font-bold">{unit.value}</span>
+            <span className="text-sm text-muted-foreground">{unit.label}</span>
           </div>
         ))}
       </div>

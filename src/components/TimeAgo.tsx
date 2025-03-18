@@ -32,13 +32,13 @@ export const TimeAgo = ({ date }: { date?: Date | string }) => {
   if (!date) return null;
   const dateObj = typeof date === 'string' ? new Date(date) : date;
   return (
-  <Tooltip>
-        <TooltipTrigger asChild>
-          <span className="cursor-default">{timeSince(dateObj)}</span>
-        </TooltipTrigger>
-        <TooltipContent>
-          {`${dateObj.toLocaleDateString()} - ${dateObj.toLocaleTimeString()}`}
-        </TooltipContent>
-      </Tooltip>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <span className="cursor-default">{timeSince(dateObj)}</span>
+      </TooltipTrigger>
+      <TooltipContent>
+        {`${dateObj.toLocaleDateString()} - ${dateObj.toLocaleTimeString()}`}
+      </TooltipContent>
+    </Tooltip>
   );
 };

@@ -1,7 +1,7 @@
 'use client';
 
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import * as React from 'react';
+import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { LuCheck, LuChevronRight, LuCircle } from 'react-icons/lu';
 import { cn } from '~/utils/cn';
 
@@ -179,5 +179,5 @@ export {
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 };

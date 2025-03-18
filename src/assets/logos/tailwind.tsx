@@ -11,13 +11,15 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
       height={154}
       preserveAspectRatio="xMidYMid"
       viewBox="0 0 256 154"
-      {...props}>
+      {...props}
+    >
       <linearGradient
         id={gradientId}
         x1="-2.778%"
         x2="100%"
         y1="32%"
-        y2="67.556%">
+        y2="67.556%"
+      >
         <stop offset={0} stopColor="#2298bd" />
         <stop offset={1} stopColor="#0ed7b5" />
       </linearGradient>

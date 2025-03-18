@@ -7,7 +7,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     width={800}
     height={800}
     viewBox="0 -141.54 1478.201 1478.201"
-    {...props}>
+    {...props}
+  >
     <g transform="matrix(.569 0 0 .569 199.451 -82.735)">
       <linearGradient
         id="a"
@@ -16,7 +17,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y1={923.573}
         y2={1420.331}
         gradientTransform="matrix(.1234 0 0 -.1234 1158.33 1550.273)"
-        gradientUnits="userSpaceOnUse">
+        gradientUnits="userSpaceOnUse"
+      >
         <stop offset={0} stopColor="#909ca9" />
         <stop offset={1} stopColor="#ededee" />
       </linearGradient>
@@ -31,7 +33,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         y1={10288.81}
         y2={10288.81}
         gradientTransform="matrix(.1234 0 0 -.1234 1158.33 1550.273)"
-        gradientUnits="userSpaceOnUse">
+        gradientUnits="userSpaceOnUse"
+      >
         <stop offset={0} stopColor="#939fab" />
         <stop offset={1} stopColor="#dcdee1" />
       </linearGradient>
@@ -45,7 +48,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         cy={7277.705}
         r={898.12}
         gradientTransform="matrix(-.1185 -.0178 -.036 .237 -198.955 -1314.415)"
-        gradientUnits="userSpaceOnUse">
+        gradientUnits="userSpaceOnUse"
+      >
         <stop offset={0} stopColor="#ee352c" />
         <stop offset={1} stopColor="#a91d22" />
       </radialGradient>

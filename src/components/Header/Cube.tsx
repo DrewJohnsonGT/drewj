@@ -47,26 +47,26 @@ export const Cube = () => {
 
   // Each face transform: rotate + translateZ in one bracket
   const sideClasses: Record<string, string> = {
-    front:
-      '[transform:rotateY(0deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--orange)]',
     back: '[transform:rotateY(180deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--orange)]',
-    right:
-      '[transform:rotateY(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--red)]',
-    left: '[transform:rotateY(-90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--lightOrange)]',
-    top: '[transform:rotateX(-90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--lightOrange)]',
     bottom:
       '[transform:rotateX(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--yellow)]',
+    front:
+      '[transform:rotateY(0deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--orange)]',
+    left: '[transform:rotateY(-90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--lightOrange)]',
+    right:
+      '[transform:rotateY(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--red)]',
+    top: '[transform:rotateX(-90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--lightOrange)]',
   };
 
   // How to rotate the *entire cube* to show a certain side.
   // Again, must be bracketed if we're using rotateX or rotateY not covered by built-in classes.
   const showClasses: Record<string, string> = {
-    'show-front': '[transform:rotateY(0deg)]',
     'show-back': '[transform:rotateY(180deg)]',
-    'show-right': '[transform:rotateY(90deg)]',
-    'show-left': '[transform:rotateY(-90deg)]',
-    'show-top': '[transform:rotateX(-90deg)]',
     'show-bottom': '[transform:rotateX(90deg)]',
+    'show-front': '[transform:rotateY(0deg)]',
+    'show-left': '[transform:rotateY(-90deg)]',
+    'show-right': '[transform:rotateY(90deg)]',
+    'show-top': '[transform:rotateX(-90deg)]',
   };
 
   return (

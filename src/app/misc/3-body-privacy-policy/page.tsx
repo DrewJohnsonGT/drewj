@@ -18,7 +18,8 @@ const ThreeBodyPrivacyPolicy = () => {
         <a
           href="https://www.free3Bodyprivacypolicy.com/free-privacy-policy-generator/"
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+        >
           Free Privacy Policy Generator
         </a>
         .
@@ -116,7 +117,8 @@ const ThreeBodyPrivacyPolicy = () => {
             <a
               href="https://3-body.vercel.app/home"
               rel="external nofollow noopener noreferrer"
-              target="_blank">
+              target="_blank"
+            >
               https://3-body.vercel.app/home
             </a>
           </p>
@@ -197,7 +199,8 @@ const ThreeBodyPrivacyPolicy = () => {
         <a
           href="https://www.free3Bodyprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking"
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+        >
           Free Privacy Policy website
         </a>{' '}
         article.

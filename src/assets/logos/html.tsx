@@ -8,7 +8,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     height={2500}
     enableBackground="new 221.807 89.47 440 621.061"
     viewBox="221.807 89.47 440 621.061"
-    {...props}>
+    {...props}
+  >
     <filter id="a" width="150%" height="150%" x="-5%" y="-5%">
       <feFlood floodColor="#000" floodOpacity={0.5} result="floodFill" />
       <feComposite

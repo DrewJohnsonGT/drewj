@@ -7,7 +7,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     preserveAspectRatio="xMidYMid"
     viewBox="0 0 256 256"
-    {...props}>
+    {...props}
+  >
     <defs>
       <path
         id="a"
@@ -23,7 +24,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         height="104.8%"
         x="-2.4%"
         y="-2.4%"
-        filterUnits="objectBoundingBox">
+        filterUnits="objectBoundingBox"
+      >
         <feOffset in="SourceAlpha" result="shadowOffsetOuter1" />
         <feGaussianBlur
           in="shadowOffsetOuter1"

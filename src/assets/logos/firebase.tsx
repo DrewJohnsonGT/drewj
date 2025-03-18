@@ -15,7 +15,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
       height={2500}
       preserveAspectRatio="xMidYMid"
       viewBox="0 0 256 351"
-      {...props}>
+      {...props}
+    >
       <defs>
         <filter
           id={filterId1}
@@ -23,7 +24,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
           height="200%"
           x="-50%"
           y="-50%"
-          filterUnits="objectBoundingBox">
+          filterUnits="objectBoundingBox"
+        >
           <feGaussianBlur
             in="SourceAlpha"
             result="shadowBlurInner1"
@@ -49,7 +51,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
           height="200%"
           x="-50%"
           y="-50%"
-          filterUnits="objectBoundingBox">
+          filterUnits="objectBoundingBox"
+        >
           <feGaussianBlur
             in="SourceAlpha"
             result="shadowBlurInner1"

@@ -10,7 +10,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     y={0}
     enableBackground="new 0 0 88.85 122.88"
     viewBox="0 0 88.85 122.88"
-    {...props}>
+    {...props}
+  >
     <style>
       {
         '.st0{fill:none;stroke:#d43732;stroke-width:.7881}.st1{fill:#4a728c}.st2{fill:#81b0c4}.st3{fill:#1d1919}.st4{fill:#ef3e3a}.st5{fill:#221e1f}.st6{fill:#f0d6b8}.st7{fill:#f5e2cc}.st8{fill:#fff}.st9{fill:#345061}.st11{fill:#d43732}.st12{fill:#ddd9d8}'

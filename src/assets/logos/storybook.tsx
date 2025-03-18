@@ -13,7 +13,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
       height={319}
       preserveAspectRatio="xMidYMid"
       viewBox="0 0 256 319"
-      {...props}>
+      {...props}
+    >
       <defs>
         <path
           id={pathId}

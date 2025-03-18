@@ -12,14 +12,16 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
       height={2490}
       preserveAspectRatio="xMinYMin meet"
       viewBox="0 0 256 255"
-      {...props}>
+      {...props}
+    >
       <defs>
         <linearGradient
           id={gradientIdA}
           x1="12.959%"
           x2="79.639%"
           y1="12.039%"
-          y2="78.201%">
+          y2="78.201%"
+        >
           <stop offset="0%" stopColor="#387EB8" />
           <stop offset="100%" stopColor="#366994" />
         </linearGradient>
@@ -28,7 +30,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
           x1="19.128%"
           x2="90.742%"
           y1="20.579%"
-          y2="88.429%">
+          y2="88.429%"
+        >
           <stop offset="0%" stopColor="#FFE052" />
           <stop offset="100%" stopColor="#FFC331" />
         </linearGradient>

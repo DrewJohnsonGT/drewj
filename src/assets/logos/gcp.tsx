@@ -8,7 +8,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     height={800}
     preserveAspectRatio="xMinYMin meet"
     viewBox="0 -14.5 256 256"
-    {...props}>
+    {...props}
+  >
     <path
       fill="#CAC9C2"
       d="m81.558 190.482-44.94-77.835 44.94-77.836h89.876l44.939 77.836-44.94 77.835H81.559"
