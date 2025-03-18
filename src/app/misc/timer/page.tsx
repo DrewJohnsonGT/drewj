@@ -24,8 +24,10 @@ const TIMES = [
 ];
 
 const getPercentOfGoal = (date: Date, goal: number) => {
-  const currentDate = new Date();
-  const ms = currentDate.getTime() - date.getTime();
+  const currentDateEastern = new Date(
+    new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
+  );
+  const ms = currentDateEastern.getTime() - date.getTime();
   const percentage = (ms / goal) * 100;
   return Math.round(percentage * 100) / 100;
 };
