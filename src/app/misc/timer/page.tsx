@@ -19,7 +19,7 @@ const ONE_MONTH = ONE_WEEK * 4;
 const TIMES = [
   {
     goal: ONE_MONTH,
-    time: new Date('Thu Mar 13 2025 23:44:00 GMT-0500 (Eastern Standard Time)'),
+    time: new Date('Tue Mar 18 2025 14:45:00 GMT-0500 (Eastern Standard Time)'),
   },
 ];
 
