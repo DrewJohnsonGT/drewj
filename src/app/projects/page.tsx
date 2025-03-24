@@ -20,9 +20,9 @@ const ProjectsPage = async () => {
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
   return (
-    <div className="grid grid-cols-1 justify-center gap-4 px-4 pb-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="grid grid-cols-1 justify-center gap-4 px-4 pb-20 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
       {projectsSortedByDate.map((project) => (
-        <Card key={project.title} className="p-4">
+        <Card key={project.title} className="p-0">
           <CardHeader className="p-0">
             <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
               <Image
@@ -37,7 +37,7 @@ const ProjectsPage = async () => {
               <CardTitle>{project.title}</CardTitle>
             </div>
           </CardHeader>
-          <CardContent className="flex flex-1 flex-col p-0">
+          <CardContent className="flex flex-1 flex-col gap-4 p-4">
             <p className="leading-snug">{project.description}</p>
             <div className="mt-auto flex flex-wrap items-end justify-center gap-1">
               {project.technologies?.map((technology) => (
