@@ -12,6 +12,7 @@ export const readProjectsFile = async (slug: string) => {
   try {
     await access(filePath);
   } catch (err) {
+    console.error(err);
     return null;
   }
 

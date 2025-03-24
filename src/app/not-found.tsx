@@ -8,7 +8,7 @@ const NotFoundPage = () => (
       <Image
         src="/images/pug.png"
         alt="Sad pug"
-        className="h-[250px] w-[250px] animate-[wiggle_1s_cubic-bezier(0.36,0.07,0.19,0.97)_both_infinite_alternate-reverse] cursor-pointer"
+        className="size-[250px] animate-[wiggle_1s_cubic-bezier(0.36,0.07,0.19,0.97)_both_infinite_alternate-reverse] cursor-pointer"
         width={200}
         height={200}
       />

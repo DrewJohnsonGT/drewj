@@ -1,39 +1,39 @@
 export enum Technology {
-  React = 'React',
-  Next = 'Next.js',
-  TypeScript = 'TypeScript',
-  Tailwind = 'Tailwind',
-  Shadcn = 'Shadcn',
-  MatterJS = 'Matter.js',
-  Vite = 'Vite',
-  NodeJS = 'Node.js',
-  Redux = 'Redux',
-  MSSQL = 'MSSQL',
   Printing = '3D Printing',
-  Python = 'Python',
-  RaspberryPi = 'Raspberry Pi',
+  Android = 'Android',
   Arduino = 'Arduino',
-  HTML = 'HTML',
-  PostgreSQL = 'PostgreSQL',
-  Prisma = 'Prisma',
-  Vercel = 'Vercel',
+  Capacitor = 'Capacitor',
+  ChromeAPI = 'Chrome API',
   CSS = 'CSS',
   Firebase = 'Firebase',
-  ChromeAPI = 'Chrome API',
-  iOS = 'iOS',
-  Android = 'Android',
-  Capacitor = 'Capacitor',
+  HTML = 'HTML',
   Ionic = 'Ionic',
+  iOS = 'iOS',
+  MatterJS = 'Matter.js',
+  MSSQL = 'MSSQL',
+  Next = 'Next.js',
+  NodeJS = 'Node.js',
   P5 = 'P5.js',
+  PostgreSQL = 'PostgreSQL',
+  Prisma = 'Prisma',
+  Python = 'Python',
+  RaspberryPi = 'Raspberry Pi',
+  React = 'React',
+  Redux = 'Redux',
+  Shadcn = 'Shadcn',
+  Tailwind = 'Tailwind',
+  TypeScript = 'TypeScript',
+  Vercel = 'Vercel',
+  Vite = 'Vite',
 }
 
 export interface Project {
   banner: string;
-  slug: string;
-  title: string;
-  description: string;
-  technologies: Technology[];
   date: string;
-  repository?: string;
+  description: string;
   link?: string;
+  repository?: string;
+  slug: string;
+  technologies: Technology[];
+  title: string;
 }

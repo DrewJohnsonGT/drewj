@@ -66,7 +66,7 @@ const ProjectsPage = async ({
                       size="icon"
                       aria-label="Back to All Projects"
                     >
-                      <IoMdArrowRoundBack className="h-4 w-4" />
+                      <IoMdArrowRoundBack className="size-4" />
                     </Button>
                   </Link>
                 </TooltipTrigger>
@@ -89,7 +89,7 @@ const ProjectsPage = async ({
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <FaGithub className="h-4 w-4" />
+                        <FaGithub className="size-4" />
                       </a>
                     </Button>
                   </TooltipTrigger>
@@ -113,7 +113,7 @@ const ProjectsPage = async ({
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <AiOutlineLink className="h-4 w-4" />
+                        <AiOutlineLink className="size-4" />
                       </a>
                     </Button>
                   </TooltipTrigger>

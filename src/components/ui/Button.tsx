@@ -69,15 +69,15 @@ export interface ButtonProps
   loadingMessage?: string;
   tooltip?: string | React.ReactNode;
   tooltipDelay?: number;
-  tooltipSide?: 'top' | 'right' | 'bottom' | 'left';
+  tooltipSide?: 'bottom' | 'left' | 'right' | 'top';
 }
 
 const ButtonLoadingContent = ({
   loadingMessage,
   size,
 }: {
-  size: ButtonVariantProps['size'];
   loadingMessage: string;
+  size: ButtonVariantProps['size'];
 }) => (
   <div className="flex items-center">
     <LoadingSpinner

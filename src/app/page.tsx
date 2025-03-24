@@ -64,7 +64,7 @@ export default function Home() {
       className="flex flex-1 flex-col items-center justify-center overflow-hidden"
     >
       <div className="z-10 m-2 inline-flex flex-col items-center gap-2 rounded-lg text-center text-2xl backdrop-blur-sm md:flex-row">
-        <div className="relative mr-4 h-[150px] w-[150px] md:mr-0">
+        <div className="relative mr-4 size-[150px] md:mr-0">
           <NextImage
             className="absolute mr-4 rounded-full border-[5px] border-primary bg-white/10 opacity-100 transition-all duration-500"
             src="/images/headshot.png"
@@ -87,7 +87,7 @@ export default function Home() {
           </h3>
         </div>
       </div>
-      <div className="absolute left-0 top-0 h-full w-full">
+      <div className="absolute left-0 top-0 size-full">
         {skillStyles.map(({ icon, logo: Logo, style }) => (
           <Logo
             key={icon}

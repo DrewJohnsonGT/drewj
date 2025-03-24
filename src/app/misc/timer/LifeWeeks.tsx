@@ -32,7 +32,7 @@ export const LifeWeeks = ({ birthDate }: { birthDate: string }) => {
       {weeksArray.map((week) => (
         <div
           key={week}
-          className={`mx-auto h-2.5 w-2.5 rounded-full ${
+          className={`mx-auto size-2.5 rounded-full ${
             week === weeksLived - 1
               ? 'animate-pulse bg-primary shadow-lg shadow-primary/50 ring-2 ring-primary/50 ring-offset-1 ring-offset-background'
               : week < weeksLived

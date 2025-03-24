@@ -34,7 +34,7 @@ import { Technology } from '~/types';
 
 const TECHNOLOGY_CHIP_MAP: Record<
   Technology,
-  { icon?: IconType; label: string; color: string; backgroundColor: string }
+  { backgroundColor: string; color: string; icon?: IconType; label: string }
 > = {
   [Technology.React]: {
     backgroundColor: '#2B6CB0',

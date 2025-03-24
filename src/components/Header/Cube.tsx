@@ -106,7 +106,7 @@ export const Cube = () => {
               sideClasses[position],
             )}
           >
-            <Icon className="h-[calc(var(--cubeSize)*0.65)] w-[calc(var(--cubeSize)*0.65)] text-foreground opacity-100" />
+            <Icon className="size-[calc(var(--cubeSize)*0.65)] text-foreground opacity-100" />
           </div>
         ))}
       </div>

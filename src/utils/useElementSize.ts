@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
 interface Size {
-  width: number;
   height: number;
+  width: number;
 }
 
 export const useElementSize = () => {

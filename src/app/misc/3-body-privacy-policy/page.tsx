@@ -1,4 +1,3 @@
-/* eslint-disable max-lines */
 const ThreeBodyPrivacyPolicy = () => {
   return (
     <div className="container">

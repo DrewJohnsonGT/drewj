@@ -13,9 +13,9 @@
     "@ianvs/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss"
   ],
-  "tailwindFunctions": ["cn", "cva"],
   "proseWrap": "always",
   "singleQuote": true,
   "tabWidth": 2,
+  "tailwindFunctions": ["cn", "cva"],
   "trailingComma": "all"
 }

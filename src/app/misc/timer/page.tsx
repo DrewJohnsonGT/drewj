@@ -9,8 +9,8 @@ export interface TimeSince {
   days: number;
   hours: number;
   minutes: number;
-  seconds: number;
   percentOfMonth: number;
+  seconds: number;
 }
 
 const ONE_WEEK = 1000 * 60 * 60 * 24 * 7;

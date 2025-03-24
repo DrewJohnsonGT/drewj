@@ -12,6 +12,22 @@ const config: Config = {
       animation: {
         rotating: 'rotating linear infinite',
       },
+      backgroundImage: {
+        'outline-hover':
+          'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%)',
+        'outline-normal':
+          'linear-gradient(180deg, hsl(var(--background-lighter)) 0%, hsl(var(--background)) 100%)',
+        'outline-pressed':
+          'linear-gradient(180deg, hsl(var(--background-lighter)) 0%, hsl(var(--background)) 100%)',
+        'primary-focused':
+          'linear-gradient(180deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-dark)) 100%)',
+        'primary-hover':
+          'linear-gradient(180deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-dark)) 100%)',
+        'primary-normal':
+          'linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%)',
+        'primary-pressed':
+          'linear-gradient(180deg, hsl(var(--secondary-dark)) 0%, hsl(var(--secondary-darker)) 100%)',
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
@@ -47,12 +63,16 @@ const config: Config = {
           foreground: 'hsl(var(--popover-foreground))',
         },
         primary: {
+          lighter: 'hsl(var(--primary-lighter))',
           DEFAULT: 'hsl(var(--primary))',
+          darker: 'hsl(var(--primary-darker))',
           foreground: 'hsl(var(--primary-foreground))',
         },
         ring: 'hsl(var(--ring))',
         secondary: {
+          lighter: 'hsl(var(--secondary-lighter))',
           DEFAULT: 'hsl(var(--secondary))',
+          darker: 'hsl(var(--secondary-darker))',
           foreground: 'hsl(var(--secondary-foreground))',
         },
         sidebar: {
