@@ -20,7 +20,7 @@ const ResumePage = () => {
             download="DrewJohnson_resume.pdf"
             data-disable-nprogress={true}
           >
-            Download as PDF
+            Download PDF
           </a>
         </Button>
         <Image

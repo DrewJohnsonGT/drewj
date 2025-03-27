@@ -38,7 +38,7 @@ const AboutPage = () => {
       </div>
       <br />
       <p className="text-center text-xl">
-        A montage of my full Mandalorian build from Halloween last year
+        A montage of my full Mandalorian build
       </p>
       <br />
       <iframe
