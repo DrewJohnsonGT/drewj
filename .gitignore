@@ -36,3 +36,11 @@ next-env.d.ts
 
 # env
 .env
+
+# resume build files
+public/resume.aux
+public/resume.fdb_latexmk
+public/resume.fls
+public/resume.log
+public/resume.out
+public/resume.synctex.gz
