@@ -7,7 +7,7 @@ const Card: React.FC<React.ComponentProps<'div'>> = ({
 }) => (
   <div
     className={cn(
-      'flex flex-col rounded-lg border bg-card text-card-foreground shadow-md',
+      'flex flex-col rounded-lg border bg-card text-card-foreground shadow-lg',
       className,
     )}
     {...props}

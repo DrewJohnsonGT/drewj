@@ -33,12 +33,20 @@ const config: Config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      boxShadow: {
+        button:
+          '0px 2px 0px 0px rgba(255, 255, 255, 0.12) inset, 0px 1px 2px 0px rgba(0, 17, 126, 0.12), 0px 2px 4px 0px rgba(0, 17, 126, 0.12)',
+        normal: '0px 1px 2px 0px rgba(35, 31, 50, 0.07)',
+      },
       colors: {
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
         },
-        background: 'hsl(var(--background))',
+        background: {
+          DEFAULT: 'hsl(var(--background))',
+          lighter: 'hsl(var(--background-lighter))',
+        },
         border: 'hsl(var(--border))',
         card: {
           DEFAULT: 'hsl(var(--card))',
@@ -63,17 +71,19 @@ const config: Config = {
           foreground: 'hsl(var(--popover-foreground))',
         },
         primary: {
-          lighter: 'hsl(var(--primary-lighter))',
-          DEFAULT: 'hsl(var(--primary))',
+          dark: 'hsl(var(--primary-dark))',
           darker: 'hsl(var(--primary-darker))',
+          DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
+          lighter: 'hsl(var(--primary-lighter))',
         },
         ring: 'hsl(var(--ring))',
         secondary: {
-          lighter: 'hsl(var(--secondary-lighter))',
-          DEFAULT: 'hsl(var(--secondary))',
+          dark: 'hsl(var(--secondary-dark))',
           darker: 'hsl(var(--secondary-darker))',
+          DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
+          lighter: 'hsl(var(--secondary-lighter))',
         },
         sidebar: {
           accent: 'hsl(var(--sidebar-accent))',
@@ -118,7 +128,6 @@ const config: Config = {
         input: INPUT_HEIGHT,
       },
       transitionDuration: {
-        DEFAULT: '150ms',
         75: '75ms',
         100: '100ms',
         150: '150ms',
@@ -128,6 +137,7 @@ const config: Config = {
         700: '700ms',
         1000: '1000ms',
         4000: '4000ms',
+        DEFAULT: '150ms',
       },
     },
   },
