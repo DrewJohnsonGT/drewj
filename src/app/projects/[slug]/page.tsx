@@ -55,25 +55,18 @@ const ProjectsPage = async ({
 
       <div className="mb-16 flex w-full flex-col items-center justify-center gap-4">
         <div className="flex w-full justify-between">
+          <Link href="/projects">
+            <Button
+              variant="primary"
+              size="icon"
+              aria-label="Back to All Projects"
+              tooltip="Back to All Projects"
+            >
+              <IoMdArrowRoundBack className="size-4" />
+            </Button>
+          </Link>
           <h1 className="mb-4 text-4xl font-bold">{frontmatter.title}</h1>
           <div className="flex gap-2">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link href="/projects">
-                    <Button
-                      variant="primary"
-                      size="icon"
-                      aria-label="Back to All Projects"
-                    >
-                      <IoMdArrowRoundBack className="size-4" />
-                    </Button>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>Back to All Projects</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-
             {frontmatter.repository && (
               <TooltipProvider>
                 <Tooltip>
@@ -128,7 +121,7 @@ const ProjectsPage = async ({
           <p className="mb-4">{frontmatter.description}</p>
         )}
 
-        <div className="flex max-w-lg flex-1 flex-wrap items-center justify-center gap-1">
+        <div className="flex max-w-lg flex-1 flex-wrap items-center justify-center gap-2">
           {frontmatter.technologies?.map((technology) => (
             <TechnologyChip key={technology} technology={technology} />
           ))}

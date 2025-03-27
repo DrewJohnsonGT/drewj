@@ -198,10 +198,10 @@ export const TechnologyChip = ({ technology }: { technology: Technology }) => {
   const tech = TECHNOLOGY_CHIP_MAP[technology];
   return (
     <Badge
-      className="inline-flex items-center justify-center gap-[0.15rem] p-1"
+      className="inline-flex items-center justify-center gap-[0.15rem] p-1 px-2"
       style={{
         backgroundColor: tech.backgroundColor,
-        boxShadow: `inset 0 0 0px 2px ${tech.color}`,
+        boxShadow: `0px 0px 0px 2px ${tech.color}`,
         color: tech.color,
       }}
     >

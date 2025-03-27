@@ -38,7 +38,7 @@ const ProjectsPage = async () => {
           </CardHeader>
           <CardContent className="flex flex-1 flex-col gap-4 p-4">
             <p className="leading-snug">{project.description}</p>
-            <div className="mt-auto flex flex-wrap items-end justify-center gap-1">
+            <div className="mt-auto flex flex-wrap items-end justify-center gap-2">
               {project.technologies?.map((technology) => (
                 <TechnologyChip key={technology} technology={technology} />
               ))}
