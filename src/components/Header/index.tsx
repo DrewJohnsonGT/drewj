@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { MdMenu } from 'react-icons/md';
 import { Cube } from '~/components/Header/Cube';
 import { ThemeToggle } from '~/components/Header/ThemeToggle';
+import { ProgressLink } from '~/components/ProgressBar/Link';
 import { Button } from '~/components/ui/Button';
 import {
   DropdownMenu,
@@ -78,13 +79,13 @@ export const Header = () => {
               onMouseLeave={() => setActiveIndex(findRouteIndex())}
               onClick={() => setActiveIndex(index)}
             >
-              <Link
+              <ProgressLink
                 href={`/${route.value}`}
                 key={route.value}
                 className="no-underline"
               >
                 {route.label}
-              </Link>
+              </ProgressLink>
             </li>
           ))}
         </ul>
@@ -110,12 +111,12 @@ export const Header = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-36">
             {ROUTES.map((route) => (
-              <Link href={`/${route.value}`} key={route.value}>
+              <ProgressLink href={`/${route.value}`} key={route.value}>
                 <DropdownMenuItem className="flex items-center">
                   <route.icon className="mr-2 size-6" />
                   {route.label}
                 </DropdownMenuItem>
-              </Link>
+              </ProgressLink>
             ))}
           </DropdownMenuContent>
         </DropdownMenu>

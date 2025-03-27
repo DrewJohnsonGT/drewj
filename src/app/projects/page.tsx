@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { AiOutlineLink, AiOutlineZoomIn } from 'react-icons/ai';
 import { RiGitRepositoryLine } from 'react-icons/ri';
+import { ProgressLink } from '~/components/ProgressBar/Link';
 import { TechnologyChip } from '~/components/TechnologyChip';
 import { Button } from '~/components/ui/Button';
 import {
@@ -72,12 +72,15 @@ const ProjectsPage = async () => {
               </a>
             )}
             {project.slug && (
-              <Link href={`/projects/${project.slug}`} className="flex-1">
+              <ProgressLink
+                href={`/projects/${project.slug}`}
+                className="flex-1"
+              >
                 <Button className="flex w-full flex-1 items-center gap-1">
                   <AiOutlineZoomIn />
                   Details
                 </Button>
-              </Link>
+              </ProgressLink>
             )}
           </CardFooter>
         </Card>

@@ -1,10 +1,10 @@
 import { compileMDX } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { AiOutlineLink } from 'react-icons/ai';
 import { FaGithub } from 'react-icons/fa6';
 import { IoMdArrowRoundBack } from 'react-icons/io';
+import { ProgressLink } from '~/components/ProgressBar/Link';
 import { TechnologyChip } from '~/components/TechnologyChip';
 import { Button } from '~/components/ui/Button';
 import {
@@ -55,7 +55,7 @@ const ProjectsPage = async ({
 
       <div className="mb-16 flex w-full flex-col items-center justify-center gap-4">
         <div className="flex w-full justify-between">
-          <Link href="/projects">
+          <ProgressLink href="/projects">
             <Button
               variant="primary"
               size="icon"
@@ -64,7 +64,7 @@ const ProjectsPage = async ({
             >
               <IoMdArrowRoundBack className="size-4" />
             </Button>
-          </Link>
+          </ProgressLink>
           <h1 className="mb-4 text-4xl font-bold">{frontmatter.title}</h1>
           <div className="flex gap-2">
             {frontmatter.repository && (
