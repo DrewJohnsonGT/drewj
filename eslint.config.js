@@ -42,6 +42,7 @@ export default [
       'sort/string-enums': 'error',
       'sort/string-unions': 'error',
       'sort/type-properties': 'error',
+      'tailwindcss/enforces-negative-arbitrary-values': 'off',
     },
     settings: {
       react: { version: 'detect' },

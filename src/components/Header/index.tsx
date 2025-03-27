@@ -61,7 +61,7 @@ export const Header = () => {
       <Link href="/" className="mr-auto">
         <Cube />
       </Link>
-      <nav className="relative ml-[calc(var(--headerHeight)*0.2)] mr-auto hidden md:block">
+      <nav className="relative ml-[calc(var(--headerHeight)*0.2)] mr-auto hidden lg:block">
         <ul className="m-0 inline-flex list-none p-0">
           {ROUTES.map((route, index) => (
             <li
@@ -93,10 +93,10 @@ export const Header = () => {
           ref={underlineRef}
         />
       </nav>
-      <h1 className="mx-auto block font-[Cube] text-[0.65rem] font-bold md:hidden">
+      <h1 className="mx-auto block font-[Cube] text-[0.65rem] font-bold lg:hidden">
         {ROUTES[findRouteIndex()]?.title ?? ROUTES[findRouteIndex()]?.label}
       </h1>
-      <div className="flex md:hidden">
+      <div className="flex lg:hidden">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button

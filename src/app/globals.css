@@ -35,7 +35,7 @@
     --destructive: 0 100% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 140 100% 40%;
+    --success: 130 100% 40%;
     --success-foreground: 0 0% 100%;
 
     --warning: 30 100% 60%;
@@ -184,7 +184,6 @@
   --disabledText: #b2b2b2;
   --githubLight: #b802b8;
   --github: #7c007c;
-  --success: #2ea44f;
   --instagram: #e4405f;
   --instagramLight: #f092a7;
   --lightOrange: #ff9651;

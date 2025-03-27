@@ -35,7 +35,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [submitSuccess, setSubmitSuccess] = useState<boolean>(true);
+  const [submitSuccess, setSubmitSuccess] = useState<boolean>(false);
 
   const form = useForm<ContactFormValues>({
     defaultValues: {
@@ -79,71 +79,74 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="mx-auto w-full max-w-md">
+    <div className="mx-auto">
       {!submitSuccess && (
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Your name" {...field} required />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+        <>
+          <h3 className="my-8 text-xl">Or send me a message here</h3>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Your name" {...field} required />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="email"
-                      placeholder="your.email@example.com"
-                      required
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="email"
+                        placeholder="your.email@example.com"
+                        required
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Message</FormLabel>
-                  <FormDescription>
-                    Please provide details about your inquiry.
-                  </FormDescription>
-                  <FormControl>
-                    <Textarea placeholder="Your message" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Message</FormLabel>
+                    <FormDescription>
+                      Please provide details about your inquiry.
+                    </FormDescription>
+                    <FormControl>
+                      <Textarea placeholder="Your message" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
 
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full"
-              loading={isSubmitting}
-              loadingText="Sending..."
-            >
-              Send Message
-            </Button>
-          </form>
-        </Form>
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full"
+                loading={isSubmitting}
+                loadingText="Sending..."
+              >
+                Send Message
+              </Button>
+            </form>
+          </Form>
+        </>
       )}
       {submitError && (
         <div className="text-sm font-medium text-destructive">
@@ -162,7 +165,7 @@ const ContactForm = () => {
 
 const ContactPage = () => {
   return (
-    <div className="flex flex-1 flex-col items-center justify-center">
+    <div className="flex flex-1 flex-col items-center justify-center p-4">
       <p className="text-xl">
         Reaching out and connecting on{' '}
         <a
@@ -176,7 +179,6 @@ const ContactPage = () => {
         is the best way to get a hold of me
       </p>
 
-      <h3 className="mt-8 text-xl">Or send me a message here</h3>
       <div className="mt-8 w-full max-w-md">
         <ContactForm />
       </div>
