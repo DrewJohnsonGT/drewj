@@ -147,13 +147,13 @@ const FormMessage: React.FC<React.ComponentProps<'p'>> = ({
   const body = error ? String(error?.message) : children;
 
   if (!body) {
-    return null;
+    return <div className="h-5" aria-hidden="true" />; // Placeholder with height to prevent layout shift
   }
 
   return (
     <p
       id={formMessageId}
-      className={cn('text-sm font-medium text-destructive', className)}
+      className={cn('h-5 text-sm font-medium text-destructive', className)}
       {...props}
     >
       {body}

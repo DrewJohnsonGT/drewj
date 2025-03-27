@@ -35,7 +35,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [submitSuccess, setSubmitSuccess] = useState<boolean>(false);
+  const [submitSuccess, setSubmitSuccess] = useState<boolean>(true);
 
   const form = useForm<ContactFormValues>({
     defaultValues: {
@@ -80,78 +80,82 @@ const ContactForm = () => {
 
   return (
     <div className="mx-auto w-full max-w-md">
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Name</FormLabel>
-                <FormControl>
-                  <Input placeholder="Your name" {...field} />
-                </FormControl>
-                {form.formState.errors.name && <FormMessage />}
-              </FormItem>
-            )}
-          />
+      {!submitSuccess && (
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Your name" {...field} required />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input
-                    type="email"
-                    placeholder="your.email@example.com"
-                    {...field}
-                  />
-                </FormControl>
-                {form.formState.errors.email && <FormMessage />}
-              </FormItem>
-            )}
-          />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="your.email@example.com"
+                      required
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Message</FormLabel>
-                <FormDescription>
-                  Please provide details about your inquiry.
-                </FormDescription>
-                <FormControl>
-                  <Textarea placeholder="Your message" {...field} />
-                </FormControl>
-                {form.formState.errors.message && <FormMessage />}
-              </FormItem>
-            )}
-          />
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Message</FormLabel>
+                  <FormDescription>
+                    Please provide details about your inquiry.
+                  </FormDescription>
+                  <FormControl>
+                    <Textarea placeholder="Your message" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-          {submitError && (
-            <div className="text-sm font-medium text-destructive">
-              {submitError}
-            </div>
-          )}
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full"
+              loading={isSubmitting}
+              loadingText="Sending..."
+            >
+              Send Message
+            </Button>
+          </form>
+        </Form>
+      )}
+      {submitError && (
+        <div className="text-sm font-medium text-destructive">
+          {submitError}
+        </div>
+      )}
 
-          {submitSuccess && (
-            <div className="text-sm font-medium text-green-600">
-              Thank you for your message! I&apos;ll get back to you soon.
-            </div>
-          )}
-
-          <Button
-            type="submit"
-            disabled={isSubmitting || !form.formState.isValid}
-            className="w-full"
-          >
-            {isSubmitting ? 'Sending...' : 'Send Message'}
-          </Button>
-        </form>
-      </Form>
+      {submitSuccess && (
+        <div className="text-center font-medium text-success">
+          Thank you for your message! I&apos;ll get back to you soon.
+        </div>
+      )}
     </div>
   );
 };
