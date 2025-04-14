@@ -43,7 +43,7 @@ const ContactForm = () => {
       message: '',
       name: '',
     },
-    mode: 'onBlur',
+    mode: 'onSubmit',
     resolver: zodResolver(contactFormSchema),
   });
 
