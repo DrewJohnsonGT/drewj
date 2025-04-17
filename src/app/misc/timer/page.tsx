@@ -18,7 +18,7 @@ const ONE_MONTH = ONE_WEEK * 4;
 
 const TIME = {
   goal: ONE_MONTH,
-  time: new Date('Mon April 14 2025 16:58:00 GMT-0400 (Eastern Daylight Time)'),
+  time: new Date('Thu April 17 2025 13:47:00 GMT-0400 (Eastern Daylight Time)'),
 };
 
 const getPercentOfGoal = (date: Date, goal: number) => {
