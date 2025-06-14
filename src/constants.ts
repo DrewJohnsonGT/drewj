@@ -11,8 +11,7 @@ export const START_DATE = new Date(
   'Sat Jun 14 2025 14:51:00 GMT-0400 (Eastern Daylight Time)',
 );
 const ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
-const ONE_MONTH = ONE_WEEK * 4;
-export const GOAL = ONE_MONTH;
+export const GOAL = ONE_WEEK;
 
 export const ROUTES = [
   {
