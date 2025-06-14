@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import { LifeWeeks } from './LifeWeeks';
 import { TimeSinceItem } from './TimeSinceItem';
 import { ScrollArea } from '~/components/ui/ScrollArea';
+import { GOAL, START_DATE } from '~/constants';
+import { getPercentOfGoal } from '~/utils/getPercentOfGoal';
+import { getTimeSince } from '~/utils/getTimeSince';
 
 export interface TimeSince {
   days: number;
@@ -13,37 +16,13 @@ export interface TimeSince {
   seconds: number;
 }
 
-const ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
-const ONE_MONTH = ONE_WEEK * 4;
-
-const TIME = {
-  goal: ONE_MONTH,
-  time: new Date('Sat Jun 14 2025 14:51:00 GMT-0400 (Eastern Daylight Time)'),
-};
-
-const getPercentOfGoal = (date: Date, goal: number) => {
-  const ms = Date.now() - date.getTime();
-  const percentage = (ms / goal) * 100;
-  return Math.round(percentage * 100) / 100;
-};
-
-const getTimeSince = (time: Date) => {
-  const now = new Date();
-  const diff = now.getTime() - time.getTime();
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-  return { days, hours, minutes, seconds };
-};
-
 const useHomeLogic = () => {
   const [timeSince, setTimeSince] = useState<TimeSince>();
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const timeSince = getTimeSince(TIME.time);
-      const percentOfGoal = getPercentOfGoal(TIME.time, TIME.goal);
+      const timeSince = getTimeSince(START_DATE);
+      const percentOfGoal = getPercentOfGoal(START_DATE, GOAL);
       setTimeSince({
         ...timeSince,
         percentOfMonth: percentOfGoal,
