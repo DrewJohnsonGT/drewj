@@ -22,7 +22,7 @@ export const GOALS = [
     goal: ONE_WEEK,
     label: 'DARK',
     startDate: new Date(
-      'Sat Jun 21 2025 9:06:00 GMT-0400 (Eastern Daylight Time)',
+      'Sat Jun 21 2025 09:06:00 GMT-0400 (Eastern Daylight Time)',
     ),
   },
 ];
