@@ -46,7 +46,7 @@ display_timer() {
     seconds=$((elapsed_seconds % 60))
     
     # Display timer header with label
-    printf "${CYAN}=== Timer %d (%s) ===${NO_COLOR}\n" $timer_index "$label"
+    printf "${CYAN}=== ${label} ===${NO_COLOR}\n"
     
     # Display the information with colors
     printf "${RED}%d${NO_COLOR} days, ${GREEN}%02d${NO_COLOR} hours, ${YELLOW}%02d${NO_COLOR} minutes, ${BLUE}%02d${NO_COLOR} seconds\n" \
@@ -54,7 +54,7 @@ display_timer() {
     printf "${MAGENTA}%.2f%%${NO_COLOR}\n" $percentage
     
     # Create a simple progress bar with color based on percentage
-    bar_length=40  # Reduced to 40 for better display
+    bar_length=40
     filled_length=$(awk "BEGIN {printf \"%.0f\", ($percentage / 100) * $bar_length}")
     
     # Ensure filled_length doesn't exceed bar_length
