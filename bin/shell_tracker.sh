@@ -8,7 +8,7 @@ MAGENTA='\033[0;35m'
 CYAN='\033[0;36m'
 NO_COLOR='\033[0m'
 
-API_URL="http://localhost:3001/api/time"
+API_URL="https://drewj.dev/api/time"
 
 fetch_data() {
     curl -s "$API_URL"
