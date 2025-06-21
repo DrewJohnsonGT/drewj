@@ -4,7 +4,7 @@ export const TimeSinceItem = ({
   days,
   hours,
   minutes,
-  percentOfMonth,
+  percentOfGoal,
   seconds,
 }: TimeSince) => {
   return (
@@ -22,9 +22,9 @@ export const TimeSinceItem = ({
           </div>
         ))}
       </div>
-      {percentOfMonth && (
+      {percentOfGoal && (
         <span className="text-lg text-orange-500">
-          {percentOfMonth?.toFixed(2)}%
+          {percentOfGoal?.toFixed(2)}%
         </span>
       )}
     </div>
