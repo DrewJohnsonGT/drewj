@@ -8,21 +8,20 @@ import { RiFileUserLine } from 'react-icons/ri';
 export const NO_HEADER_FOOTER_ROUTES = ['/misc/timer'];
 
 const ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
-const ONE_MONTH = 1000 * 60 * 60 * 24 * 30;
 
 export const GOALS = [
-  {
-    goal: ONE_MONTH,
-    label: 'NF',
-    startDate: new Date(
-      'Sat Jun 14 2025 14:51:00 GMT-0400 (Eastern Daylight Time)',
-    ),
-  },
   {
     goal: ONE_WEEK,
     label: 'DARK',
     startDate: new Date(
       'Sun Jun 22 2025 08:25:00 GMT-0400 (Eastern Daylight Time)',
+    ),
+  },
+  {
+    goal: ONE_WEEK,
+    label: 'NF',
+    startDate: new Date(
+      'Tue Jun 24 2025 10:50:00 GMT-0400 (Eastern Daylight Time)',
     ),
   },
 ];
