@@ -12,16 +12,16 @@ const ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
 export const GOALS = [
   {
     goal: ONE_WEEK,
-    label: 'DARK',
+    label: 'NF',
     startDate: new Date(
-      'Sun Jun 22 2025 08:25:00 GMT-0400 (Eastern Daylight Time)',
+      'Tue Jun 24 2025 12:12:00 GMT-0400 (Eastern Daylight Time)',
     ),
   },
   {
     goal: ONE_WEEK,
-    label: 'NF',
+    label: 'DARK',
     startDate: new Date(
-      'Tue Jun 24 2025 12:12:00 GMT-0400 (Eastern Daylight Time)',
+      'Tue Jun 24 2025 22:56:00 GMT-0400 (Eastern Daylight Time)',
     ),
   },
 ];
