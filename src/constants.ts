@@ -19,10 +19,10 @@ export const GOALS = [
     ),
   },
   {
-    goal: ONE_WEEK,
+    goal: ONE_DAY,
     label: 'DARK',
     startDate: new Date(
-      'Fri Jun 27 2025 9:53:00 GMT-0400 (Eastern Daylight Time)',
+      'Sun Jun 29 2025 16:06:00 GMT-0400 (Eastern Daylight Time)',
     ),
   },
 ];

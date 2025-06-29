@@ -11,7 +11,8 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "preinstall": "npx only-allow pnpm",
-    "clean": "rm -rf .next node_modules"
+    "clean": "rm -rf .next node_modules",
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run format"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.3",
