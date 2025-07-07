@@ -11,10 +11,17 @@ const ONE_DAY = 1000 * 60 * 60 * 24;
 
 export const GOALS = [
   {
+    goal: ONE_DAY * 2,
+    label: 'NF',
+    startDate: new Date(
+      'Sun Jul 6 2025 18:16:00 GMT-0400 (Eastern Daylight Time)',
+    ),
+  },
+  {
     goal: ONE_DAY,
     label: 'DARK',
     startDate: new Date(
-      'Sun Jul 6 2025 18:16:00 GMT-0400 (Eastern Daylight Time)',
+      'Mon Jul 7 2025 15:54:00 GMT-0400 (Eastern Daylight Time)',
     ),
   },
 ];
