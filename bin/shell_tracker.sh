@@ -25,42 +25,45 @@ display_timer() {
     local timer_data=$1
     local timer_index=$2
     local line_offset=$3
-    
+
     # Parse the JSON data
     start_date=$(echo "$timer_data" | jq -r '.startDate')
     goal_ms=$(echo "$timer_data" | jq -r '.goal')
     label=$(echo "$timer_data" | jq -r '.label')
-    
+
+    # Compute goal in days (floating, two decimals)
+    goal_days=$(awk "BEGIN {printf \"%.2f\", $goal_ms/(1000*60*60*24)}")
+
     # Convert ISO date to epoch timestamp in milliseconds
     start_time_ms=$(gdate -d "$start_date" +%s%3N)
     current_time_ms=$(gdate +%s%3N)
-    
+
     # Calculate elapsed time in milliseconds
     elapsed_ms=$((current_time_ms - start_time_ms))
-    
+
     # Calculate percentage completion
-    if [ $goal_ms -ne 0 ]; then
+    if [ "$goal_ms" -ne 0 ]; then
         percentage=$(awk "BEGIN {printf \"%.2f\", ($elapsed_ms / $goal_ms) * 100}")
     else
         percentage=0
     fi
-    
+
     # Convert elapsed milliseconds to days, hours, minutes, seconds
     elapsed_seconds=$((elapsed_ms / 1000))
     days=$((elapsed_seconds / 86400))
     hours=$(((elapsed_seconds % 86400) / 3600))
     minutes=$(((elapsed_seconds % 3600) / 60))
     seconds=$((elapsed_seconds % 60))
-    
+
     # Create a simple progress bar with color based on percentage
     bar_length=40
     filled_length=$(awk "BEGIN {printf \"%.0f\", ($percentage / 100) * $bar_length}")
-    
+
     # Ensure filled_length doesn't exceed bar_length
-    if [ $filled_length -gt $bar_length ]; then
+    if [ "$filled_length" -gt "$bar_length" ]; then
         filled_length=$bar_length
     fi
-    
+
     # Choose color based on percentage
     if (( $(awk "BEGIN {print ($percentage < 25)}") )); then
         BAR_COLOR=$RED
@@ -71,36 +74,36 @@ display_timer() {
     else
         BAR_COLOR=$CYAN
     fi
-    
-    # Position cursor and display timer header
+
+    # Position cursor and display timer header with goal in days
     tput cup $line_offset 0
     tput el  # Clear to end of line
-    printf "${CYAN}=== ${label} ===${NO_COLOR}"
-    
+    printf "${CYAN}=== %s (Goal: %s days) ===${NO_COLOR}\n" "$label" "$goal_days"
+
     # Display the time information
     tput cup $((line_offset + 1)) 0
     tput el
-    printf "${RED}%d${NO_COLOR} days, ${GREEN}%02d${NO_COLOR} hours, ${YELLOW}%02d${NO_COLOR} minutes, ${BLUE}%02d${NO_COLOR} seconds" \
+    printf "${RED}%d${NO_COLOR} days, ${GREEN}%02d${NO_COLOR} hours, ${YELLOW}%02d${NO_COLOR} minutes, ${BLUE}%02d${NO_COLOR} seconds\n" \
         $days $hours $minutes $seconds
-    
+
     # Display percentage
     tput cup $((line_offset + 2)) 0
     tput el
-    printf "${MAGENTA}%.2f%%${NO_COLOR}" $percentage
-    
+    printf "${MAGENTA}%.2f%%${NO_COLOR}\n" $percentage
+
     # Display progress bar
     tput cup $((line_offset + 3)) 0
     tput el
     printf "["
-    for ((i=0; i<$bar_length; i++)); do
+    for ((i=0; i<bar_length; i++)); do
         if [ $i -lt $filled_length ]; then
             printf "${BAR_COLOR}█${NO_COLOR}"
         else
             printf " "
         fi
     done
-    printf "]"
-    
+    printf "]\n"
+
     # Empty line for spacing
     tput cup $((line_offset + 4)) 0
     tput el
