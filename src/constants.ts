@@ -13,16 +13,9 @@ const ONE_WEEK = ONE_DAY * 7;
 export const GOALS = [
   {
     goal: ONE_WEEK,
-    label: 'NF',
-    startDate: new Date(
-      'Sun Jul 6 2025 18:16:00 GMT-0400 (Eastern Daylight Time)',
-    ),
-  },
-  {
-    goal: ONE_WEEK,
     label: 'DARK',
     startDate: new Date(
-      'Fri Jul 11 2025 12:34:00 GMT-0400 (Eastern Daylight Time)',
+      'Fri Jul 11 2025 16:05:00 GMT-0400 (Eastern Daylight Time)',
     ),
   },
 ];
