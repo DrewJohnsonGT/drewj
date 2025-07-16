@@ -48,7 +48,6 @@ export const PUG_SEARCH =
 
 export const LINKED_IN_URL = 'https://www.linkedin.com/in/drewjohnsongt/';
 export const GITHUB_URL = 'https://github.com/DrewJohnsonGT/';
-export const INSTAGRAM_URL = 'https://www.instagram.com/sdrewjohnson/';
 
 export const MANDO_VIDEO_URL = 'https://www.youtube.com/embed/I97jYWG01Ss';
 

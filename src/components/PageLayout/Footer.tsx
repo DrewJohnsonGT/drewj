@@ -1,9 +1,9 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/Tooltip';
-import { GITHUB_URL, INSTAGRAM_URL, LINKED_IN_URL, NO_HEADER_FOOTER_ROUTES } from '~/constants';
+import { GITHUB_URL, LINKED_IN_URL, NO_HEADER_FOOTER_ROUTES } from '~/constants';
 import { cn } from '~/utils/cn';
 
 const LINKS = [
@@ -12,12 +12,6 @@ const LINKS = [
     href: LINKED_IN_URL,
     icon: FaLinkedin,
     title: 'LinkedIn',
-  },
-  {
-    color: 'text-[#E4405F] hover:text-[#FF6B84]',
-    href: INSTAGRAM_URL,
-    icon: FaInstagram,
-    title: 'Instagram',
   },
   {
     color: 'text-[#333333] hover:text-[#6E7681]',

@@ -214,8 +214,6 @@
     --disabledText: #b2b2b2;
     --githubLight: #b802b8;
     --github: #7c007c;
-    --instagram: #e4405f;
-    --instagramLight: #f092a7;
     --lightOrange: #ff9651;
     --linkedin: #0072b1;
     --linkedinLight: #00a0dc;
@@ -279,6 +277,47 @@
     --chart-red: 0 100% 60%;
     --chart-yellow: 48 100% 60%;
     --chart-purple: 242 65% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html,
+body {
+  @apply flex h-screen w-screen flex-1 flex-col bg-background antialiased dark:[color-scheme:dark];
+}
+
+@keyframes moveAndRotate {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(200vw) rotate(360deg);
+  }
+}
+
+@keyframes moveAndRotateCounter {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(200vw) rotate(-360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: translateZ(calc(var(--translateZ) * -1)) rotateY(0deg) rotateX(0deg);
+  }
+  to {
+    transform: translateZ(calc(var(--translateZ) * -1)) rotateY(360deg) rotateX(360deg);
   }
 }
 
