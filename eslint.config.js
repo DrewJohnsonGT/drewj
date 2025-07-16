@@ -1,14 +1,54 @@
 // @ts-expect-error - Next plugin is not typed
 import nextPlugin from '@next/eslint-plugin-next';
+import eslintParserTypeScript from '@typescript-eslint/parser';
+import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss';
 import react from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
 import sort from 'eslint-plugin-sort';
-import tailwind from 'eslint-plugin-tailwindcss';
 import ts from 'typescript-eslint';
 
 export default [
   ...ts.configs.recommended,
-  ...tailwind.configs['flat/recommended'],
+  {
+    files: ['**/*.{ts,tsx,cts,mts}'],
+    languageOptions: {
+      parser: eslintParserTypeScript,
+      parserOptions: {
+        project: true,
+      },
+    },
+  },
+  // Tailwind
+  {
+    files: ['**/*.{jsx,tsx}'],
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    plugins: {
+      'better-tailwindcss': eslintPluginBetterTailwindcss,
+    },
+    rules: {
+      ...eslintPluginBetterTailwindcss.configs['recommended-warn']?.rules,
+      ...eslintPluginBetterTailwindcss.configs['recommended-error']?.rules,
+      'better-tailwindcss/enforce-consistent-line-wrapping': [
+        'warn',
+        {
+          group: 'newLine',
+          printWidth: 120,
+        },
+      ],
+    },
+    settings: {
+      'better-tailwindcss': {
+        entryPoint: './src/app/globals.css',
+      },
+    },
+  },
+  // React
   react.configs.flat?.recommended,
   {
     languageOptions: {
@@ -33,6 +73,7 @@ export default [
           varsIgnorePattern: '^_',
         },
       ],
+      'react/prop-types': 'off',
       // React scope no longer necessary with new JSX transform.
       'react/react-in-jsx-scope': 'off',
       'sort/exports': 'off',
@@ -42,25 +83,14 @@ export default [
       'sort/string-enums': 'error',
       'sort/string-unions': 'error',
       'sort/type-properties': 'error',
-      'tailwindcss/enforces-negative-arbitrary-values': 'off',
     },
     settings: {
-      react: { version: 'detect' },
-      tailwindcss: {
-        callees: ['cva', 'cn'],
-        config: './tailwind.config.ts',
-        ignoredKeys: ['compoundVariants', 'defaultVariants'],
-        whitelist: ['dark', 'cycling-letter'],
+      react: {
+        version: 'detect',
       },
     },
   },
-  // Ignore Tailwind custom classnames in logos
-  {
-    files: ['src/assets/logos/**/*.tsx'],
-    rules: {
-      'tailwindcss/no-custom-classname': 'off',
-    },
-  },
+  // Next
   {
     name: 'Next Plugin',
     plugins: {
