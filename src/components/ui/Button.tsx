@@ -53,13 +53,13 @@ const buttonVariants = cva(
         ghost: 'border-none bg-transparent text-foreground shadow-none hover:bg-accent hover:text-accent-foreground',
         link: 'm-0 break-words p-0 text-link underline-offset-4 hover:underline',
         outline:
-          'border border-border bg-outline-normal text-foreground shadow-normal hover:bg-outline-hover hover:text-accent-foreground active:bg-outline-pressed',
+          'border bg-outline-normal text-foreground shadow-normal hover:bg-outline-hover hover:text-accent-foreground active:bg-outline-pressed',
         primary:
           'border border-primary bg-primary-normal text-primary-foreground shadow-button hover:border-secondary hover:bg-primary-hover active:bg-primary-pressed',
         primaryOutline:
-          'border border-border bg-outline-normal text-foreground shadow-normal hover:border-primary hover:bg-accent hover:bg-primary-hover hover:text-primary-foreground hover:shadow-button',
+          'border bg-outline-normal text-foreground shadow-normal hover:border-primary hover:bg-accent hover:bg-primary-hover hover:text-primary-foreground hover:shadow-button',
         secondary:
-          'border border-border bg-secondary text-secondary-foreground shadow-normal hover:border-primary hover:bg-secondary/90 hover:text-primary',
+          'border bg-secondary text-secondary-foreground shadow-normal hover:border-primary hover:bg-secondary/90 hover:text-primary',
       },
     },
   },
