@@ -12,8 +12,7 @@ interface SkillProps {
   style: Record<string, string>;
 }
 
-const getRandomVariance = (min: number, max: number): number =>
-  Math.random() * (max - min) + min;
+const getRandomVariance = (min: number, max: number): number => Math.random() * (max - min) + min;
 
 export default function Home() {
   const { ref: sectionRef, size: sectionSize } = useElementSize();
@@ -59,10 +58,7 @@ export default function Home() {
   }, [sectionSize.height, sectionSize.width]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="flex flex-1 flex-col items-center justify-center overflow-hidden"
-    >
+    <section ref={sectionRef} className="flex flex-1 flex-col items-center justify-center overflow-hidden">
       <div className="z-10 m-2 inline-flex flex-col items-center gap-2 rounded-lg text-center text-2xl backdrop-blur-sm md:flex-row">
         <div className="relative mr-4 size-[150px] md:mr-0">
           <NextImage

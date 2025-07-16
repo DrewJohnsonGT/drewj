@@ -34,12 +34,12 @@ const DropdownMenuSubTrigger: React.FC<
     <LuChevronRight className="ml-auto" />
   </DropdownMenuPrimitive.SubTrigger>
 );
-DropdownMenuSubTrigger.displayName =
-  DropdownMenuPrimitive.SubTrigger.displayName;
+DropdownMenuSubTrigger.displayName = DropdownMenuPrimitive.SubTrigger.displayName;
 
-const DropdownMenuSubContent: React.FC<
-  React.ComponentProps<typeof DropdownMenuPrimitive.SubContent>
-> = ({ className, ...props }) => (
+const DropdownMenuSubContent: React.FC<React.ComponentProps<typeof DropdownMenuPrimitive.SubContent>> = ({
+  className,
+  ...props
+}) => (
   <DropdownMenuPrimitive.SubContent
     className={cn(
       'z-50 min-w-32 overflow-hidden rounded-md border bg-input-background p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
@@ -48,12 +48,13 @@ const DropdownMenuSubContent: React.FC<
     {...props}
   />
 );
-DropdownMenuSubContent.displayName =
-  DropdownMenuPrimitive.SubContent.displayName;
+DropdownMenuSubContent.displayName = DropdownMenuPrimitive.SubContent.displayName;
 
-const DropdownMenuContent: React.FC<
-  React.ComponentProps<typeof DropdownMenuPrimitive.Content>
-> = ({ className, sideOffset = 4, ...props }) => (
+const DropdownMenuContent: React.FC<React.ComponentProps<typeof DropdownMenuPrimitive.Content>> = ({
+  className,
+  sideOffset = 4,
+  ...props
+}) => (
   <DropdownMenuPrimitive.Portal>
     <DropdownMenuPrimitive.Content
       sideOffset={sideOffset}
@@ -83,9 +84,12 @@ const DropdownMenuItem: React.FC<
 );
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
 
-const DropdownMenuCheckboxItem: React.FC<
-  React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem>
-> = ({ checked, children, className, ...props }) => (
+const DropdownMenuCheckboxItem: React.FC<React.ComponentProps<typeof DropdownMenuPrimitive.CheckboxItem>> = ({
+  checked,
+  children,
+  className,
+  ...props
+}) => (
   <DropdownMenuPrimitive.CheckboxItem
     className={cn(
       'relative flex cursor-pointer select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
@@ -102,12 +106,13 @@ const DropdownMenuCheckboxItem: React.FC<
     {children}
   </DropdownMenuPrimitive.CheckboxItem>
 );
-DropdownMenuCheckboxItem.displayName =
-  DropdownMenuPrimitive.CheckboxItem.displayName;
+DropdownMenuCheckboxItem.displayName = DropdownMenuPrimitive.CheckboxItem.displayName;
 
-const DropdownMenuRadioItem: React.FC<
-  React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem>
-> = ({ children, className, ...props }) => (
+const DropdownMenuRadioItem: React.FC<React.ComponentProps<typeof DropdownMenuPrimitive.RadioItem>> = ({
+  children,
+  className,
+  ...props
+}) => (
   <DropdownMenuPrimitive.RadioItem
     className={cn(
       'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
@@ -131,36 +136,20 @@ const DropdownMenuLabel: React.FC<
   }
 > = ({ className, inset, ...props }) => (
   <DropdownMenuPrimitive.Label
-    className={cn(
-      'px-2 py-1.5 text-sm font-semibold',
-      inset && 'pl-8',
-      className,
-    )}
+    className={cn('px-2 py-1.5 text-sm font-semibold', inset && 'pl-8', className)}
     {...props}
   />
 );
 DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName;
 
-const DropdownMenuSeparator: React.FC<
-  React.ComponentProps<typeof DropdownMenuPrimitive.Separator>
-> = ({ className, ...props }) => (
-  <DropdownMenuPrimitive.Separator
-    className={cn('-mx-1 my-1 h-px bg-muted', className)}
-    {...props}
-  />
-);
-DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
-
-const DropdownMenuShortcut: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
+const DropdownMenuSeparator: React.FC<React.ComponentProps<typeof DropdownMenuPrimitive.Separator>> = ({
   className,
   ...props
-}) => {
-  return (
-    <span
-      className={cn('ml-auto text-xs tracking-widest opacity-60', className)}
-      {...props}
-    />
-  );
+}) => <DropdownMenuPrimitive.Separator className={cn('-mx-1 my-1 h-px bg-muted', className)} {...props} />;
+DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
+
+const DropdownMenuShortcut: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({ className, ...props }) => {
+  return <span className={cn('ml-auto text-xs tracking-widest opacity-60', className)} {...props} />;
 };
 DropdownMenuShortcut.displayName = 'DropdownMenuShortcut';
 

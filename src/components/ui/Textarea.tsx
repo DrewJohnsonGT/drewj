@@ -25,11 +25,7 @@ const Textarea: React.FC<React.ComponentProps<'textarea'>> = ({
   return (
     <div className="relative">
       <textarea
-        className={cn(
-          sharedInputClasses,
-          'flex min-h-[80px] data-[placeholder]:text-muted-foreground',
-          className,
-        )}
+        className={cn(sharedInputClasses, 'flex min-h-[80px] data-[placeholder]:text-muted-foreground', className)}
         {...props}
         value={value}
         onChange={handleChange}

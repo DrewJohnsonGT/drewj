@@ -13,20 +13,13 @@ const config: Config = {
         rotating: 'rotating linear infinite',
       },
       backgroundImage: {
-        'outline-hover':
-          'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%)',
-        'outline-normal':
-          'linear-gradient(180deg, hsl(var(--background-lighter)) 0%, hsl(var(--background)) 100%)',
-        'outline-pressed':
-          'linear-gradient(180deg, hsl(var(--background-lighter)) 0%, hsl(var(--background)) 100%)',
-        'primary-focused':
-          'linear-gradient(180deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-dark)) 100%)',
-        'primary-hover':
-          'linear-gradient(180deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-dark)) 100%)',
-        'primary-normal':
-          'linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%)',
-        'primary-pressed':
-          'linear-gradient(180deg, hsl(var(--secondary-dark)) 0%, hsl(var(--secondary-darker)) 100%)',
+        'outline-hover': 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%)',
+        'outline-normal': 'linear-gradient(180deg, hsl(var(--background-lighter)) 0%, hsl(var(--background)) 100%)',
+        'outline-pressed': 'linear-gradient(180deg, hsl(var(--background-lighter)) 0%, hsl(var(--background)) 100%)',
+        'primary-focused': 'linear-gradient(180deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-dark)) 100%)',
+        'primary-hover': 'linear-gradient(180deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-dark)) 100%)',
+        'primary-normal': 'linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%)',
+        'primary-pressed': 'linear-gradient(180deg, hsl(var(--secondary-dark)) 0%, hsl(var(--secondary-darker)) 100%)',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -115,12 +108,10 @@ const config: Config = {
       keyframes: {
         rotating: {
           '0%': {
-            transform:
-              'translateZ(calc(var(--translateZ)*-1)) rotateX(0deg) rotateY(0deg)',
+            transform: 'translateZ(calc(var(--translateZ)*-1)) rotateX(0deg) rotateY(0deg)',
           },
           '100%': {
-            transform:
-              'translateZ(calc(var(--translateZ)*-1)) rotateX(360deg) rotateY(360deg)',
+            transform: 'translateZ(calc(var(--translateZ)*-1)) rotateX(360deg) rotateY(360deg)',
           },
         },
       },

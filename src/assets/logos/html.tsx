@@ -12,33 +12,17 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
   >
     <filter id="a" width="150%" height="150%" x="-5%" y="-5%">
       <feFlood floodColor="#000" floodOpacity={0.5} result="floodFill" />
-      <feComposite
-        in="floodFill"
-        in2="SourceAlpha"
-        operator="in"
-        result="coloredAlpha"
-      />
+      <feComposite in="floodFill" in2="SourceAlpha" operator="in" result="coloredAlpha" />
       <feGaussianBlur in="coloredAlpha" result="blur" stdDeviation={8} />
-      <feComposite
-        in="blur"
-        in2="SourceGraphic"
-        operator="out"
-        result="maskedOffsetBlur"
-      />
+      <feComposite in="blur" in2="SourceGraphic" operator="out" result="maskedOffsetBlur" />
       <feMerge>
         <feMergeNode in="maskedOffsetBlur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
     <g filter="url(#a)">
-      <path
-        fill="#e44d26"
-        d="m261.849 660.647-40.042-449.125h440l-40.086 449.054-180.184 49.954z"
-      />
-      <path
-        fill="#f16529"
-        d="m441.807 672.348 145.596-40.367 34.258-383.735H441.807z"
-      />
+      <path fill="#e44d26" d="m261.849 660.647-40.042-449.125h440l-40.086 449.054-180.184 49.954z" />
+      <path fill="#f16529" d="m441.807 672.348 145.596-40.367 34.258-383.735H441.807z" />
       <path
         fill="#ebebeb"
         d="M441.807 414.82h-72.888l-5.035-56.406h77.923V303.33H303.683l1.32 14.778 13.538 151.794h123.266zm0 143.056-.242.066-61.346-16.566-3.922-43.93h-55.294l7.718 86.489 112.834 31.323.252-.071z"

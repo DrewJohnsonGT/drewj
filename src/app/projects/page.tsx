@@ -4,33 +4,19 @@ import { RiGitRepositoryLine } from 'react-icons/ri';
 import { ProgressLink } from '~/components/ProgressBar/Link';
 import { TechnologyChip } from '~/components/TechnologyChip';
 import { Button } from '~/components/ui/Button';
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '~/components/ui/Card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '~/components/ui/Card';
 import { getAllProjectsFrontMatter } from '~/utils/projects';
 
 const ProjectsPage = async () => {
   const projects = await getAllProjectsFrontMatter();
-  const projectsSortedByDate = projects.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
+  const projectsSortedByDate = projects.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   return (
     <div className="grid grid-cols-1 justify-center gap-4 px-4 pb-20 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
       {projectsSortedByDate.map((project) => (
         <Card key={project.title} className="p-0">
           <CardHeader className="p-0">
             <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
-              <Image
-                src={project.banner}
-                alt={project.title}
-                placeholder="empty"
-                className="object-cover"
-                fill
-              />
+              <Image src={project.banner} alt={project.title} placeholder="empty" className="object-cover" fill />
             </div>
             <div className="p-2 text-center">
               <CardTitle>{project.title}</CardTitle>
@@ -46,15 +32,8 @@ const ProjectsPage = async () => {
           </CardContent>
           <CardFooter className="mt-2 flex items-center justify-between gap-2 p-2">
             {project.repository && (
-              <a
-                href={project.repository}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  variant="primaryOutline"
-                  className="flex items-center gap-1"
-                >
+              <a href={project.repository} target="_blank" rel="noopener noreferrer">
+                <Button variant="primaryOutline" className="flex items-center gap-1">
                   <RiGitRepositoryLine />
                   Repo
                 </Button>
@@ -62,20 +41,14 @@ const ProjectsPage = async () => {
             )}
             {project.link && (
               <a href={project.link} target="_blank" rel="noopener noreferrer">
-                <Button
-                  variant="primaryOutline"
-                  className="flex items-center gap-1"
-                >
+                <Button variant="primaryOutline" className="flex items-center gap-1">
                   <AiOutlineLink />
                   Visit
                 </Button>
               </a>
             )}
             {project.slug && (
-              <ProgressLink
-                href={`/projects/${project.slug}`}
-                className="flex-1"
-              >
+              <ProgressLink href={`/projects/${project.slug}`} className="flex-1">
                 <Button className="flex w-full flex-1 items-center gap-1">
                   <AiOutlineZoomIn />
                   Details

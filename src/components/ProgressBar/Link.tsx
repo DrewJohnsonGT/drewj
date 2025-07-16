@@ -26,13 +26,7 @@ export const useProgressLink = () => {
   return { navigate };
 };
 
-export const ProgressLink = ({
-  href,
-  children,
-  className,
-  onClick,
-  ...props
-}: ProgressLinkProps) => {
+export const ProgressLink = ({ href, children, className, onClick, ...props }: ProgressLinkProps) => {
   const router = useRouter();
   const progress = useProgressBar();
 

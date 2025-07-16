@@ -1,8 +1,4 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '~/components/ui/Tooltip';
+import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/Tooltip';
 
 const timeSince = (date: Date): string => {
   const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
@@ -36,9 +32,7 @@ export const TimeAgo = ({ date }: { date?: Date | string }) => {
       <TooltipTrigger asChild>
         <span className="cursor-default">{timeSince(dateObj)}</span>
       </TooltipTrigger>
-      <TooltipContent>
-        {`${dateObj.toLocaleDateString()} - ${dateObj.toLocaleTimeString()}`}
-      </TooltipContent>
+      <TooltipContent>{`${dateObj.toLocaleDateString()} - ${dateObj.toLocaleTimeString()}`}</TooltipContent>
     </Tooltip>
   );
 };

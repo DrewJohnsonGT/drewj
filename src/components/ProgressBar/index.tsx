@@ -1,23 +1,9 @@
 'use client';
 
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
-import {
-  AnimatePresence,
-  motion,
-  useMotionTemplate,
-  useSpring,
-} from 'motion/react';
+import { createContext, ReactNode, useContext, useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion, useMotionTemplate, useSpring } from 'motion/react';
 
-const ProgressBarContext = createContext<ReturnType<typeof useProgress> | null>(
-  null,
-);
+const ProgressBarContext = createContext<ReturnType<typeof useProgress> | null>(null);
 
 export function useProgressBar() {
   const progress = useContext(ProgressBarContext);
@@ -32,11 +18,7 @@ export function useProgressBar() {
 export function ProgressBarProvider({ children }: { children: ReactNode }) {
   const progress = useProgress();
 
-  return (
-    <ProgressBarContext.Provider value={progress}>
-      {children}
-    </ProgressBarContext.Provider>
-  );
+  return <ProgressBarContext.Provider value={progress}>{children}</ProgressBarContext.Provider>;
 }
 
 export function ProgressBarDisplay() {
@@ -58,9 +40,7 @@ export function ProgressBarDisplay() {
 }
 
 function useProgress() {
-  const [state, setState] = useState<
-    'complete' | 'completing' | 'in-progress' | 'initial'
-  >('initial');
+  const [state, setState] = useState<'complete' | 'completing' | 'in-progress' | 'initial'>('initial');
 
   const value = useSpring(0, {
     damping: 25,
@@ -107,9 +87,7 @@ function useProgress() {
   }
 
   function done() {
-    setState((state) =>
-      state === 'initial' || state === 'in-progress' ? 'completing' : state,
-    );
+    setState((state) => (state === 'initial' || state === 'in-progress' ? 'completing' : state));
   }
 
   return { done, reset, start, state, value };

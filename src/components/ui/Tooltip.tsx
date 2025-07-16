@@ -10,9 +10,11 @@ const Tooltip = TooltipPrimitive.Root;
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
-const TooltipContent: React.FC<
-  React.ComponentProps<typeof TooltipPrimitive.Content>
-> = ({ className, sideOffset = 4, ...props }) => (
+const TooltipContent: React.FC<React.ComponentProps<typeof TooltipPrimitive.Content>> = ({
+  className,
+  sideOffset = 4,
+  ...props
+}) => (
   <TooltipPrimitive.Portal>
     <TooltipPrimitive.Content
       sideOffset={sideOffset}

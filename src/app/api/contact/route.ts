@@ -83,24 +83,15 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     const data = (await request.json()) as ContactFormData;
 
     if (!data.name || !data.email || !data.message) {
-      return NextResponse.json(
-        { error: 'Name, email, and message are required' },
-        { status: 400 },
-      );
+      return NextResponse.json({ error: 'Name, email, and message are required' }, { status: 400 });
     }
 
     const embed = createContactFormEmbed(data);
     await sendDiscordNotification(embed);
 
-    return NextResponse.json(
-      { message: 'Contact form submitted successfully', success: true },
-      { status: 200 },
-    );
+    return NextResponse.json({ message: 'Contact form submitted successfully', success: true }, { status: 200 });
   } catch (error) {
     console.error('Error processing contact form:', error);
-    return NextResponse.json(
-      { error: 'Failed to process contact form submission' },
-      { status: 500 },
-    );
+    return NextResponse.json({ error: 'Failed to process contact form submission' }, { status: 500 });
   }
 }

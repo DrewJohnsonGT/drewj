@@ -4,14 +4,7 @@ import * as React from 'react';
 import { Label } from './Label';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
-import {
-  Controller,
-  ControllerProps,
-  FieldPath,
-  FieldValues,
-  FormProvider,
-  useFormContext,
-} from 'react-hook-form';
+import { Controller, ControllerProps, FieldPath, FieldValues, FormProvider, useFormContext } from 'react-hook-form';
 import { cn } from '~/utils/cn';
 
 const Form = FormProvider;
@@ -23,9 +16,7 @@ type FormFieldContextValue<
   name: TName;
 };
 
-const FormFieldContext = React.createContext<FormFieldContextValue>(
-  {} as FormFieldContextValue,
-);
+const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFieldContextValue);
 
 const FormField = <
   TFieldValues extends FieldValues = FieldValues,
@@ -67,14 +58,9 @@ type FormItemContextValue = {
   id: string;
 };
 
-const FormItemContext = React.createContext<FormItemContextValue>(
-  {} as FormItemContextValue,
-);
+const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue);
 
-const FormItem: React.FC<React.ComponentProps<'div'>> = ({
-  className,
-  ...props
-}) => {
+const FormItem: React.FC<React.ComponentProps<'div'>> = ({ className, ...props }) => {
   const id = React.useId();
 
   return (
@@ -85,36 +71,20 @@ const FormItem: React.FC<React.ComponentProps<'div'>> = ({
 };
 FormItem.displayName = 'FormItem';
 
-const FormLabel: React.FC<React.ComponentProps<typeof LabelPrimitive.Root>> = ({
-  className,
-  ...props
-}) => {
+const FormLabel: React.FC<React.ComponentProps<typeof LabelPrimitive.Root>> = ({ className, ...props }) => {
   const { error, formItemId } = useFormField();
 
-  return (
-    <Label
-      className={cn('text-base', error && 'text-destructive', className)}
-      htmlFor={formItemId}
-      {...props}
-    />
-  );
+  return <Label className={cn('text-base', error && 'text-destructive', className)} htmlFor={formItemId} {...props} />;
 };
 FormLabel.displayName = 'FormLabel';
 
-const FormControl: React.FC<React.ComponentProps<typeof Slot>> = ({
-  ...props
-}) => {
-  const { error, formDescriptionId, formItemId, formMessageId } =
-    useFormField();
+const FormControl: React.FC<React.ComponentProps<typeof Slot>> = ({ ...props }) => {
+  const { error, formDescriptionId, formItemId, formMessageId } = useFormField();
 
   return (
     <Slot
       id={formItemId}
-      aria-describedby={
-        !error
-          ? `${formDescriptionId}`
-          : `${formDescriptionId} ${formMessageId}`
-      }
+      aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
       aria-invalid={!!error}
       {...props}
     />
@@ -122,27 +92,14 @@ const FormControl: React.FC<React.ComponentProps<typeof Slot>> = ({
 };
 FormControl.displayName = 'FormControl';
 
-const FormDescription: React.FC<React.ComponentProps<'p'>> = ({
-  className,
-  ...props
-}) => {
+const FormDescription: React.FC<React.ComponentProps<'p'>> = ({ className, ...props }) => {
   const { formDescriptionId } = useFormField();
 
-  return (
-    <p
-      id={formDescriptionId}
-      className={cn('text-sm text-muted-foreground', className)}
-      {...props}
-    />
-  );
+  return <p id={formDescriptionId} className={cn('text-sm text-muted-foreground', className)} {...props} />;
 };
 FormDescription.displayName = 'FormDescription';
 
-const FormMessage: React.FC<React.ComponentProps<'p'>> = ({
-  children,
-  className,
-  ...props
-}) => {
+const FormMessage: React.FC<React.ComponentProps<'p'>> = ({ children, className, ...props }) => {
   const { error, formMessageId } = useFormField();
   const body = error ? String(error?.message) : children;
 
@@ -151,24 +108,11 @@ const FormMessage: React.FC<React.ComponentProps<'p'>> = ({
   }
 
   return (
-    <p
-      id={formMessageId}
-      className={cn('h-5 text-sm font-medium text-destructive', className)}
-      {...props}
-    >
+    <p id={formMessageId} className={cn('h-5 text-sm font-medium text-destructive', className)} {...props}>
       {body}
     </p>
   );
 };
 FormMessage.displayName = 'FormMessage';
 
-export {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-  useFormField,
-};
+export { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, useFormField };

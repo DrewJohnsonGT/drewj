@@ -1,19 +1,9 @@
 import { IconType } from 'react-icons';
 import { DiMsqlServer } from 'react-icons/di';
 import { FaApple, FaNodeJs, FaReact } from 'react-icons/fa';
-import {
-  FaChrome,
-  FaCss3Alt,
-  FaHtml5,
-  FaPython,
-  FaRaspberryPi,
-} from 'react-icons/fa6';
+import { FaChrome, FaCss3Alt, FaHtml5, FaPython, FaRaspberryPi } from 'react-icons/fa6';
 import { IoLogoAndroid } from 'react-icons/io';
-import {
-  RiFirebaseFill,
-  RiNextjsLine,
-  RiTailwindCssFill,
-} from 'react-icons/ri';
+import { RiFirebaseFill, RiNextjsLine, RiTailwindCssFill } from 'react-icons/ri';
 import {
   SiArduino,
   SiCapacitor,
@@ -205,9 +195,7 @@ export const TechnologyChip = ({ technology }: { technology: Technology }) => {
         color: tech.color,
       }}
     >
-      {tech?.icon && (
-        <tech.icon style={{ color: tech.color }} className="text-[22px]" />
-      )}
+      {tech?.icon && <tech.icon style={{ color: tech.color }} className="text-[22px]" />}
       <span style={{ color: tech.color }}>{tech?.label}</span>
     </Badge>
   );

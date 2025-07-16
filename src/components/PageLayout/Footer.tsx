@@ -2,17 +2,8 @@
 
 import { usePathname } from 'next/navigation';
 import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa6';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '~/components/ui/Tooltip';
-import {
-  GITHUB_URL,
-  INSTAGRAM_URL,
-  LINKED_IN_URL,
-  NO_HEADER_FOOTER_ROUTES,
-} from '~/constants';
+import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/Tooltip';
+import { GITHUB_URL, INSTAGRAM_URL, LINKED_IN_URL, NO_HEADER_FOOTER_ROUTES } from '~/constants';
 import { cn } from '~/utils/cn';
 
 const LINKS = [

@@ -16,18 +16,11 @@ const spinnerVariants = cva('animate-spin rounded-full', {
   },
 });
 
-const LoadingSpinner: React.FC<
-  React.ComponentProps<'div'> & VariantProps<typeof spinnerVariants>
-> = ({ className, size, ...props }) => (
-  <div
-    className={cn(
-      'border-muted border-t-primary',
-      spinnerVariants({ size }),
-      className,
-    )}
-    {...props}
-  />
-);
+const LoadingSpinner: React.FC<React.ComponentProps<'div'> & VariantProps<typeof spinnerVariants>> = ({
+  className,
+  size,
+  ...props
+}) => <div className={cn('border-muted border-t-primary', spinnerVariants({ size }), className)} {...props} />;
 
 LoadingSpinner.displayName = 'LoadingSpinner';
 

@@ -1,12 +1,6 @@
 import { TimeSince } from './page';
 
-export const TimeSinceItem = ({
-  days,
-  hours,
-  minutes,
-  percentOfGoal,
-  seconds,
-}: TimeSince) => {
+export const TimeSinceItem = ({ days, hours, minutes, percentOfGoal, seconds }: TimeSince) => {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="flex flex-row items-center justify-center gap-2">
@@ -22,11 +16,7 @@ export const TimeSinceItem = ({
           </div>
         ))}
       </div>
-      {percentOfGoal && (
-        <span className="text-lg text-orange-500">
-          {percentOfGoal?.toFixed(2)}%
-        </span>
-      )}
+      {percentOfGoal && <span className="text-lg text-orange-500">{percentOfGoal?.toFixed(2)}%</span>}
     </div>
   );
 };

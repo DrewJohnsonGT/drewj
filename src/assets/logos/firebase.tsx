@@ -18,19 +18,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
       {...props}
     >
       <defs>
-        <filter
-          id={filterId1}
-          width="200%"
-          height="200%"
-          x="-50%"
-          y="-50%"
-          filterUnits="objectBoundingBox"
-        >
-          <feGaussianBlur
-            in="SourceAlpha"
-            result="shadowBlurInner1"
-            stdDeviation={17.5}
-          />
+        <filter id={filterId1} width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+          <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation={17.5} />
           <feOffset in="shadowBlurInner1" result="shadowOffsetInner1" />
           <feComposite
             in="shadowOffsetInner1"
@@ -40,30 +29,11 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
             operator="arithmetic"
             result="shadowInnerInner1"
           />
-          <feColorMatrix
-            in="shadowInnerInner1"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
-          />
+          <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
         </filter>
-        <filter
-          id={filterId2}
-          width="200%"
-          height="200%"
-          x="-50%"
-          y="-50%"
-          filterUnits="objectBoundingBox"
-        >
-          <feGaussianBlur
-            in="SourceAlpha"
-            result="shadowBlurInner1"
-            stdDeviation={3.5}
-          />
-          <feOffset
-            dx={1}
-            dy={-9}
-            in="shadowBlurInner1"
-            result="shadowOffsetInner1"
-          />
+        <filter id={filterId2} width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox">
+          <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation={3.5} />
+          <feOffset dx={1} dy={-9} in="shadowBlurInner1" result="shadowOffsetInner1" />
           <feComposite
             in="shadowOffsetInner1"
             in2="SourceAlpha"
@@ -72,10 +42,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
             operator="arithmetic"
             result="shadowInnerInner1"
           />
-          <feColorMatrix
-            in="shadowInnerInner1"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0"
-          />
+          <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0" />
         </filter>
         <path
           id={pathId1}
@@ -98,10 +65,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
       />
       <use xlinkHref={`#${pathId2}`} fill="#FFA50E" fillRule="evenodd" />
       <use xlinkHref={`#${pathId2}`} filter={`url(#${filterId2})`} />
-      <path
-        fill="#F6820C"
-        d="m0 282.998.962-.968 3.496-1.42 128.477-128 1.628-4.431-32.05-61.074z"
-      />
+      <path fill="#F6820C" d="m0 282.998.962-.968 3.496-1.42 128.477-128 1.628-4.431-32.05-61.074z" />
       <path
         fill="#FDE068"
         d="m139.121 347.551 116.275-64.847-33.204-204.495c-1.039-6.398-8.888-8.927-13.468-4.34L0 282.998l115.608 64.548a24.126 24.126 0 0 0 23.513.005"

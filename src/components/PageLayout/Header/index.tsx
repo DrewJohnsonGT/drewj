@@ -9,12 +9,7 @@ import { Cube } from '~/components/Header/Cube';
 import { ThemeToggle } from '~/components/Header/ThemeToggle';
 import { ProgressLink } from '~/components/ProgressBar/Link';
 import { Button } from '~/components/ui/Button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '~/components/ui/DropdownMenu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '~/components/ui/DropdownMenu';
 import { NO_HEADER_FOOTER_ROUTES, ROUTES } from '~/constants';
 
 export const Header = () => {
@@ -24,10 +19,7 @@ export const Header = () => {
   const navRef = useRef<(HTMLLIElement | null)[]>([]);
   const underlineRef = useRef<HTMLDivElement>(null);
 
-  const findRouteIndex = useCallback(
-    () => ROUTES.findIndex((route) => route.value === currentPath),
-    [currentPath],
-  );
+  const findRouteIndex = useCallback(() => ROUTES.findIndex((route) => route.value === currentPath), [currentPath]);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -68,8 +60,7 @@ export const Header = () => {
             <li
               className={clsx(
                 'cursor-pointer p-2 px-3 font-[Qube] text-2xl hover:text-primary',
-                (index === activeIndex || currentPath === route.value) &&
-                  'text-primary',
+                (index === activeIndex || currentPath === route.value) && 'text-primary',
               )}
               key={route.value}
               ref={(el) => {
@@ -79,11 +70,7 @@ export const Header = () => {
               onMouseLeave={() => setActiveIndex(findRouteIndex())}
               onClick={() => setActiveIndex(index)}
             >
-              <ProgressLink
-                href={`/${route.value}`}
-                key={route.value}
-                className="no-underline"
-              >
+              <ProgressLink href={`/${route.value}`} key={route.value} className="no-underline">
                 {route.label}
               </ProgressLink>
             </li>
@@ -100,12 +87,7 @@ export const Header = () => {
       <div className="flex lg:hidden">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="size-12"
-              aria-label="Navigation menu"
-            >
+            <Button variant="ghost" size="icon" className="size-12" aria-label="Navigation menu">
               <MdMenu className="size-10" />
             </Button>
           </DropdownMenuTrigger>

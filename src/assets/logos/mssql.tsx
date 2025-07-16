@@ -2,13 +2,7 @@ import * as React from 'react';
 import { SVGProps } from 'react';
 
 const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width={800}
-    height={800}
-    viewBox="0 -141.54 1478.201 1478.201"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width={800} height={800} viewBox="0 -141.54 1478.201 1478.201" {...props}>
     <g transform="matrix(.569 0 0 .569 199.451 -82.735)">
       <linearGradient
         id="a"

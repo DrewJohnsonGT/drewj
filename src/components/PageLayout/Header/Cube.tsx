@@ -48,13 +48,10 @@ export const Cube = () => {
   // Each face transform: rotate + translateZ in one bracket
   const sideClasses: Record<string, string> = {
     back: '[transform:rotateY(180deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--orange)]',
-    bottom:
-      '[transform:rotateX(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--yellow)]',
-    front:
-      '[transform:rotateY(0deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--orange)]',
+    bottom: '[transform:rotateX(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--yellow)]',
+    front: '[transform:rotateY(0deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--orange)]',
     left: '[transform:rotateY(-90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--lightOrange)]',
-    right:
-      '[transform:rotateY(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--red)]',
+    right: '[transform:rotateY(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--red)]',
     top: '[transform:rotateX(-90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--lightOrange)]',
   };
 
@@ -91,8 +88,7 @@ export const Cube = () => {
           // If a side is focused => rotate so that side is forward
           focusedSide && showClasses[`show-${focusedSide.position}`],
           // Also spin on hover (4 turns) if a side is focused
-          focusedSide &&
-            'hover:duration-4000 hover:ease-linear hover:[transform:rotateX(1440deg)_rotateY(1440deg)]',
+          focusedSide && 'hover:duration-4000 hover:ease-linear hover:[transform:rotateX(1440deg)_rotateY(1440deg)]',
         )}
       >
         {SIDES.map(({ icon: Icon, position, route }) => (

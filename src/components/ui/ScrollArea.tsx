@@ -4,26 +4,14 @@ import * as React from 'react';
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';
 import { cn } from '~/utils/cn';
 
-interface ScrollAreaProps
-  extends React.ComponentProps<typeof ScrollAreaPrimitive.Root> {
+interface ScrollAreaProps extends React.ComponentProps<typeof ScrollAreaPrimitive.Root> {
   viewportClassName?: string;
 }
 
-const ScrollArea: React.FC<ScrollAreaProps> = ({
-  children,
-  className,
-  viewportClassName,
-  ...props
-}) => (
-  <ScrollAreaPrimitive.Root
-    className={cn('relative overflow-hidden', className)}
-    {...props}
-  >
+const ScrollArea: React.FC<ScrollAreaProps> = ({ children, className, viewportClassName, ...props }) => (
+  <ScrollAreaPrimitive.Root className={cn('relative overflow-hidden', className)} {...props}>
     <ScrollAreaPrimitive.Viewport
-      className={cn(
-        'size-full scroll-smooth rounded-[inherit] [&>div]:!block',
-        viewportClassName,
-      )}
+      className={cn('size-full scroll-smooth rounded-[inherit] [&>div]:!block', viewportClassName)}
     >
       {children}
     </ScrollAreaPrimitive.Viewport>
@@ -33,17 +21,17 @@ const ScrollArea: React.FC<ScrollAreaProps> = ({
 );
 ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName;
 
-const ScrollBar: React.FC<
-  React.ComponentProps<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
-> = ({ className, orientation = 'vertical', ...props }) => (
+const ScrollBar: React.FC<React.ComponentProps<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>> = ({
+  className,
+  orientation = 'vertical',
+  ...props
+}) => (
   <ScrollAreaPrimitive.ScrollAreaScrollbar
     orientation={orientation}
     className={cn(
       'flex touch-none select-none transition-colors',
-      orientation === 'vertical' &&
-        'h-full w-2.5 border-l border-l-transparent p-px',
-      orientation === 'horizontal' &&
-        'h-2.5 flex-col border-t border-t-transparent p-px',
+      orientation === 'vertical' && 'h-full w-2.5 border-l border-l-transparent p-px',
+      orientation === 'horizontal' && 'h-2.5 flex-col border-t border-t-transparent p-px',
       className,
     )}
     {...props}

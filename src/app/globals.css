@@ -231,11 +231,9 @@ body {
 
 @keyframes rotating {
   from {
-    transform: translateZ(calc(var(--translateZ) * -1)) rotateY(0deg)
-      rotateX(0deg);
+    transform: translateZ(calc(var(--translateZ) * -1)) rotateY(0deg) rotateX(0deg);
   }
   to {
-    transform: translateZ(calc(var(--translateZ) * -1)) rotateY(360deg)
-      rotateX(360deg);
+    transform: translateZ(calc(var(--translateZ) * -1)) rotateY(360deg) rotateX(360deg);
   }
 }

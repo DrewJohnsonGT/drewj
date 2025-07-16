@@ -5,15 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Button } from '~/components/ui/Button';
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '~/components/ui/Form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '~/components/ui/Form';
 import { Input } from '~/components/ui/Input';
 import { Textarea } from '~/components/ui/Textarea';
 import { LINKED_IN_URL } from '~/constants';
@@ -106,12 +98,7 @@ const ContactForm = () => {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input
-                        type="email"
-                        placeholder="your.email@example.com"
-                        required
-                        {...field}
-                      />
+                      <Input type="email" placeholder="your.email@example.com" required {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -124,9 +111,7 @@ const ContactForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Message</FormLabel>
-                    <FormDescription>
-                      Please provide details about your inquiry.
-                    </FormDescription>
+                    <FormDescription>Please provide details about your inquiry.</FormDescription>
                     <FormControl>
                       <Textarea placeholder="Your message" {...field} />
                     </FormControl>
@@ -148,11 +133,7 @@ const ContactForm = () => {
           </Form>
         </>
       )}
-      {submitError && (
-        <div className="text-sm font-medium text-destructive">
-          {submitError}
-        </div>
-      )}
+      {submitError && <div className="text-sm font-medium text-destructive">{submitError}</div>}
 
       {submitSuccess && (
         <div className="text-center font-medium text-success">

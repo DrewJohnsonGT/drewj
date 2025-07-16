@@ -3,11 +3,7 @@ import { LoadingSpinner } from './LoadingSpinner';
 import { Slot } from '@radix-ui/react-slot';
 import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from '~/components/ui/Tooltip';
+import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/Tooltip';
 import { cn } from '~/utils/cn';
 
 const buttonVariants = cva(
@@ -25,8 +21,7 @@ const buttonVariants = cva(
         variant: 'primary',
       },
       {
-        className:
-          'border-destructive text-destructive hover:bg-destructive/10 hover:text-destructive',
+        className: 'border-destructive text-destructive hover:bg-destructive/10 hover:text-destructive',
         color: 'destructive',
         variant: 'outline',
       },
@@ -43,8 +38,7 @@ const buttonVariants = cva(
     },
     variants: {
       color: {
-        destructive:
-          'border-destructive bg-destructive text-destructive-foreground',
+        destructive: 'border-destructive bg-destructive text-destructive-foreground',
         link: 'text-link underline-offset-4 hover:underline',
         success: 'bg-success text-success-foreground',
       },
@@ -56,8 +50,7 @@ const buttonVariants = cva(
         smallIcon: 'size-8',
       },
       variant: {
-        ghost:
-          'border-none bg-transparent text-foreground shadow-none hover:bg-accent hover:text-accent-foreground',
+        ghost: 'border-none bg-transparent text-foreground shadow-none hover:bg-accent hover:text-accent-foreground',
         link: 'm-0 break-words p-0 text-link underline-offset-4 hover:underline',
         outline:
           'border border-border bg-outline-normal text-foreground shadow-normal hover:bg-outline-hover hover:text-accent-foreground active:bg-outline-pressed',
@@ -74,9 +67,7 @@ const buttonVariants = cva(
 
 export type ButtonVariantProps = VariantProps<typeof buttonVariants>;
 
-export interface ButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'>,
-    ButtonVariantProps {
+export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'>, ButtonVariantProps {
   asChild?: boolean;
   loading?: boolean;
   loadingText?: string;
@@ -93,10 +84,7 @@ export const ButtonLoadingContent = ({
   size: ButtonVariantProps['size'];
 }) => (
   <div className="flex items-center">
-    <LoadingSpinner
-      className={cn('size-4', size !== 'icon' && 'mr-2')}
-      size="sm"
-    />
+    <LoadingSpinner className={cn('size-4', size !== 'icon' && 'mr-2')} size="sm" />
     {size !== 'icon' && <span>{loadingText}</span>}
   </div>
 );
@@ -123,20 +111,13 @@ const Button: React.FC<React.ComponentProps<'button'> & ButtonProps> = ({
       type={type}
       {...props}
     >
-      {loading ? (
-        <ButtonLoadingContent size={size} loadingText={loadingText} />
-      ) : (
-        props.children
-      )}
+      {loading ? <ButtonLoadingContent size={size} loadingText={loadingText} /> : props.children}
     </Comp>
   );
 
   return tooltip ? (
     <Tooltip delayDuration={tooltipDelay}>
-      <TooltipTrigger
-        asChild
-        className={cn(props.disabled && 'cursor-default')}
-      >
+      <TooltipTrigger asChild className={cn(props.disabled && 'cursor-default')}>
         <span>{buttonContent}</span>
       </TooltipTrigger>
       <TooltipContent side={tooltipSide}>{tooltip}</TooltipContent>

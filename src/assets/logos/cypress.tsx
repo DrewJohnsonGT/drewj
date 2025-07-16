@@ -10,32 +10,12 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     {...props}
   >
     <defs>
-      <path
-        id="a"
-        d="M128 0c70.75 0 128 57.25 128 128s-57.25 128-128 128S0 198.75 0 128 57.25 0 128 0Z"
-      />
-      <path
-        id="d"
-        d="M128 3c69.09 0 125 55.91 125 125s-55.91 125-125 125S3 197.09 3 128 58.91 3 128 3Z"
-      />
-      <filter
-        id="c"
-        width="104.8%"
-        height="104.8%"
-        x="-2.4%"
-        y="-2.4%"
-        filterUnits="objectBoundingBox"
-      >
+      <path id="a" d="M128 0c70.75 0 128 57.25 128 128s-57.25 128-128 128S0 198.75 0 128 57.25 0 128 0Z" />
+      <path id="d" d="M128 3c69.09 0 125 55.91 125 125s-55.91 125-125 125S3 197.09 3 128 58.91 3 128 3Z" />
+      <filter id="c" width="104.8%" height="104.8%" x="-2.4%" y="-2.4%" filterUnits="objectBoundingBox">
         <feOffset in="SourceAlpha" result="shadowOffsetOuter1" />
-        <feGaussianBlur
-          in="shadowOffsetOuter1"
-          result="shadowBlurOuter1"
-          stdDeviation={2}
-        />
-        <feColorMatrix
-          in="shadowBlurOuter1"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"
-        />
+        <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation={2} />
+        <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0" />
       </filter>
     </defs>
     <mask id="b" fill="#fff">

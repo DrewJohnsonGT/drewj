@@ -22,12 +22,6 @@
     "target": "ESNext",
     "allowJs": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "eslint.config.js",
-    ".next/types/**/*.ts"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "eslint.config.js", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
