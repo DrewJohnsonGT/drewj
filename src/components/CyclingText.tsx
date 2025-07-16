@@ -24,7 +24,7 @@ const fonts = [
 const FINAL_FONT = 'Qube';
 
 const setFinalFont = () => {
-  const letters = document.querySelectorAll('.cycling-letter');
+  const letters = document.querySelectorAll('#cycling-letter');
   letters.forEach((letter) => {
     (letter as HTMLElement).style.fontFamily = FINAL_FONT;
   });
@@ -35,11 +35,11 @@ export const CyclingText = ({ text }: { text: string }) => {
 
   useEffect(() => {
     const rollIntro = () => {
-      const letters = document.querySelectorAll('.cycling-letter');
+      const letters = document.querySelectorAll('#cycling-letter');
       letters.forEach((letter) => {
         const randomFontIndex = Math.floor(Math.random() * fonts.length);
         const randomFont = fonts[randomFontIndex];
-        (letter as HTMLElement).style.fontFamily = randomFont;
+        (letter as HTMLElement).style.fontFamily = randomFont ?? '';
       });
     };
 
@@ -68,8 +68,9 @@ export const CyclingText = ({ text }: { text: string }) => {
         {text.split('').map((letter, index) => (
           <p
             key={index}
+            id={`cycling-letter-${index}`}
             className={`
-              cycling-letter w-6 text-foreground drop-shadow-[0px_0px_16px_hsl(var(--primary))]
+              w-6 text-foreground drop-shadow-[0px_0px_16px_hsl(var(--primary))]
               md:w-12
             `}
           >

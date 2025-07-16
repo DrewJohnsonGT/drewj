@@ -1,12 +1,12 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { Cube } from './Cube';
+import { ThemeToggle } from './ThemeToggle';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MdMenu } from 'react-icons/md';
-import { Cube } from '~/components/Header/Cube';
-import { ThemeToggle } from '~/components/Header/ThemeToggle';
 import { ProgressLink } from '~/components/ProgressBar/Link';
 import { Button } from '~/components/ui/Button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '~/components/ui/DropdownMenu';

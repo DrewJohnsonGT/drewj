@@ -76,21 +76,21 @@ const buttonVariants = cva(
           hover:underline
         `,
         outline: `
-          bg-outline-normal shadow-normal border text-foreground
+          border bg-outline-normal text-foreground shadow-normal
           hover:bg-outline-hover hover:text-accent-foreground
           active:bg-outline-pressed
         `,
         primary: `
-          bg-primary-normal shadow-button border border-primary text-primary-foreground
-          hover:bg-primary-hover hover:border-secondary
+          border border-primary bg-primary-normal text-primary-foreground shadow-button
+          hover:border-secondary hover:bg-primary-hover
           active:bg-primary-pressed
         `,
         primaryOutline: `
-          bg-outline-normal shadow-normal border text-foreground
-          hover:bg-primary-hover hover:shadow-button hover:border-primary hover:bg-accent hover:text-primary-foreground
+          border bg-outline-normal text-foreground shadow-normal
+          hover:border-primary hover:bg-accent hover:bg-primary-hover hover:text-primary-foreground hover:shadow-button
         `,
         secondary: `
-          shadow-normal border bg-secondary text-secondary-foreground
+          border bg-secondary text-secondary-foreground shadow-normal
           hover:border-primary hover:bg-secondary/90 hover:text-primary
         `,
       },

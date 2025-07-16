@@ -58,8 +58,66 @@
   --color-chart-yellow: hsl(var(--chart-yellow));
   --color-chart-purple: hsl(var(--chart-purple));
 
-  /* Radius */
-  --radius: hsl(var(--radius));
+  /* BACKGROUND IMAGES */
+  --background-image-outline-hover: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+  --background-image-outline-normal: linear-gradient(
+    180deg,
+    hsl(var(--background)) 0%,
+    hsl(var(--input-background)) 100%
+  );
+  --background-image-outline-pressed: linear-gradient(
+    180deg,
+    hsl(var(--background-light)) 0%,
+    hsl(var(--background)) 100%
+  );
+
+  --background-image-primary-normal: linear-gradient(180deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%);
+  --background-image-primary-hover: linear-gradient(180deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-dark)) 100%);
+  --background-image-primary-focused: linear-gradient(
+    180deg,
+    hsl(var(--secondary)) 0%,
+    hsl(var(--secondary-dark)) 100%
+  );
+  --background-image-primary-pressed: linear-gradient(
+    180deg,
+    hsl(var(--secondary)) 0%,
+    hsl(var(--secondary-darker)) 100%
+  );
+
+  --background-image-secondary-hover: linear-gradient(
+    180deg,
+    hsl(var(--secondary)) 0%,
+    hsl(var(--secondary-dark)) 100%
+  );
+  --background-image-secondary-normal: linear-gradient(
+    180deg,
+    hsl(var(--secondary)) 0%,
+    hsl(var(--secondary-dark)) 100%
+  );
+  --background-image-secondary-pressed: linear-gradient(
+    180deg,
+    hsl(var(--secondary-dark)) 0%,
+    hsl(var(--secondary-darker)) 100%
+  );
+
+  /* SHADOWS */
+  --shadow-button:
+    0px 2px 0px 0px rgba(91, 34, 34, 0.12) inset, 0px 1px 2px 0px rgba(0, 17, 126, 0.12),
+    0px 2px 4px 0px rgba(0, 17, 126, 0.12);
+  --shadow-normal: 0px 1px 2px 0px rgba(35, 31, 50, 0.07);
+  --shadow-input: 0 0 0 1px hsl(var(--border));
+  --shadow-input-hover: 0 0 0 2px hsl(var(--ring) / 70%);
+  --shadow-input-focus: 0 0 0 2px hsl(var(--ring) / 100%);
+
+  /* RADII */
+  --radius: 0.5rem;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* HEIGHTS */
+  --height-input: 2.5rem;
+  --size-input: 2.5rem;
 
   /* Animations */
   --animate-moveAndRotate: moveAndRotate 10s linear infinite;
@@ -147,24 +205,6 @@
     --chart-red: 0 100% 50%;
     --chart-yellow: 48 100% 50%;
     --chart-purple: 242 57% 69%;
-
-    /* SHADOWS */
-    --shadow-button:
-      0px 2px 0px 0px rgba(91, 34, 34, 0.12) inset, 0px 1px 2px 0px rgba(0, 17, 126, 0.12),
-      0px 2px 4px 0px rgba(0, 17, 126, 0.12);
-    --shadow-normal: 0px 1px 2px 0px rgba(35, 31, 50, 0.07);
-    --shadow-input: 0 0 0 1px hsl(var(--border));
-    --shadow-input-hover: 0 0 0 2px hsl(var(--ring) / 70%);
-    --shadow-input-focus: 0 0 0 2px hsl(var(--ring) / 100%);
-
-    /* RADII */
-    --radius: 0.5rem;
-    --radius-lg: var(--radius);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-sm: calc(var(--radius) - 4px);
-
-    --height-input: 2.5rem;
-    --size-input: 2.5rem;
 
     --headerHeight: 80px;
     --footerHeight: 50px;

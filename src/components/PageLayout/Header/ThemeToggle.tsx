@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Skeleton } from '../ui/Skeleton';
 import { useTheme } from 'next-themes';
 import { EmpireSVG } from '~/assets/svg/empire';
 import { RebelsSVG } from '~/assets/svg/rebels';
 import { Button } from '~/components/ui/Button';
+import { Skeleton } from '~/components/ui/Skeleton';
 import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/Tooltip';
 
 export const ThemeToggle = () => {
