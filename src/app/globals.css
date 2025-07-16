@@ -197,17 +197,6 @@
   --buttonHoverBackground: #ff8c00;
 }
 
-@layer base {
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-html,
-body {
-  @apply flex h-screen w-screen flex-1 flex-col bg-background antialiased dark:[color-scheme:dark];
-}
-
 @keyframes moveAndRotate {
   0% {
     transform: translateX(0) rotate(0deg);
