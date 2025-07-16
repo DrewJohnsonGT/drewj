@@ -20,7 +20,10 @@ const ResumePage = () => {
           </a>
         </Button>
         <Image
-          className="cursor-zoom-in object-contain shadow-lg dark:shadow-white dark:invert"
+          className={`
+            cursor-zoom-in object-contain shadow-lg
+            dark:shadow-white dark:invert
+          `}
           src={RESUME_FILE}
           alt="Resume"
           onClick={() => setIsModalOpen(true)}

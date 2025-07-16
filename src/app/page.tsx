@@ -59,17 +59,39 @@ export default function Home() {
 
   return (
     <section ref={sectionRef} className="flex flex-1 flex-col items-center justify-center overflow-hidden">
-      <div className="z-10 m-2 inline-flex flex-col items-center gap-2 rounded-lg text-center text-2xl backdrop-blur-sm md:flex-row">
-        <div className="relative mr-4 size-[150px] md:mr-0">
+      <div
+        className={`
+          z-10 m-2 inline-flex flex-col items-center gap-2 rounded-lg text-center text-2xl backdrop-blur-sm
+          md:flex-row
+        `}
+      >
+        <div
+          className={`
+            relative mr-4 size-[150px]
+            md:mr-0
+          `}
+        >
           <NextImage
-            className="absolute mr-4 rounded-full border-[5px] border-primary bg-white/10 opacity-100 transition-all duration-500"
+            className={`
+              absolute mr-4 rounded-full border-[5px] border-primary bg-white/10 opacity-100 transition-all duration-500
+            `}
             src="/images/headshot.png"
             alt="Drew Johnson"
             width={150}
             height={150}
           />
           <NextImage
-            className={`absolute mr-4 rounded-full border-[5px] border-primary bg-white/10 transition-all duration-500 ${showMando ? 'opacity-100' : 'opacity-0 hover:opacity-100'}`}
+            className={`
+              absolute mr-4 rounded-full border-[5px] border-primary bg-white/10 transition-all duration-500
+              ${
+                showMando
+                  ? `opacity-100`
+                  : `
+                    opacity-0
+                    hover:opacity-100
+                  `
+              }
+            `}
             src="/images/mando-headshot.png"
             alt="Drew Johnson the Mandalorian"
             width={150}
@@ -78,12 +100,17 @@ export default function Home() {
         </div>
         <div className="m-auto flex flex-col">
           <CyclingText text="Drew Johnson" />
-          <h3 className="mt-2 font-['Qube'] text-base text-primary md:text-start">
+          <h3
+            className={`
+              mt-2 font-['Qube'] text-base text-primary
+              md:text-start
+            `}
+          >
             <i>Always Building Something</i>
           </h3>
         </div>
       </div>
-      <div className="absolute left-0 top-0 size-full">
+      <div className="absolute top-0 left-0 size-full">
         {skillStyles.map(({ icon, logo: Logo, style }) => (
           <Logo
             key={icon}

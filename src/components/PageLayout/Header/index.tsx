@@ -54,12 +54,20 @@ export const Header = () => {
       <Link href="/" className="mr-auto">
         <Cube />
       </Link>
-      <nav className="relative ml-[calc(var(--headerHeight)*0.2)] mr-auto hidden lg:block">
+      <nav
+        className={`
+          relative mr-auto ml-[calc(var(--headerHeight)*0.2)] hidden
+          lg:block
+        `}
+      >
         <ul className="m-0 inline-flex list-none p-0">
           {ROUTES.map((route, index) => (
             <li
               className={clsx(
-                'cursor-pointer p-2 px-3 font-[Qube] text-2xl hover:text-primary',
+                `
+                  cursor-pointer p-2 px-3 font-[Qube] text-2xl
+                  hover:text-primary
+                `,
                 (index === activeIndex || currentPath === route.value) && 'text-primary',
               )}
               key={route.value}
@@ -81,10 +89,20 @@ export const Header = () => {
           ref={underlineRef}
         />
       </nav>
-      <h1 className="mx-auto block font-[Cube] text-[0.65rem] font-bold lg:hidden">
+      <h1
+        className={`
+          mx-auto block font-[Cube] text-[0.65rem] font-bold
+          lg:hidden
+        `}
+      >
         {ROUTES[findRouteIndex()]?.title ?? ROUTES[findRouteIndex()]?.label}
       </h1>
-      <div className="flex lg:hidden">
+      <div
+        className={`
+          flex
+          lg:hidden
+        `}
+      >
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="size-12" aria-label="Navigation menu">

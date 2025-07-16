@@ -11,7 +11,14 @@ const ProjectsPage = async () => {
   const projects = await getAllProjectsFrontMatter();
   const projectsSortedByDate = projects.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   return (
-    <div className="grid grid-cols-1 justify-center gap-4 px-4 pb-20 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+    <div
+      className={`
+        grid grid-cols-1 justify-center gap-4 px-4 pb-20
+        md:grid-cols-2
+        xl:grid-cols-3
+        2xl:grid-cols-4
+      `}
+    >
       {projectsSortedByDate.map((project) => (
         <Card key={project.title} className="p-0">
           <CardHeader className="p-0">

@@ -10,7 +10,7 @@ const CardHeader: React.FC<React.ComponentProps<'div'>> = ({ className, ...props
 );
 
 const CardTitle: React.FC<React.ComponentProps<'h3'>> = ({ className, ...props }) => (
-  <h3 className={cn('text-2xl font-semibold leading-none tracking-tight', className)} {...props} />
+  <h3 className={cn('text-2xl leading-none font-semibold tracking-tight', className)} {...props} />
 );
 
 const CardDescription: React.FC<React.ComponentProps<'p'>> = ({ className, ...props }) => (

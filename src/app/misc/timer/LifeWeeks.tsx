@@ -28,17 +28,29 @@ export const LifeWeeks = ({ birthDate }: { birthDate: string }) => {
   const weeksArray = Array.from({ length: totalWeeks }, (_, index) => index);
 
   return (
-    <div className="grid flex-1 grid-cols-26 gap-1 px-8 md:grid-cols-13 lg:grid-cols-52">
+    <div
+      className={`
+        grid flex-1 grid-cols-26 gap-1 px-8
+        md:grid-cols-13
+        lg:grid-cols-52
+      `}
+    >
       {weeksArray.map((week) => (
         <div
           key={week}
-          className={`mx-auto size-2.5 rounded-full ${
-            week === weeksLived - 1
-              ? 'animate-pulse bg-primary shadow-lg shadow-primary/50 ring-2 ring-primary/50 ring-offset-1 ring-offset-background'
-              : week < weeksLived
-                ? 'bg-primary'
-                : 'bg-muted'
-          }`}
+          className={`
+            mx-auto size-2.5 rounded-full
+            ${
+              week === weeksLived - 1
+                ? `
+                  animate-pulse bg-primary shadow-lg ring-2 shadow-primary/50 ring-primary/50 ring-offset-1
+                  ring-offset-background
+                `
+                : week < weeksLived
+                  ? 'bg-primary'
+                  : 'bg-muted'
+            }
+          `}
         />
       ))}
     </div>

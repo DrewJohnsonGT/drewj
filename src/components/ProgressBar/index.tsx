@@ -32,7 +32,7 @@ export function ProgressBarDisplay() {
           id="progress-bar"
           style={{ width }}
           exit={{ opacity: 0 }}
-          className="fixed left-0 top-0 z-50 h-1 w-full bg-primary"
+          className="fixed top-0 left-0 z-50 h-1 w-full bg-primary"
         />
       )}
     </AnimatePresence>

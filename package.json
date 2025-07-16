@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "lint": "next lint",
+    "lint": "next lint --fix",
     "format": "prettier --write .",
     "preinstall": "npx only-allow pnpm",
     "clean": "rm -rf .next node_modules",

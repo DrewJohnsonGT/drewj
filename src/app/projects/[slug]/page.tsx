@@ -29,7 +29,11 @@ const ProjectsPage = async ({ params }: { params: Promise<{ slug: string }> }) =
     source: markdown,
   });
   return (
-    <div className="mx-auto flex max-w-[clamp(300px,90vw,550px)] flex-col items-center justify-center pb-(--footerHeight) text-xl">
+    <div
+      className={`
+        mx-auto flex max-w-[clamp(300px,90vw,550px)] flex-col items-center justify-center pb-(--footerHeight) text-xl
+      `}
+    >
       <meta property="og:title" content={frontmatter.title} key="ogtitle" />
       <meta property="og:description" content={frontmatter.description} key="ogdescription" />
       <meta property="og:image" content={frontmatter.banner} key="ogimage" />

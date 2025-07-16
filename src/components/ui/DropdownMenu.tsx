@@ -24,7 +24,12 @@ const DropdownMenuSubTrigger: React.FC<
 > = ({ children, className, inset, ...props }) => (
   <DropdownMenuPrimitive.SubTrigger
     className={cn(
-      'flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+      `
+        flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none select-none
+        focus:bg-accent
+        data-[state=open]:bg-accent
+        [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0
+      `,
       inset && 'pl-8',
       className,
     )}
@@ -42,7 +47,15 @@ const DropdownMenuSubContent: React.FC<React.ComponentProps<typeof DropdownMenuP
 }) => (
   <DropdownMenuPrimitive.SubContent
     className={cn(
-      'z-50 min-w-32 overflow-hidden rounded-md border bg-input-background p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+      `
+        z-50 min-w-32 overflow-hidden rounded-md border bg-input-background p-1 text-popover-foreground shadow-lg
+        data-[side=bottom]:slide-in-from-top-2
+        data-[side=left]:slide-in-from-right-2
+        data-[side=right]:slide-in-from-left-2
+        data-[side=top]:slide-in-from-bottom-2
+        data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95
+        data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95
+      `,
       className,
     )}
     {...props}
@@ -59,7 +72,15 @@ const DropdownMenuContent: React.FC<React.ComponentProps<typeof DropdownMenuPrim
     <DropdownMenuPrimitive.Content
       sideOffset={sideOffset}
       className={cn(
-        'z-50 min-w-32 overflow-hidden rounded-md border bg-input-background p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+        `
+          z-50 min-w-32 overflow-hidden rounded-md border bg-input-background p-1 text-popover-foreground shadow-md
+          data-[side=bottom]:slide-in-from-top-2
+          data-[side=left]:slide-in-from-right-2
+          data-[side=right]:slide-in-from-left-2
+          data-[side=top]:slide-in-from-bottom-2
+          data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95
+          data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95
+        `,
         className,
       )}
       {...props}
@@ -75,7 +96,13 @@ const DropdownMenuItem: React.FC<
 > = ({ className, inset, ...props }) => (
   <DropdownMenuPrimitive.Item
     className={cn(
-      'relative flex cursor-pointer select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+      `
+        relative flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 text-sm transition-colors outline-none
+        select-none
+        focus:bg-accent focus:text-accent-foreground
+        data-disabled:pointer-events-none data-disabled:opacity-50
+        [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0
+      `,
       inset && 'pl-8',
       className,
     )}
@@ -92,7 +119,12 @@ const DropdownMenuCheckboxItem: React.FC<React.ComponentProps<typeof DropdownMen
 }) => (
   <DropdownMenuPrimitive.CheckboxItem
     className={cn(
-      'relative flex cursor-pointer select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50',
+      `
+        relative flex cursor-pointer items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none
+        select-none
+        focus:bg-accent focus:text-accent-foreground
+        data-disabled:pointer-events-none data-disabled:opacity-50
+      `,
       className,
     )}
     checked={checked}
@@ -115,7 +147,12 @@ const DropdownMenuRadioItem: React.FC<React.ComponentProps<typeof DropdownMenuPr
 }) => (
   <DropdownMenuPrimitive.RadioItem
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50',
+      `
+        relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none
+        select-none
+        focus:bg-accent focus:text-accent-foreground
+        data-disabled:pointer-events-none data-disabled:opacity-50
+      `,
       className,
     )}
     {...props}

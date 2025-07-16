@@ -17,6 +17,7 @@ export default [
   // Tailwind
   {
     files: ['**/*.{jsx,tsx}'],
+    ignores: ['src/assets/**/*'],
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {

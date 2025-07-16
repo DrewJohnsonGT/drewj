@@ -59,11 +59,19 @@ export const CyclingText = ({ text }: { text: string }) => {
 
   return (
     <div className="grid w-full place-content-center bg-cover font-[Qube]">
-      <h2 className="flex flex-wrap items-center justify-between text-[1.75rem] leading-none md:text-[3.5rem]">
+      <h2
+        className={`
+          flex flex-wrap items-center justify-between text-[1.75rem] leading-none
+          md:text-[3.5rem]
+        `}
+      >
         {text.split('').map((letter, index) => (
           <p
             key={index}
-            className="cycling-letter w-6 text-foreground drop-shadow-[0px_0px_16px_hsl(var(--primary))] md:w-12"
+            className={`
+              cycling-letter w-6 text-foreground drop-shadow-[0px_0px_16px_hsl(var(--primary))]
+              md:w-12
+            `}
           >
             {letter}
           </p>

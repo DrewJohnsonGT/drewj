@@ -34,7 +34,11 @@ export const Footer = () => {
   }
 
   return (
-    <footer className="sticky bottom-0 z-10 flex min-h-(--footerHeight) w-full items-center justify-center gap-2 backdrop-blur-sm">
+    <footer
+      className={`
+        sticky bottom-0 z-10 flex min-h-(--footerHeight) w-full items-center justify-center gap-2 backdrop-blur-sm
+      `}
+    >
       {LINKS.map((link) => {
         const Icon = link.icon;
         return (
@@ -44,7 +48,10 @@ export const Footer = () => {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-center px-2 transition-transform hover:scale-125"
+                className={`
+                  flex items-center justify-center px-2 transition-transform
+                  hover:scale-125
+                `}
               >
                 <Icon className={cn('size-7', link.color)} />
               </a>

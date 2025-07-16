@@ -84,11 +84,15 @@ export const Cube = () => {
           // Smooth transform
           'transition-transform duration-1000',
           // If no side is focused => spin infinitely
-          !focusedSide && 'animate-rotating [animation-duration:20s]',
+          !focusedSide &&
+            `
+              animate-rotating
+              [animation-duration:20s]
+            `,
           // If a side is focused => rotate so that side is forward
           focusedSide && showClasses[`show-${focusedSide.position}`],
           // Also spin on hover (4 turns) if a side is focused
-          focusedSide && 'hover:duration-4000 hover:ease-linear hover:[transform:rotateX(1440deg)_rotateY(1440deg)]',
+          focusedSide && 'hover:[transform:rotateX(1440deg)_rotateY(1440deg)] hover:duration-4000 hover:ease-linear',
         )}
       >
         {SIDES.map(({ icon: Icon, position, route }) => (

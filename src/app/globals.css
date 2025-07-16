@@ -1,58 +1,62 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+/* Enable a “.dark” class variant for all descendants */
+@custom-variant dark (&:is(.dark *));
+
 @theme {
   /* Colors */
-  --background: hsl(var(--background));
-  --background-lighter: hsl(var(--background-lighter));
-  --foreground: hsl(var(--foreground));
+  --color-background: hsl(var(--background));
+  --color-background-lighter: hsl(var(--background-lighter));
+  --color-foreground: hsl(var(--foreground));
 
-  --card: hsl(var(--card));
-  --card-foreground: hsl(var(--card-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
 
-  --popover: hsl(var(--popover));
-  --popover-foreground: hsl(var(--popover-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
 
-  --primary: hsl(var(--primary));
-  --primary-lighter: hsl(var(--primary-lighter));
-  --primary-dark: hsl(var(--primary-dark));
-  --primary-darker: hsl(var(--primary-darker));
-  --primary-foreground: hsl(var(--primary-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-lighter: hsl(var(--primary-lighter));
+  --color-primary-dark: hsl(var(--primary-dark));
+  --color-primary-darker: hsl(var(--primary-darker));
+  --color-primary-foreground: hsl(var(--primary-foreground));
 
-  --secondary: hsl(var(--secondary));
-  --secondary-lighter: hsl(var(--secondary-lighter));
-  --secondary-dark: hsl(var(--secondary-dark));
-  --secondary-darker: hsl(var(--secondary-darker));
-  --secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-lighter: hsl(var(--secondary-lighter));
+  --color-secondary-dark: hsl(var(--secondary-dark));
+  --color-secondary-darker: hsl(var(--secondary-darker));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
 
-  --muted: hsl(var(--muted));
-  --muted-foreground: hsl(var(--muted-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
 
-  --accent: hsl(var(--accent));
-  --accent-foreground: hsl(var(--accent-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
 
-  --destructive: hsl(var(--destructive));
-  --destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
 
-  --success: hsl(var(--success));
-  --success-foreground: hsl(var(--success-foreground));
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
 
-  --warning: hsl(var(--warning));
-  --warning-foreground: hsl(var(--warning-foreground));
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
 
-  --border: hsl(var(--border));
-  --input: hsl(var(--input));
-  --input-background: hsl(var(--input-background));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-input-background: hsl(var(--input-background));
 
-  --link: hsl(var(--link));
+  --color-link: hsl(var(--link));
+  --color-ring: hsl(var(--ring));
 
-  --chart-blue: hsl(var(--chart-blue));
-  --chart-green: hsl(var(--chart-green));
-  --chart-orange: hsl(var(--chart-orange));
-  --chart-pink: hsl(var(--chart-pink));
-  --chart-red: hsl(var(--chart-red));
-  --chart-yellow: hsl(var(--chart-yellow));
-  --chart-purple: hsl(var(--chart-purple));
+  --color-chart-blue: hsl(var(--chart-blue));
+  --color-chart-green: hsl(var(--chart-green));
+  --color-chart-orange: hsl(var(--chart-orange));
+  --color-chart-pink: hsl(var(--chart-pink));
+  --color-chart-red: hsl(var(--chart-red));
+  --color-chart-yellow: hsl(var(--chart-yellow));
+  --color-chart-purple: hsl(var(--chart-purple));
 
   /* Radius */
   --radius: hsl(var(--radius));
@@ -144,7 +148,23 @@
     --chart-yellow: 48 100% 50%;
     --chart-purple: 242 57% 69%;
 
+    /* SHADOWS */
+    --shadow-button:
+      0px 2px 0px 0px rgba(91, 34, 34, 0.12) inset, 0px 1px 2px 0px rgba(0, 17, 126, 0.12),
+      0px 2px 4px 0px rgba(0, 17, 126, 0.12);
+    --shadow-normal: 0px 1px 2px 0px rgba(35, 31, 50, 0.07);
+    --shadow-input: 0 0 0 1px hsl(var(--border));
+    --shadow-input-hover: 0 0 0 2px hsl(var(--ring) / 70%);
+    --shadow-input-focus: 0 0 0 2px hsl(var(--ring) / 100%);
+
+    /* RADII */
     --radius: 0.5rem;
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --height-input: 2.5rem;
+    --size-input: 2.5rem;
 
     --headerHeight: 80px;
     --footerHeight: 50px;

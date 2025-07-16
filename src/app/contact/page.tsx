@@ -153,7 +153,10 @@ const ContactPage = () => {
           href={LINKED_IN_URL}
           target="_blank"
           rel="noreferrer"
-          className="text-(--linkedin) hover:text-(--linkedinLight)"
+          className={`
+            text-(--linkedin)
+            hover:text-(--linkedinLight)
+          `}
         >
           LinkedIn
         </a>{' '}

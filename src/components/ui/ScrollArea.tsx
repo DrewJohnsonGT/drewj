@@ -11,7 +11,13 @@ interface ScrollAreaProps extends React.ComponentProps<typeof ScrollAreaPrimitiv
 const ScrollArea: React.FC<ScrollAreaProps> = ({ children, className, viewportClassName, ...props }) => (
   <ScrollAreaPrimitive.Root className={cn('relative overflow-hidden', className)} {...props}>
     <ScrollAreaPrimitive.Viewport
-      className={cn('size-full scroll-smooth rounded-[inherit] [&>div]:block!', viewportClassName)}
+      className={cn(
+        `
+          size-full scroll-smooth rounded-[inherit]
+          [&>div]:block!
+        `,
+        viewportClassName,
+      )}
     >
       {children}
     </ScrollAreaPrimitive.Viewport>
@@ -29,7 +35,7 @@ const ScrollBar: React.FC<React.ComponentProps<typeof ScrollAreaPrimitive.Scroll
   <ScrollAreaPrimitive.ScrollAreaScrollbar
     orientation={orientation}
     className={cn(
-      'flex touch-none select-none transition-colors',
+      'flex touch-none transition-colors select-none',
       orientation === 'vertical' && 'h-full w-2.5 border-l border-l-transparent p-px',
       orientation === 'horizontal' && 'h-2.5 flex-col border-t border-t-transparent p-px',
       className,

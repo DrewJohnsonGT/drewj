@@ -7,7 +7,12 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '~/components/ui/Tooltip
 import { cn } from '~/utils/cn';
 
 const buttonVariants = cva(
-  'inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50',
+  `
+    inline-flex shrink-0 cursor-pointer items-center justify-center rounded-md font-medium whitespace-nowrap
+    transition-colors
+    focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none
+    disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50
+  `,
   {
     compoundVariants: [
       {
@@ -16,18 +21,27 @@ const buttonVariants = cva(
         variant: 'ghost',
       },
       {
-        className: 'border-destructive bg-destructive hover:bg-destructive/90',
+        className: `
+          border-destructive bg-destructive
+          hover:bg-destructive/90
+        `,
         color: 'destructive',
         variant: 'primary',
       },
       {
-        className: 'border-destructive text-destructive hover:bg-destructive/10 hover:text-destructive',
+        className: `
+          border-destructive text-destructive
+          hover:bg-destructive/10 hover:text-destructive
+        `,
         color: 'destructive',
         variant: 'outline',
       },
       {
-        className:
-          'border-destructive bg-destructive text-destructive-foreground hover:border-destructive/90 hover:bg-destructive/90 active:border-destructive/90 active:bg-destructive/90',
+        className: `
+          border-destructive bg-destructive text-destructive-foreground
+          hover:border-destructive/90 hover:bg-destructive/90
+          active:border-destructive/90 active:bg-destructive/90
+        `,
         color: 'destructive',
         variant: 'primary',
       },
@@ -39,7 +53,10 @@ const buttonVariants = cva(
     variants: {
       color: {
         destructive: 'border-destructive bg-destructive text-destructive-foreground',
-        link: 'text-link underline-offset-4 hover:underline',
+        link: `
+          text-link underline-offset-4
+          hover:underline
+        `,
         success: 'bg-success text-success-foreground',
       },
       size: {
@@ -50,16 +67,32 @@ const buttonVariants = cva(
         smallIcon: 'size-8',
       },
       variant: {
-        ghost: 'border-none bg-transparent text-foreground shadow-none hover:bg-accent hover:text-accent-foreground',
-        link: 'm-0 break-words p-0 text-link underline-offset-4 hover:underline',
-        outline:
-          'border bg-outline-normal text-foreground shadow-normal hover:bg-outline-hover hover:text-accent-foreground active:bg-outline-pressed',
-        primary:
-          'border border-primary bg-primary-normal text-primary-foreground shadow-button hover:border-secondary hover:bg-primary-hover active:bg-primary-pressed',
-        primaryOutline:
-          'border bg-outline-normal text-foreground shadow-normal hover:border-primary hover:bg-accent hover:bg-primary-hover hover:text-primary-foreground hover:shadow-button',
-        secondary:
-          'border bg-secondary text-secondary-foreground shadow-normal hover:border-primary hover:bg-secondary/90 hover:text-primary',
+        ghost: `
+          border-none bg-transparent text-foreground shadow-none
+          hover:bg-accent hover:text-accent-foreground
+        `,
+        link: `
+          m-0 p-0 break-words text-link underline-offset-4
+          hover:underline
+        `,
+        outline: `
+          bg-outline-normal shadow-normal border text-foreground
+          hover:bg-outline-hover hover:text-accent-foreground
+          active:bg-outline-pressed
+        `,
+        primary: `
+          bg-primary-normal shadow-button border border-primary text-primary-foreground
+          hover:bg-primary-hover hover:border-secondary
+          active:bg-primary-pressed
+        `,
+        primaryOutline: `
+          bg-outline-normal shadow-normal border text-foreground
+          hover:bg-primary-hover hover:shadow-button hover:border-primary hover:bg-accent hover:text-primary-foreground
+        `,
+        secondary: `
+          shadow-normal border bg-secondary text-secondary-foreground
+          hover:border-primary hover:bg-secondary/90 hover:text-primary
+        `,
       },
     },
   },
