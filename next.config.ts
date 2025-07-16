@@ -1,7 +1,9 @@
 import BundleAnalyzer from '@next/bundle-analyzer';
 
 const nextConfig = {
-  viewTransition: true,
+  experimental: {
+    viewTransition: true,
+  },
 };
 
 const withBundleAnalyzer = BundleAnalyzer({

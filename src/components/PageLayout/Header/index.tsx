@@ -46,11 +46,11 @@ export const Header = () => {
   }, [activeIndex]);
 
   if (NO_HEADER_FOOTER_ROUTES.includes(pathname)) {
-    return <header className="min-h-[var(--headerHeight)]" />;
+    return <header className="min-h-(--headerHeight)" />;
   }
 
   return (
-    <header className="sticky top-0 z-10 flex min-h-[var(--headerHeight)] items-center pr-2 backdrop-blur-sm">
+    <header className="sticky top-0 z-10 flex min-h-(--headerHeight) items-center pr-2 backdrop-blur-sm">
       <Link href="/" className="mr-auto">
         <Cube />
       </Link>

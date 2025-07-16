@@ -30,11 +30,11 @@ const LINKS = [
 export const Footer = () => {
   const pathname = usePathname();
   if (NO_HEADER_FOOTER_ROUTES.includes(pathname)) {
-    return <footer className="min-h-[var(--footerHeight)]" />;
+    return <footer className="min-h-(--footerHeight)" />;
   }
 
   return (
-    <footer className="sticky bottom-0 z-10 flex min-h-[var(--footerHeight)] w-full items-center justify-center gap-2 backdrop-blur-sm">
+    <footer className="sticky bottom-0 z-10 flex min-h-(--footerHeight) w-full items-center justify-center gap-2 backdrop-blur-sm">
       {LINKS.map((link) => {
         const Icon = link.icon;
         return (

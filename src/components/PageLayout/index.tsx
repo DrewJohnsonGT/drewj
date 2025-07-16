@@ -13,10 +13,8 @@ export const PageLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="relative flex min-h-screen flex-col">
           <ProgressBarDisplay />
           <Header />
-          <ScrollArea className="-mb-[var(--footerHeight)] -mt-[var(--headerHeight)] flex h-full flex-1 flex-col">
-            <div className="flex h-screen flex-1 flex-col pb-[var(--footerHeight)] pt-[var(--headerHeight)]">
-              {children}
-            </div>
+          <ScrollArea className="-mb-(--footerHeight) -mt-(--headerHeight) flex h-full flex-1 flex-col">
+            <div className="flex h-screen flex-1 flex-col pb-(--footerHeight) pt-(--headerHeight)">{children}</div>
           </ScrollArea>
           <Footer />
         </div>

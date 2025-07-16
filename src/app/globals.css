@@ -1,6 +1,94 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@theme {
+  /* Colors */
+  --background: hsl(var(--background));
+  --background-lighter: hsl(var(--background-lighter));
+  --foreground: hsl(var(--foreground));
+
+  --card: hsl(var(--card));
+  --card-foreground: hsl(var(--card-foreground));
+
+  --popover: hsl(var(--popover));
+  --popover-foreground: hsl(var(--popover-foreground));
+
+  --primary: hsl(var(--primary));
+  --primary-lighter: hsl(var(--primary-lighter));
+  --primary-dark: hsl(var(--primary-dark));
+  --primary-darker: hsl(var(--primary-darker));
+  --primary-foreground: hsl(var(--primary-foreground));
+
+  --secondary: hsl(var(--secondary));
+  --secondary-lighter: hsl(var(--secondary-lighter));
+  --secondary-dark: hsl(var(--secondary-dark));
+  --secondary-darker: hsl(var(--secondary-darker));
+  --secondary-foreground: hsl(var(--secondary-foreground));
+
+  --muted: hsl(var(--muted));
+  --muted-foreground: hsl(var(--muted-foreground));
+
+  --accent: hsl(var(--accent));
+  --accent-foreground: hsl(var(--accent-foreground));
+
+  --destructive: hsl(var(--destructive));
+  --destructive-foreground: hsl(var(--destructive-foreground));
+
+  --success: hsl(var(--success));
+  --success-foreground: hsl(var(--success-foreground));
+
+  --warning: hsl(var(--warning));
+  --warning-foreground: hsl(var(--warning-foreground));
+
+  --border: hsl(var(--border));
+  --input: hsl(var(--input));
+  --input-background: hsl(var(--input-background));
+
+  --link: hsl(var(--link));
+
+  --chart-blue: hsl(var(--chart-blue));
+  --chart-green: hsl(var(--chart-green));
+  --chart-orange: hsl(var(--chart-orange));
+  --chart-pink: hsl(var(--chart-pink));
+  --chart-red: hsl(var(--chart-red));
+  --chart-yellow: hsl(var(--chart-yellow));
+  --chart-purple: hsl(var(--chart-purple));
+
+  /* Radius */
+  --radius: hsl(var(--radius));
+
+  /* Animations */
+  --animate-moveAndRotate: moveAndRotate 10s linear infinite;
+  --animate-moveAndRotateCounter: moveAndRotateCounter 10s linear infinite;
+  --animate-rotating: rotating 10s linear infinite;
+
+  @keyframes moveAndRotate {
+    0% {
+      transform: translateX(0) rotate(0deg);
+    }
+    100% {
+      transform: translateX(200vw) rotate(360deg);
+    }
+  }
+
+  @keyframes moveAndRotateCounter {
+    0% {
+      transform: translateX(0) rotate(0deg);
+    }
+    100% {
+      transform: translateX(200vw) rotate(-360deg);
+    }
+  }
+
+  @keyframes rotating {
+    from {
+      transform: translateZ(calc(var(--translateZ) * -1)) rotateY(0deg) rotateX(0deg);
+    }
+    to {
+      transform: translateZ(calc(var(--translateZ) * -1)) rotateY(360deg) rotateX(360deg);
+    }
+  }
+}
 
 @layer base {
   :root {
@@ -57,6 +145,26 @@
     --chart-purple: 242 57% 69%;
 
     --radius: 0.5rem;
+
+    --headerHeight: 80px;
+    --footerHeight: 50px;
+    --cubeSize: calc(var(--headerHeight) * 0.6);
+    --translateZ: calc(var(--cubeSize) / 2);
+    --disabled: #dfdfdf;
+    --disabledText: #b2b2b2;
+    --githubLight: #b802b8;
+    --github: #7c007c;
+    --instagram: #e4405f;
+    --instagramLight: #f092a7;
+    --lightOrange: #ff9651;
+    --linkedin: #0072b1;
+    --linkedinLight: #00a0dc;
+    --orange: #ff7400;
+    --purple: #212173;
+    --red: #ff0000;
+    --yellow: #ff9900;
+    --buttonBackground: #ff7400;
+    --buttonHoverBackground: #ff8c00;
   }
 
   .dark {
@@ -173,53 +281,4 @@
 @font-face {
   font-family: 'spooky';
   src: url('/fonts/spooky.otf');
-}
-
-:root {
-  --headerHeight: 80px;
-  --footerHeight: 50px;
-  --cubeSize: calc(var(--headerHeight) * 0.6);
-  --translateZ: calc(var(--cubeSize) / 2);
-  --disabled: #dfdfdf;
-  --disabledText: #b2b2b2;
-  --githubLight: #b802b8;
-  --github: #7c007c;
-  --instagram: #e4405f;
-  --instagramLight: #f092a7;
-  --lightOrange: #ff9651;
-  --linkedin: #0072b1;
-  --linkedinLight: #00a0dc;
-  --orange: #ff7400;
-  --purple: #212173;
-  --red: #ff0000;
-  --yellow: #ff9900;
-  --buttonBackground: #ff7400;
-  --buttonHoverBackground: #ff8c00;
-}
-
-@keyframes moveAndRotate {
-  0% {
-    transform: translateX(0) rotate(0deg);
-  }
-  100% {
-    transform: translateX(200vw) rotate(360deg);
-  }
-}
-
-@keyframes moveAndRotateCounter {
-  0% {
-    transform: translateX(0) rotate(0deg);
-  }
-  100% {
-    transform: translateX(200vw) rotate(-360deg);
-  }
-}
-
-@keyframes rotating {
-  from {
-    transform: translateZ(calc(var(--translateZ) * -1)) rotateY(0deg) rotateX(0deg);
-  }
-  to {
-    transform: translateZ(calc(var(--translateZ) * -1)) rotateY(360deg) rotateX(360deg);
-  }
 }

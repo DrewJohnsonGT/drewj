@@ -11,7 +11,7 @@ interface ScrollAreaProps extends React.ComponentProps<typeof ScrollAreaPrimitiv
 const ScrollArea: React.FC<ScrollAreaProps> = ({ children, className, viewportClassName, ...props }) => (
   <ScrollAreaPrimitive.Root className={cn('relative overflow-hidden', className)} {...props}>
     <ScrollAreaPrimitive.Viewport
-      className={cn('size-full scroll-smooth rounded-[inherit] [&>div]:!block', viewportClassName)}
+      className={cn('size-full scroll-smooth rounded-[inherit] [&>div]:block!', viewportClassName)}
     >
       {children}
     </ScrollAreaPrimitive.Viewport>

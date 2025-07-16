@@ -47,12 +47,12 @@ export const Cube = () => {
 
   // Each face transform: rotate + translateZ in one bracket
   const sideClasses: Record<string, string> = {
-    back: '[transform:rotateY(180deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--orange)]',
-    bottom: '[transform:rotateX(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--yellow)]',
-    front: '[transform:rotateY(0deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--orange)]',
-    left: '[transform:rotateY(-90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--lightOrange)]',
-    right: '[transform:rotateY(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--red)]',
-    top: '[transform:rotateX(-90deg)_translateZ(calc(var(--cubeSize)/2))] bg-[var(--lightOrange)]',
+    back: '[transform:rotateY(180deg)_translateZ(calc(var(--cubeSize)/2))] bg-(--orange)',
+    bottom: '[transform:rotateX(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-(--yellow)',
+    front: '[transform:rotateY(0deg)_translateZ(calc(var(--cubeSize)/2))] bg-(--orange)',
+    left: '[transform:rotateY(-90deg)_translateZ(calc(var(--cubeSize)/2))] bg-(--lightOrange)',
+    right: '[transform:rotateY(90deg)_translateZ(calc(var(--cubeSize)/2))] bg-(--red)',
+    top: '[transform:rotateX(-90deg)_translateZ(calc(var(--cubeSize)/2))] bg-(--lightOrange)',
   };
 
   // How to rotate the *entire cube* to show a certain side.
@@ -71,16 +71,16 @@ export const Cube = () => {
       className={clsx(
         // Outer container: apply perspective & ensure it's big enough
         'overflow-visible',
-        'ml-[calc(var(--headerHeight)*0.2)] h-[var(--cubeSize)] w-[var(--cubeSize)]',
+        'ml-[calc(var(--headerHeight)*0.2)] h-(--cubeSize) w-(--cubeSize)',
         'flex items-center justify-center',
         // Single bracket for perspective
-        '[perspective:calc(var(--cubeSize)*5)]',
+        'perspective-[calc(var(--cubeSize)*5)]',
       )}
     >
       <div
         className={clsx(
           // The cube wrapper: preserve-3D so child transforms combine in 3D
-          'relative h-full w-full [transform-style:preserve-3d]',
+          'relative h-full w-full transform-3d',
           // Smooth transform
           'transition-transform duration-1000',
           // If no side is focused => spin infinitely
@@ -96,7 +96,7 @@ export const Cube = () => {
             key={route}
             className={clsx(
               // Each face is absolutely positioned in the 3D space
-              'absolute h-[var(--cubeSize)] w-[var(--cubeSize)]',
+              'absolute h-(--cubeSize) w-(--cubeSize)',
               'flex items-center justify-center border border-foreground opacity-80',
               // Combine rotation + translateZ in a single bracket
               sideClasses[position],
