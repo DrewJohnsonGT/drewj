@@ -31,6 +31,7 @@
   },
   "include": [
     "eslint.config.js",
+    "prettier.config.js",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
