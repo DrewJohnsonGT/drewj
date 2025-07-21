@@ -12,9 +12,9 @@ const ONE_WEEK = ONE_DAY * 7;
 
 export const GOALS = [
   {
-    goal: ONE_WEEK,
-    label: 'DARK',
-    startDate: new Date('Thu Jul 17 2025 22:16:00 GMT-0400 (Eastern Daylight Time)'),
+    goal: ONE_WEEK * 6,
+    label: 'Domanine Detox',
+    startDate: new Date('Mon Jul 21 2025 10:28:00 GMT-0400 (Eastern Daylight Time)'),
   },
 ];
 
