@@ -14,7 +14,7 @@ export const GOALS = [
   {
     goal: ONE_WEEK * 6,
     label: 'Domanine Detox',
-    startDate: new Date('Mon Aug 10 2025 17:46:00 GMT-0400 (Eastern Daylight Time)'),
+    startDate: new Date('Mon Aug 10 2025 22:50:00 GMT-0400 (Eastern Daylight Time)'),
   },
 ];
 
